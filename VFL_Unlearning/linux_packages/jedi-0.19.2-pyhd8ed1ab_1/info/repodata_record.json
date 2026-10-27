@@ -1,0 +1,20 @@
+{
+  "name": "jedi",
+  "version": "0.19.2",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "jedi-0.19.2-pyhd8ed1ab_1.conda",
+  "md5": "a4f4c5dc9b80bc50e0d3dc4e6e8f1bd9",
+  "depends": [
+    "parso >=0.8.3,<0.9.0",
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "Apache-2.0 AND MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1733300981994,
+  "size": 843646
+}

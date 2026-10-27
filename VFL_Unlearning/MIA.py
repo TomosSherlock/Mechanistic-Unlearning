@@ -31,7 +31,20 @@ def get_membership_attack_data(retain_loader, forget_loader, test_loader, bottom
 def entropy(p, dim = -1, keepdim = False):
     return -torch.where(p > 0, p * p.log(), p.new([0.0])).sum(dim=dim, keepdim=keepdim)
 
+def collect_prob_basic(data_loader, model, args):
+    prob = []
+    with torch.no_grad():
+        for batch in data_loader:
+            batch = [tensor.to(next(model.parameters()).device) for tensor in batch]
+            x, y = batch
+            output = model(x)
+            prob.append(F.softmax(output, dim=-1).data)
+        return torch.cat(prob)
+
 def collect_prob(data_loader, bottom_model_A, bottom_model_B, top_model,args):   
+    if top_model == None:
+        return collect_prob_basic(data_loader, bottom_model_A, args)
+    
     #data_loader = torch.utils.data.DataLoader(data_loader.dataset, batch_size=1, shuffle=False, num_workers = 40)
     prob = []
     with torch.no_grad():
@@ -60,6 +73,14 @@ def collect_prob(data_loader, bottom_model_A, bottom_model_B, top_model,args):
                 target = target[0].long().cuda()
                 x_b = data[1]
                 x_a = data[0]
+            elif args.data == 'custom':
+                x_a = data[:, :, :, 0:14]
+                x_b = data[:, :, :, 14:28]
+            elif args.data == 'custom-1':
+                    x_a = torch.stack([data[:, :, 0:14]])
+                    x_b = torch.stack([data[:, :, 14:28]])
+                    x_a = torch.permute(x_a, (1,0,2,3))
+                    x_b = torch.permute(x_b, (1,0,2,3))
             else:
                 raise ValueError(f'No dataset named {args.data}!')
             bottom_A_out = bottom_model_A(x_a)

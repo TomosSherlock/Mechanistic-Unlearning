@@ -1,0 +1,7 @@
+conda-forge::securesystemslib
+conda>=22.11
+cryptography>=41.0.0
+pytest
+pytest-benchmark
+pytest-cov
+setuptools_scm

@@ -1,0 +1,53 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+      "size_in_bytes": 6
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "b05084ca1d50879865178d9fff9fabeab61bdfb1f361bfbde95421ffc8f9be46",
+      "size_in_bytes": 3310
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "406a0f6918e4432e2cddcf7e67a91781c32cbeaa7a2b22c9877d8d60ad8b0b52",
+      "size_in_bytes": 786
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "1b68144734c4b66791f27add5d425f3620775585718a03d0f9b110ba3a4d88db",
+      "size_in_bytes": 82
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "60387c6dd5cdb55c917f39bda1334945fa43c2881dd1be0e857c212dc6f52ee0",
+      "size_in_bytes": 128
+    },
+    {
+      "_path": "site-packages/typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "size_in_bytes": 13936
+    },
+    {
+      "_path": "site-packages/typing_extensions.py",
+      "path_type": "hardlink",
+      "sha256": "4040ca1a1ecbee00d1385c12a93084d1c5bd46f0b774f07e5ae7e91c4f55e696",
+      "size_in_bytes": 165012
+    }
+  ],
+  "paths_version": 1
+}

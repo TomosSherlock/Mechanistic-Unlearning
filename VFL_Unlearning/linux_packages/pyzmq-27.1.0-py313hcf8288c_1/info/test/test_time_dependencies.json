@@ -1,0 +1,1 @@
+["pytest-rerunfailures", "gevent", "pip", "pytest-asyncio", "tornado", "pytest"]

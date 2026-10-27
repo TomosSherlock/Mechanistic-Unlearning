@@ -1,0 +1,4 @@
+- python:
+    imports:
+    - httpcore
+    python_version: 3.9.*

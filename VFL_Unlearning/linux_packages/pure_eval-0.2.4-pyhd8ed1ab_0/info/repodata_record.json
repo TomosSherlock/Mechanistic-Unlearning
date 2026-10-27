@@ -1,0 +1,22 @@
+{
+  "name": "pure_eval",
+  "version": "0.2.4",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "pure_eval-0.2.4-pyhd8ed1ab_0.conda",
+  "md5": "35993ea8ef5e76333e6efb6a0ffb3771",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pure_eval-0.2.4-pyhd8ed1ab_0.conda",
+  "sha256": "2151e981a422ef57031482b28df9c8432d54c1f44996e7760774813f167be863",
+  "depends": [
+    "python >=3.11"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "license_family": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1789159440378,
+  "size": 18473
+}

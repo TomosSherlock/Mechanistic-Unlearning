@@ -1,0 +1,14 @@
+{
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "nest-asyncio2",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1790240046978,
+  "version": "1.7.3"
+}

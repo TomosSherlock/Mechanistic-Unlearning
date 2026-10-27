@@ -1,0 +1,13 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "extra": {
+    "flow_run_id": "azure_20260105.2.1",
+    "remote_url": "https://github.com/conda-forge/anaconda-cli-base-feedstock",
+    "sha": "fe94576412173de40ea2520167d6e8f9744ee33b"
+  },
+  "home": "https://github.com/anaconda/anaconda-cli-base",
+  "license": "BSD-3-Clause",
+  "summary": "A base CLI entrypoint supporting Anaconda CLI plugins"
+}

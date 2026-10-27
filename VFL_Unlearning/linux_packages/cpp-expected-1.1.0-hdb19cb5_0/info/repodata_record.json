@@ -1,0 +1,21 @@
+{
+  "name": "cpp-expected",
+  "version": "1.1.0",
+  "build": "hdb19cb5_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "cpp-expected-1.1.0-hdb19cb5_0.conda",
+  "md5": "3a195bcf47b691adb4a635a8b7f396f7",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "CC0-1.0",
+  "license_family": "CC",
+  "timestamp": 1734039334436,
+  "size": 132687
+}

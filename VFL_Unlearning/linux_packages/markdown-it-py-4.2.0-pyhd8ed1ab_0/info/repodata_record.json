@@ -1,0 +1,23 @@
+{
+  "name": "markdown-it-py",
+  "version": "4.2.0",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "markdown-it-py-4.2.0-pyhd8ed1ab_0.conda",
+  "md5": "6d03368f2b2b0a5fb6839df53b2eb5e0",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/markdown-it-py-4.2.0-pyhd8ed1ab_0.conda",
+  "sha256": "0c4c35376fe920714390d46e4b8d31c876d65f18e1655899e0763ec25f2a902f",
+  "depends": [
+    "mdurl >=0.1,<1",
+    "python >=3.10"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "license_family": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1778169663339,
+  "size": 69017
+}

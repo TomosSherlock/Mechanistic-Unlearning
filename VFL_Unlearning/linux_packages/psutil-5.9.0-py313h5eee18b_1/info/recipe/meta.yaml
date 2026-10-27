@@ -1,0 +1,104 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Wed Jan  8 20:11:26 2025
+# ------------------------------------------------
+
+package:
+  name: psutil
+  version: 5.9.0
+source:
+  fn: psutil-5.9.0.tar.gz
+  sha256: 869842dbd66bb80c3217158e629d6fceaecc3a3166d3d1faee515b05dd26ca25
+  url: https://pypi.io/packages/source/p/psutil/psutil-5.9.0.tar.gz
+build:
+  number: '1'
+  script: /croot/psutil_1736367091698/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_/bin/python
+    -m pip install --ignore-installed --no-deps .
+  string: py313h5eee18b_1
+requirements:
+  build:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - _sysroot_linux-64_curr_repodata_hack 3 haa98f57_10
+    - binutils_impl_linux-64 2.40 h5293946_0
+    - binutils_linux-64 2.40.0 hc2dff05_1
+    - gcc_impl_linux-64 11.2.0 h1234567_1
+    - gcc_linux-64 11.2.0 h5c386dc_1
+    - kernel-headers_linux-64 3.10.0 h57e8cba_10
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libgcc-devel_linux-64 11.2.0 h1234567_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - sysroot_linux-64 2.17 h57e8cba_10
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2024.12.31 h06a4308_0
+    - expat 2.6.4 h6a678d5_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.15 h5eee18b_0
+    - pip 24.2 py313h06a4308_0
+    - python 3.13.1 hf623796_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 75.1.0 py313h06a4308_0
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h39e8969_0
+    - tzdata 2024b h04d1e81_0
+    - wheel 0.44.0 py313h06a4308_0
+    - xz 5.4.6 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - libgcc-ng >=11.2.0
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+test:
+  commands:
+    - pip check
+  imports:
+    - psutil
+    - psutil.tests
+  requires:
+    - pip
+about:
+  description: 'psutil (process and system utilities) is a cross-platform library
+    for
+
+    retrieving information on running processes and system utilization (CPU,
+
+    memory, disks, network) in Python. It is useful mainly for system
+
+    monitoring, profiling and limiting process resources and management of
+
+    running processes.
+
+    '
+  dev_url: https://github.com/giampaolo/psutil
+  doc_source_url: https://github.com/giampaolo/psutil/blob/master/docs/index.rst
+  doc_url: https://psutil.readthedocs.io/en/latest/
+  home: https://github.com/giampaolo/psutil
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: A cross-platform process and system utilities module for Python
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: a8c73f98-2640-4199-95a0-0951ed5859e6
+  recipe-maintainers:
+    - gqmelo
+    - jakirkham
+    - jjhelmus
+    - nehaljwani
+    - pelson
+  remote_url: git@github.com:AnacondaRecipes/psutil-feedstock.git
+  sha: 37acf54fc8a631d39822d53509b07fd0189cc44a

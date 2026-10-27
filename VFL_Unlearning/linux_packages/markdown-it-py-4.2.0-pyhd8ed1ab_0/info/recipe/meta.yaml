@@ -1,0 +1,84 @@
+# This file created by conda-build 26.3.0
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Thu May  7 15:58:44 2026
+# ------------------------------------------------
+
+package:
+  name: markdown-it-py
+  version: 4.2.0
+source:
+  url: https://pypi.org/packages/source/m/markdown-it-py/markdown_it_py-4.2.0.tar.gz
+  sha256: 04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49
+build:
+  number: '0'
+  entry_points:
+    - markdown-it = markdown_it.cli.parse:main
+  noarch: python
+  script: '/home/conda/feedstock_root/build_artifacts/markdown-it-py_1778169583724/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeh/bin/python
+    -m pip install . --no-deps --ignore-installed -vv '
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_9
+    - ca-certificates 2026.4.22 hbd8a1cb_0
+    - flit-core 3.12.0 pyhcf101f3_2
+    - ld_impl_linux-64 2.45.1 default_hbd61a6d_102
+    - libexpat 2.8.0 hecca717_0
+    - libffi 3.5.2 h3435931_0
+    - libgcc 15.2.0 he0feb66_18
+    - libgcc-ng 15.2.0 h69a702a_18
+    - libgomp 15.2.0 he0feb66_18
+    - liblzma 5.8.3 hb03c661_0
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libsqlite 3.53.1 h0c1763c_0
+    - libuuid 2.42 h5347b49_0
+    - libxcrypt 4.4.36 hd590300_1
+    - libzlib 1.3.2 h25fd6f3_2
+    - ncurses 6.6 hdb14827_0
+    - openssl 3.6.2 h35e630c_0
+    - packaging 26.2 pyhc364b38_0
+    - pip 26.1.1 pyh8b19718_0
+    - python 3.10.20 h3c07f61_0_cpython
+    - readline 8.3 h853b02a_0
+    - setuptools 82.0.1 pyh332efcf_0
+    - tk 8.6.13 noxft_h366c992_103
+    - tzdata 2025c hc9c84f9_1
+    - wheel 0.47.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_6
+  run:
+    - mdurl >=0.1,<1
+    - python >=3.10
+test:
+  requires:
+    - pip
+    - python 3.10.*
+  imports:
+    - markdown_it
+    - markdown_it.cli
+    - markdown_it.common
+    - markdown_it.helpers
+    - markdown_it.presets
+    - markdown_it.rules_block
+    - markdown_it.rules_core
+    - markdown_it.rules_inline
+  commands:
+    - markdown-it --help
+    - pip check
+about:
+  home: https://github.com/ExecutableBookProject/markdown-it-py
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Python port of markdown-it. Markdown parsing, done right!
+  doc_url: https://github.com/ExecutableBookProject/markdown-it-py/blob/master/README.md
+  dev_url: https://github.com/ExecutableBookProject/markdown-it-py
+extra:
+  recipe-maintainers:
+    - choldgraf
+    - dopplershift
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_25507087547
+  remote_url: https://github.com/conda-forge/markdown-it-py-feedstock
+  sha: b609ff48890a3630df7945406a5bf4144ca6c5a1

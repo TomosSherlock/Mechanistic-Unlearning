@@ -1,0 +1,23 @@
+{
+  "name": "jaraco.functools",
+  "version": "4.6.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jaraco.functools-4.6.0-pyhcf101f3_0.conda",
+  "md5": "8665b873062a31a90b563bf493f9fb2c",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jaraco.functools-4.6.0-pyhcf101f3_0.conda",
+  "sha256": "d23b9e8e8d5968699ec2bc9f8d182598e86e494dbe8a3a71b4a53b1be9a3cb16",
+  "depends": [
+    "python >=3.10",
+    "more-itertools",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1784015600777,
+  "size": 18997
+}

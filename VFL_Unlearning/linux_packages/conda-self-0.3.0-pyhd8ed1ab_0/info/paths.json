@@ -1,0 +1,173 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "818c1139afb726471d26e4bdcef14a8b51a1963ed94b967c050f7cae89320620",
+      "size_in_bytes": 3974
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "480c8eb28345a89d203cdb502f28742c49d09e72bde52e51fff7930fa55eca89",
+      "size_in_bytes": 3356
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "5b77e4a649bbfb07fdbc123967eeecd1e5a478cfaca6eefc23c35e6fdf037848",
+      "size_in_bytes": 87
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "b38268f67a631ad899e7f4393e00fd5f167b17990ca122428c6c242feff83164",
+      "size_in_bytes": 106
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/entry_points.txt",
+      "path_type": "hardlink",
+      "sha256": "5189e7e6cf9c01236b36ed8e38a69aa1bf53c56dd30451f1e1363258b3f63c68",
+      "size_in_bytes": 39
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/licenses/AUTHORS.md",
+      "path_type": "hardlink",
+      "sha256": "82d947e70d7cdf3bc410e74b161901b2e9eb381784d49d467f7633ecb2ccc584",
+      "size_in_bytes": 280
+    },
+    {
+      "_path": "site-packages/conda_self-0.3.0.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "9ab79864eedb957db85d30254c47b9748886d061e3d82303e8b6d75a9c1bee25",
+      "size_in_bytes": 1554
+    },
+    {
+      "_path": "site-packages/conda_self/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "889efb4e6a1d59d7e1a21fb1a7580d4ff47fba4790551c953a4189e744a4fdd4",
+      "size_in_bytes": 393
+    },
+    {
+      "_path": "site-packages/conda_self/_version.py",
+      "path_type": "hardlink",
+      "sha256": "442634e0d6349010b29fab6d1fa96754be86cf681c78eaede397f4c8338e53c0",
+      "size_in_bytes": 520
+    },
+    {
+      "_path": "site-packages/conda_self/cli/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "4df1fed625a940ae8fc4e4b7dab1eea4d285c115e1b252c7eddf149f2ef6902e",
+      "size_in_bytes": 1503
+    },
+    {
+      "_path": "site-packages/conda_self/cli/main_install.py",
+      "path_type": "hardlink",
+      "sha256": "fa472557ba1975d6bc7b6a1c34ef6d9379ad93568c20a1ae539a2cb90e7eb148",
+      "size_in_bytes": 2284
+    },
+    {
+      "_path": "site-packages/conda_self/cli/main_remove.py",
+      "path_type": "hardlink",
+      "sha256": "3b7ceb7e9af9ba3bfa44daffa23efb17a67e9f4d499b05855187b7516af88d68",
+      "size_in_bytes": 1831
+    },
+    {
+      "_path": "site-packages/conda_self/cli/main_reset.py",
+      "path_type": "hardlink",
+      "sha256": "1a2d696f78609b87d030a85780a603a37f21747f14763ffa6e7ee79ed07abf0e",
+      "size_in_bytes": 6973
+    },
+    {
+      "_path": "site-packages/conda_self/cli/main_update.py",
+      "path_type": "hardlink",
+      "sha256": "4a931ed8543ab6da9fa19e29842064109150fd65e1aebd288091e32b76cc65cc",
+      "size_in_bytes": 2396
+    },
+    {
+      "_path": "site-packages/conda_self/constants.py",
+      "path_type": "hardlink",
+      "sha256": "ae2cb9c119dff52bc671eeb3960ec77be6c2bc997423df104047d7451f46a7b0",
+      "size_in_bytes": 302
+    },
+    {
+      "_path": "site-packages/conda_self/exceptions.py",
+      "path_type": "hardlink",
+      "sha256": "b0c0c374c3df539f4cfbf512e83c3a7766a8b0f5518a1fb8e7d9a8490205490c",
+      "size_in_bytes": 1185
+    },
+    {
+      "_path": "site-packages/conda_self/health_checks/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e349b73a80fb5d38e147146076ea64e8cffb8f9012e8f57b6e3835b3df72f60a",
+      "size_in_bytes": 36
+    },
+    {
+      "_path": "site-packages/conda_self/health_checks/base_protection.py",
+      "path_type": "hardlink",
+      "sha256": "55901a084a191870377474f15a91330d03ecf3c3aca17eb876114a6c21d8eec1",
+      "size_in_bytes": 6452
+    },
+    {
+      "_path": "site-packages/conda_self/install.py",
+      "path_type": "hardlink",
+      "sha256": "407824004c89707c55494ac519dee00b2e72365573ea903f379071ed63eb5c8d",
+      "size_in_bytes": 1719
+    },
+    {
+      "_path": "site-packages/conda_self/package_info.py",
+      "path_type": "hardlink",
+      "sha256": "50973375eaba235c815ee2b31afc25ae237311aa5f429ab757bd211ac704ddaa",
+      "size_in_bytes": 3648
+    },
+    {
+      "_path": "site-packages/conda_self/plugin.py",
+      "path_type": "hardlink",
+      "sha256": "00f904482ac3f72600df16c8939a8c2624ca929e6214500e916c872f1b7fb4c5",
+      "size_in_bytes": 1912
+    },
+    {
+      "_path": "site-packages/conda_self/py.typed",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/conda_self/query.py",
+      "path_type": "hardlink",
+      "sha256": "a07624f7ed00b9850fe66d58c737e8302711904e1b9b2c4d5fbc06c72261ee39",
+      "size_in_bytes": 1679
+    },
+    {
+      "_path": "site-packages/conda_self/reset.py",
+      "path_type": "hardlink",
+      "sha256": "d1d49ca325e73e49eaafdc34e49c3e04db26bd4685fb3da6cdacea55992a124a",
+      "size_in_bytes": 8821
+    },
+    {
+      "_path": "site-packages/conda_self/testing.py",
+      "path_type": "hardlink",
+      "sha256": "bef41244a804ab3bccaa5f420d687aad47888169ea1604c07ac35488c15703ad",
+      "size_in_bytes": 862
+    },
+    {
+      "_path": "site-packages/conda_self/validate.py",
+      "path_type": "hardlink",
+      "sha256": "25359125df4cac0ae9b4b32ce49b62b948b3dc9811379eb3bc5346b872c04a7e",
+      "size_in_bytes": 1103
+    }
+  ],
+  "paths_version": 1
+}

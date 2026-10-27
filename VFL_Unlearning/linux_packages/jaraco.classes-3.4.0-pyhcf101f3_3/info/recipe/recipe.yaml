@@ -1,0 +1,46 @@
+schema_version: 1
+
+context:
+  name: jaraco.classes
+  version: 3.4.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 47a024b51d0239c0dd8c8540c6c7f484be3b8fcf0b2d85c13825780d3b3f3acd
+
+build:
+  number: 3
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=56
+    - setuptools_scm >=3.4.1
+  run:
+    - python >=${{ python_min }}
+    - more-itertools
+
+tests:
+  - python:
+      imports:
+        - jaraco
+        - jaraco.classes
+      python_version: ${{ python_min }}.*
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: jaraco.classes
+  homepage: https://github.com/jaraco/jaraco.classes
+  repository: https://github.com/jaraco/jaraco.classes
+
+extra:
+  recipe-maintainers:
+    - carlodri

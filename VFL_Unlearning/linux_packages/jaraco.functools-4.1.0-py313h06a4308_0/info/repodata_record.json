@@ -1,0 +1,22 @@
+{
+  "name": "jaraco.functools",
+  "version": "4.1.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "jaraco.functools-4.1.0-py313h06a4308_0.conda",
+  "md5": "472d048415f35e29b8b39a6cfc947ccd",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "more-itertools",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1740408209702,
+  "size": 23834
+}

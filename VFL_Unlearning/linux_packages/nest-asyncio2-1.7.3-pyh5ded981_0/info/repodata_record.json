@@ -1,0 +1,22 @@
+{
+  "name": "nest-asyncio2",
+  "version": "1.7.3",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "nest-asyncio2-1.7.3-pyh5ded981_0.conda",
+  "md5": "409939a1f19ecec35d0b89e7889ecd92",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/nest-asyncio2-1.7.3-pyh5ded981_0.conda",
+  "sha256": "7af0be0e578a5c700bfe9fbed3fda322bda460cdd8a1e2b444787819c1eb32bc",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-2-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1790240046978,
+  "size": 16422
+}

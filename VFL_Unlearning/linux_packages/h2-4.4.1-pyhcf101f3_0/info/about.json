@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/python-hyper/h2",
+  "doc_url": "https://python-hyper.org/",
+  "extra": {
+    "flow_run_id": "github_30858975120",
+    "recipe-maintainers": [
+      "primozgodec",
+      "wiphoo",
+      "bollwyvl"
+    ],
+    "remote_url": "https://github.com/conda-forge/h2-feedstock",
+    "sha": "b55752af6f9252957ebbebe2bfcd4ab4f9bac3e7"
+  },
+  "home": "https://pypi.org/project/h2",
+  "license": "MIT",
+  "summary": "HTTP/2 State-Machine based protocol implementation"
+}

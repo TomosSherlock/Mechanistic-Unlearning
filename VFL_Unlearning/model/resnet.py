@@ -80,6 +80,8 @@ class ResNet_Bottom(nn.Module):
         self.in_planes = 64
         if self.cfg.data == 'mnist':
             channel = 1
+        if self.cfg.data == 'custom-1':
+            channel = 1
         else:
             channel = 3
         self.layer0 = nn.Sequential(
@@ -111,6 +113,50 @@ class ResNet_Bottom(nn.Module):
         out = out.view(out.size(0), -1)
         return out
 
+# For non-federated learning
+class ResNet_Full(nn.Module):
+    def __init__(self, block, num_blocks, model_config, num_classes=10):
+        super(ResNet_Full, self).__init__()
+        self.cfg = model_config
+        self.num_blocks = num_blocks
+        self.in_planes = 64
+        if self.cfg.data == 'mnist':
+            channel = 1
+        if self.cfg.data == 'custom-1':
+            channel = 1
+        else:
+            channel = 3
+        self.layer0 = nn.Sequential(
+            nn.Conv2d(channel, 64, kernel_size=3, stride=1, padding=1, bias=False),
+            nn.BatchNorm2d(64),
+            nn.ReLU(inplace=True))
+        self.layer1 = self._make_layer(block, 64, num_blocks[0], stride=1, cfg=self.cfg)
+        self.layer2 = self._make_layer(block, 128, num_blocks[1], stride=2, cfg=self.cfg)
+        self.layer3 = self._make_layer(block, 256, num_blocks[2], stride=2, cfg=self.cfg)
+        self.layer4 = self._make_layer(block, 512, num_blocks[3], stride=2, cfg=self.cfg)
+        self.linear = nn.Linear(512, num_classes)
+        # self.linear = nn.Linear(512 * block.expansion, num_classes)
+            # self.set_passport()
+
+    def _make_layer(self, block, planes, num_blocks, stride, cfg):
+        strides = [stride] + [1] * (num_blocks - 1)
+        layers = []
+        for stride in strides:
+            layers.append(block(self.in_planes, planes, stride, cfg))
+            self.in_planes = planes * block.expansion
+        return nn.Sequential(*layers)
+
+    def forward(self, x):
+        out = self.layer0(x)
+        out = self.layer1(out)
+        out = self.layer2(out)
+        out = self.layer3(out)
+        out = self.layer4(out)
+        out = F.avg_pool2d(out, out.size()[2:])
+        out = out.view(out.size(0), -1)
+        out = self.linear(out)
+        return out
+
 
 
 
@@ -121,3 +167,7 @@ def ResNet18_Bottom(model_config):
 
 def ResNet18_Top(model_config):
     return ResNet_Top(BasicBlock, [2, 2, 2, 2], model_config)
+
+
+def ResNet18_Full(model_config):
+    return ResNet_Full(BasicBlock, [2, 2, 2, 2], model_config)

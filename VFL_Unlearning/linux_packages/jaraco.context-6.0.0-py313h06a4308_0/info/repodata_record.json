@@ -1,0 +1,21 @@
+{
+  "name": "jaraco.context",
+  "version": "6.0.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "jaraco.context-6.0.0-py313h06a4308_0.conda",
+  "md5": "568af8d43ff7c6e7ecdc725bdc860053",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1731706769302,
+  "size": 17028
+}

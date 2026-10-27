@@ -1,0 +1,16 @@
+site-packages/shellingham-1.5.4.dist-info/INSTALLER
+site-packages/shellingham-1.5.4.dist-info/METADATA
+site-packages/shellingham-1.5.4.dist-info/RECORD
+site-packages/shellingham-1.5.4.dist-info/REQUESTED
+site-packages/shellingham-1.5.4.dist-info/WHEEL
+site-packages/shellingham-1.5.4.dist-info/direct_url.json
+site-packages/shellingham-1.5.4.dist-info/licenses/LICENSE
+site-packages/shellingham-1.5.4.dist-info/top_level.txt
+site-packages/shellingham-1.5.4.dist-info/zip-safe
+site-packages/shellingham/__init__.py
+site-packages/shellingham/_core.py
+site-packages/shellingham/nt.py
+site-packages/shellingham/posix/__init__.py
+site-packages/shellingham/posix/_core.py
+site-packages/shellingham/posix/proc.py
+site-packages/shellingham/posix/ps.py

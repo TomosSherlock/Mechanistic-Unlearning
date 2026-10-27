@@ -1,0 +1,10 @@
+- python:
+    imports:
+    - typing_inspection
+    python_version: 3.10.*
+- script:
+    content: pip check
+  requirements:
+    run:
+    - pip
+    - python 3.10.*

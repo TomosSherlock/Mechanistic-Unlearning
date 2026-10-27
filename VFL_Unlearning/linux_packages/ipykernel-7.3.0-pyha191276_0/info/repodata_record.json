@@ -1,0 +1,37 @@
+{
+  "name": "ipykernel",
+  "version": "7.3.0",
+  "build": "pyha191276_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "ipykernel-7.3.0-pyha191276_0.conda",
+  "md5": "2b47a10e4d98334f8171ff60aea05ff3",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/ipykernel-7.3.0-pyha191276_0.conda",
+  "sha256": "305ad9226363ff5f259c404dd9a7508183a2e150739b2adc43db7d817234da66",
+  "depends": [
+    "__linux",
+    "comm >=0.1.1",
+    "debugpy >=1.6.5",
+    "ipython >=7.23.1",
+    "jupyter_client >=8.9.0",
+    "jupyter_core >=5.1,!=6.0.*",
+    "matplotlib-inline >=0.1",
+    "nest-asyncio2 >=1.7.0",
+    "packaging >=22",
+    "psutil >=5.7",
+    "python >=3.10",
+    "pyzmq >=25",
+    "tornado >=6.4.1",
+    "traitlets >=5.4.0",
+    "python"
+  ],
+  "constrains": [
+    "appnope >=0.1.2"
+  ],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1781101665847,
+  "size": 138635
+}

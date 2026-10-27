@@ -1,0 +1,6 @@
+- python:
+    imports:
+    - wcwidth
+    python_version:
+    - 3.11.*
+    - '*'

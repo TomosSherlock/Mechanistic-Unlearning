@@ -1,0 +1,89 @@
+{
+  "paths": [
+    {
+      "_path": "etc/conda/test-files/cached_property/1/tests/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "etc/conda/test-files/cached_property/1/tests/test_async_cached_property.py",
+      "path_type": "hardlink",
+      "sha256": "9fc7237f3b014e56f8d6a33ba654bd0bd2633776cb831acbb40de56fc13721dc",
+      "size_in_bytes": 3763
+    },
+    {
+      "_path": "etc/conda/test-files/cached_property/1/tests/test_cached_property.py",
+      "path_type": "hardlink",
+      "sha256": "d386b86e7e3537ed9e70d040ac85214bfa9fed26c550a0e0364a203d80d22c96",
+      "size_in_bytes": 5957
+    },
+    {
+      "_path": "etc/conda/test-files/cached_property/1/tests/test_coroutine_cached_property.py",
+      "path_type": "hardlink",
+      "sha256": "abf1e4551b31c6381a99c3b1f8c65c132cd5f5f2b55124782d3966446e612aa6",
+      "size_in_bytes": 3192
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+      "size_in_bytes": 6
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "76bb1843c7f30dfc1ad64b1df04397314ed64481eb17528a116f0a5097fc0800",
+      "size_in_bytes": 10504
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "5878427321ef5339b1cfd7948c32bd31a2f0314379ff066ef7f5f4e614d4cd69",
+      "size_in_bytes": 968
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "61532836a2b3111b7ec23519c09df7c41180c27165fb872a6d8913b566b88ad1",
+      "size_in_bytes": 91
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "d26639ef65662084925f3939c02b2263f46f2c9bbdec1ff66768817ae4ff0f11",
+      "size_in_bytes": 126
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/licenses/AUTHORS.md",
+      "path_type": "hardlink",
+      "sha256": "775a784279e2a8e83e1e9f396e3f4518990a470b6f265e699f58617d1f57e714",
+      "size_in_bytes": 412
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "ba4756c8039b25b66e3c456cc5bf635aa528cf459b97ee1499d06684ccd89b9a",
+      "size_in_bytes": 1479
+    },
+    {
+      "_path": "site-packages/cached_property-2.0.1.dist-info/top_level.txt",
+      "path_type": "hardlink",
+      "sha256": "3ecb7ddd74367a78653d57c22297382afdfc7fa257118ba48bdea193287ed491",
+      "size_in_bytes": 16
+    },
+    {
+      "_path": "site-packages/cached_property.py",
+      "path_type": "hardlink",
+      "sha256": "9af1e4ac7cf6e924aa8b918effee560a64586ddc65eefbd9a2a59e56c38de084",
+      "size_in_bytes": 4177
+    }
+  ],
+  "paths_version": 1
+}

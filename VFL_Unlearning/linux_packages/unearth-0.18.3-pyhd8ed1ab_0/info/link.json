@@ -1,0 +1,9 @@
+{
+  "noarch": {
+    "entry_points": [
+      "unearth = unearth.__main__:cli"
+    ],
+    "type": "python"
+  },
+  "package_metadata_version": 1
+}

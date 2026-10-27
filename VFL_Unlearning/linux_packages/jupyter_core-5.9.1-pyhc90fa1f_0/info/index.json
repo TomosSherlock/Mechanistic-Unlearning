@@ -1,0 +1,21 @@
+{
+  "build": "pyhc90fa1f_0",
+  "build_number": 0,
+  "constrains": [
+    "pywin32 >=300"
+  ],
+  "depends": [
+    "__unix",
+    "python",
+    "platformdirs >=2.5",
+    "python >=3.10",
+    "traitlets >=5.3",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "jupyter_core",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1760643864586,
+  "version": "5.9.1"
+}

@@ -1,0 +1,22 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "JSON for Modern C++ is a C++11 JSON parser.",
+  "dev_url": "http://github.com/nlohmann/json",
+  "doc_url": "http://nlohmann.github.io/json/",
+  "extra": {
+    "flow_run_id": "github_30991318195",
+    "recipe-maintainers": [
+      "constantinpape",
+      "SylvainCorlay",
+      "JohanMabille",
+      "wolfv"
+    ],
+    "remote_url": "https://github.com/conda-forge/nlohmann_json-feedstock",
+    "sha": "c62fb1cefffeaf1ec3d2f419cc71d5efbe1d572b"
+  },
+  "home": "http://github.com/nlohmann/json",
+  "license": "MIT",
+  "summary": "JSON for Modern C++"
+}

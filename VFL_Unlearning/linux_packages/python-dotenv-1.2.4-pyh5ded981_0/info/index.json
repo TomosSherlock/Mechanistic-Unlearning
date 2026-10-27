@@ -1,0 +1,14 @@
+{
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "python-dotenv",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1790859080558,
+  "version": "1.2.4"
+}

@@ -1,0 +1,23 @@
+{
+  "paths": [
+    {
+      "_path": "etc/conda/test-files/typing-extensions/1/src/_typed_dict_test_helper.py",
+      "path_type": "hardlink",
+      "sha256": "d522d5308180d08c7775347f5cc7c842c52f3791d5b2d3c2ff7664ebc64015e9",
+      "size_in_bytes": 564
+    },
+    {
+      "_path": "etc/conda/test-files/typing-extensions/1/src/test_typing_extensions.py",
+      "path_type": "hardlink",
+      "sha256": "8a80f91c656d2fe2c8d1dd0457ec42fb650e0e609a90b8732c3a3a509269d072",
+      "size_in_bytes": 350089
+    },
+    {
+      "_path": "etc/conda/test-files/typing-extensions/1/src/typing_extensions.py",
+      "path_type": "hardlink",
+      "sha256": "4040ca1a1ecbee00d1385c12a93084d1c5bd46f0b774f07e5ae7e91c4f55e696",
+      "size_in_bytes": 165012
+    }
+  ],
+  "paths_version": 1
+}

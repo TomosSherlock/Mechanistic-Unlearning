@@ -1,0 +1,22 @@
+{
+  "name": "idna",
+  "version": "3.20",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "idna-3.20-pyh5ded981_0.conda",
+  "md5": "ee73be987f9de9ea5c2fdaeefa7b6491",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/idna-3.20-pyh5ded981_0.conda",
+  "sha256": "e044b1ec829e2e24f971fa3f3408eb26f1db836e521a58f08b0fd9a03fee47be",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1790020377150,
+  "size": 178572
+}

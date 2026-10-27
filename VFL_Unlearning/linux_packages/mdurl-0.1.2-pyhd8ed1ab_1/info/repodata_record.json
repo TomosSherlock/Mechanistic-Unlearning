@@ -1,0 +1,21 @@
+{
+  "name": "mdurl",
+  "version": "0.1.2",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "mdurl-0.1.2-pyhd8ed1ab_1.conda",
+  "md5": "592132998493b3ff25fd7479396e8351",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/mdurl-0.1.2-pyhd8ed1ab_1.conda",
+  "sha256": "78c1bbe1723449c52b7a9df1af2ee5f005209f67e40b6e1d3c7619127c43b1c7",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1733255681319,
+  "size": 14465
+}

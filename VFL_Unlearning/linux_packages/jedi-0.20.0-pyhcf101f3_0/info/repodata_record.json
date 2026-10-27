@@ -1,0 +1,23 @@
+{
+  "name": "jedi",
+  "version": "0.20.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jedi-0.20.0-pyhcf101f3_0.conda",
+  "md5": "c2b3d37aa1411031126036ee76a8a861",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jedi-0.20.0-pyhcf101f3_0.conda",
+  "sha256": "744143551c1c7b528b82533fb641b9d7db20b2203abc4c2635c387fa6c089fc3",
+  "depends": [
+    "python >=3.10",
+    "parso >=0.8.6,<0.9.0",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "Apache-2.0 AND MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1782251948616,
+  "size": 2715215
+}

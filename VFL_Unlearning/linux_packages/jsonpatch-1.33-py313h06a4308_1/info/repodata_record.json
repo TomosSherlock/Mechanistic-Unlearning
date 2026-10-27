@@ -1,0 +1,22 @@
+{
+  "name": "jsonpatch",
+  "version": "1.33",
+  "build": "py313h06a4308_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "jsonpatch-1.33-py313h06a4308_1.conda",
+  "md5": "8cb4b1755a4a8fd6a57883863236ef2b",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "jsonpointer >=1.9",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1728399618377,
+  "size": 36479
+}

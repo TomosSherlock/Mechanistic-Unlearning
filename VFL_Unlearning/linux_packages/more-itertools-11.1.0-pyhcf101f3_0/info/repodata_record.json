@@ -1,0 +1,23 @@
+{
+  "name": "more-itertools",
+  "version": "11.1.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "more-itertools-11.1.0-pyhcf101f3_0.conda",
+  "md5": "0e694257dbf916540b749c3ffc808efe",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/more-itertools-11.1.0-pyhcf101f3_0.conda",
+  "sha256": "6725c1c8db9d025db763e1bba1acdcff2eb2ae20a7766a71512ea84081033288",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "license_family": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1779478190496,
+  "size": 71270
+}

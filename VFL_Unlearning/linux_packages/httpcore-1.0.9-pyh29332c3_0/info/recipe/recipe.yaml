@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  version: 1.0.9
+
+package:
+  name: httpcore
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/h/httpcore/httpcore-${{ version }}.tar.gz
+  sha256: 6e34463af53fd2ab5d807f399a9b45ea31c3dfa2276f15a2c3f00afff6e176e8
+
+build:
+  number: 0
+  noarch: python
+  script: python -m pip install . -vv --no-build-isolation --no-deps
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-fancy-pypi-readme
+  run:
+    - python >=${{ python_min }}
+    - h11 >=0.16
+    - h2 >=3,<5
+    - sniffio 1.*
+    - anyio >=4.0,<5.0
+    - certifi
+
+tests:
+  - python:
+      imports:
+        - httpcore
+      pip_check: true
+      python_version: ${{ python_min }}.*
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE.md
+  summary: The next generation HTTP client.
+  homepage: https://github.com/encode/httpcore
+
+extra:
+  recipe-maintainers:
+    - nicoddemus
+    - synapticarbors

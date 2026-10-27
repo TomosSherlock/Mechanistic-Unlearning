@@ -1,0 +1,13 @@
+{
+  "mod": "Thu, 06 Feb 2025 17:01:54 GMT",
+  "etag": "\"344a60cb6febc4f8900ab41997482472\"",
+  "cache_control": "public, max-age=30",
+  "url": "https://repo.anaconda.com/pkgs/r/osx-arm64",
+  "size": 130,
+  "mtime_ns": 1791286314514171303,
+  "refresh_ns": 1791286354761947000,
+  "has_shards": {
+    "last_checked": "2026-10-06T11:31:11.271623Z",
+    "value": false
+  }
+}

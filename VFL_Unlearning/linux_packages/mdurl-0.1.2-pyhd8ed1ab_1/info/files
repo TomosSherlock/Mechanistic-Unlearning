@@ -1,0 +1,14 @@
+site-packages/mdurl-0.1.2.dist-info/INSTALLER
+site-packages/mdurl-0.1.2.dist-info/LICENSE
+site-packages/mdurl-0.1.2.dist-info/METADATA
+site-packages/mdurl-0.1.2.dist-info/RECORD
+site-packages/mdurl-0.1.2.dist-info/REQUESTED
+site-packages/mdurl-0.1.2.dist-info/WHEEL
+site-packages/mdurl-0.1.2.dist-info/direct_url.json
+site-packages/mdurl/__init__.py
+site-packages/mdurl/_decode.py
+site-packages/mdurl/_encode.py
+site-packages/mdurl/_format.py
+site-packages/mdurl/_parse.py
+site-packages/mdurl/_url.py
+site-packages/mdurl/py.typed

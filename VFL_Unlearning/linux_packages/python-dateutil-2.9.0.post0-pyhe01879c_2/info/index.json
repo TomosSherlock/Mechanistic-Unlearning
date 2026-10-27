@@ -1,0 +1,15 @@
+{
+  "build": "pyhe01879c_2",
+  "build_number": 2,
+  "depends": [
+    "python >=3.9",
+    "six >=1.5",
+    "python"
+  ],
+  "license": "Apache-2.0",
+  "name": "python-dateutil",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1751104122689,
+  "version": "2.9.0.post0"
+}

@@ -1,0 +1,19 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/Marco-Sulla/python-frozendict",
+  "extra": {
+    "feedstock-name": "frozendict",
+    "flow_run_id": "github_27369656997",
+    "recipe-maintainers": [
+      "ltalirz",
+      "Marco-Sulla"
+    ],
+    "remote_url": "https://github.com/conda-forge/frozendict-feedstock",
+    "sha": "a1c29efe1d622a49bf871eaa7a519b4116173a27"
+  },
+  "home": "https://pypi.org/project/frozendict",
+  "license": "LGPL-3.0-only",
+  "summary": "An immutable dictionary"
+}

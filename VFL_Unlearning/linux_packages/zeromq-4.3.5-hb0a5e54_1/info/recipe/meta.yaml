@@ -1,0 +1,89 @@
+# This file created by conda-build 25.1.2
+# meta.yaml template originally from:
+# /home/task_175767579991330/zeromq-feedstock/recipe, last modified Fri Sep 12 11:23:35 2025
+# ------------------------------------------------
+
+package:
+  name: zeromq
+  version: 4.3.5
+source:
+  fn: zeromq-4.3.5.tar.gz
+  patches:
+    - 001-windows-install.patch
+  sha256: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
+  url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz
+build:
+  number: '1'
+  run_exports:
+    - zeromq >=4.3.5,<4.4.0a0
+  string: hb0a5e54_1
+requirements:
+  build:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - autoconf 2.71 pl5340h5eee18b_0
+    - automake 1.16.5 pl5340h06a4308_1
+    - binutils_impl_linux-64 2.40 h5293946_0
+    - binutils_linux-64 2.40.0 hc2dff05_2
+    - gcc_impl_linux-64 11.2.0 h1234567_1
+    - gcc_linux-64 11.2.0 h5c386dc_2
+    - gxx_impl_linux-64 11.2.0 h1234567_1
+    - gxx_linux-64 11.2.0 hc2dff05_2
+    - kernel-headers_linux-64 4.18.0 h528b178_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libgcc-devel_linux-64 11.2.0 h1234567_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libstdcxx-devel_linux-64 11.2.0 h1234567_1
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libtool 2.4.7 h6a678d5_0
+    - m4 1.4.18 h4e445db_0
+    - make 4.2.1 h1bed415_1
+    - patch 2.8 hb25bd0a_0
+    - perl 5.40.2 0_h5eee18b_perl5
+    - pkg-config 0.29.2 h1bed415_8
+    - sysroot_linux-64 2.28 h528b178_0
+    - tzdata 2025b h04d1e81_0
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libsodium 1.0.20 heac8642_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+  run:
+    - __glibc >=2.28,<3.0.a0
+    - libgcc-ng >=11.2.0
+    - libsodium >=1.0.20,<1.0.21.0a0
+    - libsodium >=1.0.20,<1.0.21.0a0
+    - libstdcxx-ng >=11.2.0
+about:
+  description: 'The ZeroMQ lightweight messaging kernel is a library which extends
+    the standard socket
+
+    interfaces with features traditionally provided by specialised messaging middleware
+    products.
+
+    ZeroMQ sockets provide an abstraction of asynchronous message queues, multiple
+    messaging
+
+    patterns, message filtering (subscriptions), seamless access to multiple transport
+    protocols and more.
+
+    '
+  dev_url: https://github.com/zeromq/libzmq
+  doc_url: https://zeromq.org/get-started/
+  home: https://zeromq.org
+  license: MPL-2.0
+  license_family: Other
+  license_file: LICENSE
+  summary: A high-performance asynchronous messaging library.
+extra:
+  copy_test_source_files: true
+  final: true
+  recipe-maintainers:
+    - JohanMabille
+    - SylvainCorlay
+    - davidbrochart
+    - jakirkham
+    - minrk

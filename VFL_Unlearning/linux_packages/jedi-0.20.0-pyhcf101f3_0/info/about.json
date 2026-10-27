@@ -1,0 +1,22 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "Jedi is a static analysis tool for Python that can be used in IDEs/editors.\nIts historic focus is autocompletion, but does static analysis for now as\nwell. Jedi is fast and is very well tested. It understands Python on a\ndeeper level than all other static analysis frameworks for Python.",
+  "dev_url": "https://github.com/davidhalter/jedi/",
+  "doc_url": "http://jedi.readthedocs.io/en/latest/",
+  "extra": {
+    "flow_run_id": "github_28059880595",
+    "recipe-maintainers": [
+      "goanpeca",
+      "asmeurer",
+      "nehaljwani",
+      "ocefpaf"
+    ],
+    "remote_url": "https://github.com/conda-forge/jedi-feedstock",
+    "sha": "0c5fdd61f5e63478940f51cf4c8015921abf9e3a"
+  },
+  "home": "https://github.com/davidhalter/jedi/",
+  "license": "Apache-2.0 AND MIT",
+  "summary": "An autocompletion tool for Python that can be used for text editors."
+}

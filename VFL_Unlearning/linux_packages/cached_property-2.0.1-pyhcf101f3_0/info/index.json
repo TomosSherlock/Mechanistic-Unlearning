@@ -1,0 +1,14 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "cached_property",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1787678456483,
+  "version": "2.0.1"
+}

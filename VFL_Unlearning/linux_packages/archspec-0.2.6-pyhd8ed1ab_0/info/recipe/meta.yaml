@@ -1,0 +1,154 @@
+# This file created by conda-build 26.7.1
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Thu Oct  1 16:52:39 2026
+# ------------------------------------------------
+
+package:
+  name: archspec
+  version: 0.2.6
+source:
+  url: https://pypi.org/packages/source/a/archspec/archspec-0.2.6.tar.gz
+  sha256: 2ea980955530499865225eff917b649b39fd014b53f8c6461b6348c1d8b866f1
+build:
+  number: '0'
+  noarch: python
+  entry_points:
+    - archspec = archspec.cli:main
+  script: /home/conda/feedstock_root/build_artifacts/archspec_1790873640670/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pl/bin/python
+    -m pip install . -vv
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - _python_abi3_support 1.0 hd8ed1ab_3
+    - anyio 4.14.2 pyhcf101f3_0
+    - backports 1.0 pyhd8ed1ab_5
+    - backports.tarfile 1.2.0 pyhcf101f3_2
+    - backports.zstd 1.7.0 py310hff74037_0
+    - brotli-python 1.2.0 py310h25d4438_3
+    - bzip2 1.0.8 hda65f42_10
+    - ca-certificates 2026.7.22 hbd8a1cb_0
+    - cachecontrol 0.14.4 pyha770c72_0
+    - cachecontrol-with-filecache 0.14.4 pyhd8ed1ab_0
+    - certifi 2026.7.22 pyhd8ed1ab_0
+    - cffi 2.1.1 py310hd4ea0ea_2
+    - charset-normalizer 3.5.2 h1114479_0
+    - cleo 2.1.0 pyhd8ed1ab_1
+    - colorama 0.4.6 pyhd8ed1ab_1
+    - cpython 3.10.21 py310hd8ed1ab_0
+    - crashtest 0.4.1 pyhd8ed1ab_1
+    - cryptography 50.0.0 py310h20b05aa_1
+    - dbus 1.16.2 he8c428d_2
+    - distlib 0.4.3 pyhcf101f3_0
+    - dulwich 1.2.10 py310hbfe5df0_2
+    - exceptiongroup 1.3.1 pyhd8ed1ab_0
+    - filelock 3.32.5 pyhd8ed1ab_0
+    - findpython 0.8.0 pyhcf101f3_1
+    - h11 0.16.0 pyhcf101f3_1
+    - h2 4.4.1 pyhcf101f3_0
+    - hpack 4.2.0 pyhd8ed1ab_0
+    - httpcore 1.0.9 pyh29332c3_0
+    - httpx 0.28.1 pyhd8ed1ab_0
+    - hyperframe 6.1.0 pyhd8ed1ab_0
+    - icu 78.3 py310h44b86e0_2
+    - idna 3.19 pyhcf101f3_0
+    - importlib-metadata 9.0.1 pyhcf101f3_0
+    - importlib_resources 7.1.0 pyhd8ed1ab_0
+    - jaraco.classes 3.4.0 pyhcf101f3_3
+    - jaraco.context 6.1.2 pyhcf101f3_0
+    - jaraco.functools 4.6.0 pyhcf101f3_0
+    - jeepney 0.9.0 pyhd8ed1ab_0
+    - keyring 25.7.0 pyha804496_0
+    - ld_impl_linux-64 2.46.1 default_hbd61a6d_102
+    - libblas 3.11.0 11_h4a7cf45_openblas
+    - libcblas 3.11.0 11_h0358290_openblas
+    - libexpat 2.8.5 hd2095e1_0
+    - libffi 3.7.0 h81df57d_1
+    - libgcc 16.2.0 ha9f2e26_7
+    - libgfortran 16.2.0 h69a702a_7
+    - libgfortran5 16.2.0 h6b99dfc_7
+    - libglib 2.90.0 h569388d_0
+    - libgomp 16.2.0 he0feb66_7
+    - libiconv 1.18 h0cb94f2_3
+    - liblapack 3.11.0 11_h47877c9_openblas
+    - liblzma 5.8.3 hb03c661_1
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libopenblas 0.3.34 pthreads_hf13c14d_2
+    - libsqlite 3.53.4 h13e7031_1
+    - libstdcxx 16.2.0 h934c35e_7
+    - libuuid 2.42.4 hcfc3c73_0
+    - libxcrypt 4.4.38 h280c20c_0
+    - libzlib 1.3.2 h25fd6f3_3
+    - more-itertools 11.1.0 pyhcf101f3_0
+    - msgpack-python 1.2.2 py310he417ec5_1
+    - ncurses 6.6 hdb14827_1
+    - numpy 2.2.6 py310hefbff90_0
+    - openssl 3.6.4 h781a0a9_0
+    - packaging 26.3 pyhc364b38_0
+    - pbs-installer 2026.8.25 pyhd8ed1ab_0
+    - pcre2 10.47 h8b3dc9c_1
+    - pip 26.2.1 pyh8b19718_0
+    - pkginfo 1.12.1.2 pyhd8ed1ab_0
+    - platformdirs 4.11.5 pyhcf101f3_0
+    - poetry 2.4.2 pyheecf25b_0
+    - poetry-core 2.4.0 pyhcf101f3_0
+    - pycparser 3.0 pyhcf101f3_0
+    - pyproject_hooks 1.2.0 pyhd8ed1ab_1
+    - pysocks 1.7.1 pyha55dd90_7
+    - python 3.10.21 h267e890_0_cpython
+    - python-build 1.6.1 pyhc364b38_0
+    - python-discovery 1.6.0 pyhcf101f3_0
+    - python-fastjsonschema 2.22.2 pyhcf101f3_0
+    - python-gil 3.10.21 hd8ed1ab_0
+    - python-installer 1.0.1 pyh332efcf_0
+    - python_abi 3.10 9_cp310
+    - rapidfuzz 3.14.5 py310hea6c23e_0
+    - readline 8.3 hd6e31c0_1
+    - requests 2.34.2 pyhcf101f3_0
+    - requests-toolbelt 1.0.0 pyhd8ed1ab_1
+    - secretstorage 3.5.0 py310hff52083_1
+    - setuptools 84.0.0 pyh332efcf_0
+    - shellingham 1.5.4 pyhd8ed1ab_2
+    - sniffio 1.3.1 pyhd8ed1ab_2
+    - tk 8.6.13 noxft_h1df4ec4_4
+    - tomli 2.4.1 pyhcf101f3_0
+    - tomlkit 0.15.1 pyhcf101f3_0
+    - trove-classifiers 2026.6.1.19 pyhcf101f3_0
+    - typing_extensions 4.16.0 pyhcf101f3_0
+    - tzdata 2026c h151e31d_0
+    - urllib3 2.7.0 pyhd8ed1ab_0
+    - virtualenv 21.7.7 pyhcf101f3_0
+    - wheel 0.48.0 pyhd8ed1ab_0
+    - zipp 4.1.0 pyhcf101f3_0
+    - zstandard 0.25.0 py310h83e8816_3
+    - zstd 1.5.7 hb78ec9c_7
+  run:
+    - python >=3.10
+test:
+  imports:
+    - archspec
+    - archspec.cpu
+  commands:
+    - pip check
+    - archspec --help
+  requires:
+    - pip
+    - python 3.10.*
+about:
+  home: https://pypi.org/project/archspec/
+  summary: A library to query system architecture
+  license: MIT OR Apache-2.0
+  license_file:
+    - LICENSE-APACHE
+    - LICENSE-MIT
+  dev_url: https://github.com/archspec/archspec/
+  doc_url: https://archspec.readthedocs.io/
+extra:
+  recipe-maintainers:
+    - anthchirp
+    - isuruf
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_36895238320
+  remote_url: https://github.com/conda-forge/archspec-feedstock
+  sha: 15cf2523907af86de174a1194589ab7a5555c374

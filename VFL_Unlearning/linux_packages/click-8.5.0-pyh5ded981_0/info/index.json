@@ -1,0 +1,14 @@
+{
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "click",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1788802215348,
+  "version": "8.5.0"
+}

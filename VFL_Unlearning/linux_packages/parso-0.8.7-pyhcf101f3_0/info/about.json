@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "Parso is a Python parser that supports error recovery and round-trip parsing for different Python versions (in multiple Python versions).\nParso is also able to list multiple syntax errors in your python file.",
+  "dev_url": "https://github.com/davidhalter/parso",
+  "doc_url": "https://parso.readthedocs.io/en/latest/",
+  "extra": {
+    "flow_run_id": "github_25251316212",
+    "recipe-maintainers": [
+      "iron0012",
+      "synapticarbors"
+    ],
+    "remote_url": "https://github.com/conda-forge/parso-feedstock",
+    "sha": "063522bb19233c05f365e7f6d79e73d9085e4b55"
+  },
+  "home": "https://github.com/davidhalter/parso",
+  "license": "MIT",
+  "summary": "A Python Parser"
+}

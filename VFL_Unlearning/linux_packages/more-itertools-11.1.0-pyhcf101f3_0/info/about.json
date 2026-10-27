@@ -1,0 +1,19 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/more-itertools/more-itertools",
+  "doc_url": "https://more-itertools.readthedocs.io/en/latest/api.html",
+  "extra": {
+    "flow_run_id": "github_26307790174",
+    "recipe-maintainers": [
+      "dbast"
+    ],
+    "remote_url": "https://github.com/conda-forge/more-itertools-feedstock",
+    "sha": "ef3001bb2f9df54f5b5a56ec62ce2ef6d0de0ee6"
+  },
+  "home": "https://github.com/more-itertools/more-itertools",
+  "license": "MIT",
+  "license_family": "MIT",
+  "summary": "More routines for operating on iterables, beyond itertools"
+}

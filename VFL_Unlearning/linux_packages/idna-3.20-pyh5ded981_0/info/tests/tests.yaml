@@ -1,0 +1,24 @@
+- python:
+    imports:
+    - idna
+    python_version:
+    - 3.11.*
+    - 3.14.*
+- script:
+    content:
+    - coverage run --source=idna --branch --append -m idna --help
+    - coverage run --source=idna --branch --append -m idna.cli --help
+    - coverage run --source=idna --branch --append -m idna --version
+    - idna --version | grep -iE "idna 3\.20($| )"
+    - coverage run --source=idna --branch --append -m pytest -vv --tb=long --color=yes
+    - coverage report --show-missing --skip-covered --fail-under=93
+    cwd: etc/conda/test-files/idna/1
+  requirements:
+    run:
+    - hypothesis
+    - python 3.11.*
+    - pytest >=8.3.2
+    - pytest-cov
+  files:
+    source:
+    - tests/

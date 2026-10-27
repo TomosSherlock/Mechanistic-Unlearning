@@ -27,9 +27,54 @@ import time
 import numpy as np
 import random
 from model import read_data_text
+from fisher_forgetting import fisher_forgetting
 logger = logging.getLogger(f"VFU.{__name__}")
-
+import wandb
+from datetime import datetime
     
+# Initiate logger
+def init_run(args):
+    model_file = args.data_path.split("/")[-1]
+    n_biased_classes, rho = model_file.split("-")
+    if  args.unlearn_bias == 1:
+        unlearn_goal = 'samples'
+    else:
+        unlearn_goal = 'classes'
+
+    # set experiment name if not specified
+    if args.vfl == 0:
+        model_n = f'Resnet'
+    else:
+        model_n = f'Resnet_VFL-{args.vfl}'
+
+    if args.data == 'custom':
+        dataset = 'Biased_MNIST'
+    else:
+        dataset = args.data
+ 
+    date = datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
+
+    if args.expname == '---':
+        args.expname = f'Unlearn-{unlearn_goal}-{args.unlearn_method}-{model_n}-{dataset}-{n_biased_classes}-{rho}@{date}'
+
+    # Start a new wandb run to track this.
+    run = wandb.init(
+        name=args.expname,
+        entity="tomos-sherlock-mechanistic-unlearning",
+        mode="offline",
+        project="vfl-unlearning",
+        # Track hyperparameters and run metadata.
+        config={
+            "unlearning method": args.unlearn_method,
+            "biased classes": n_biased_classes,
+            "bias probability": rho,
+            "epochs": args.epochs,
+            "mode": args.mode,
+            "unlearn goal" : unlearn_goal,
+        },
+    )
+
+    return run
 
 
 def main():
@@ -40,50 +85,70 @@ def main():
     np.random.seed(0)
     random.seed(0)
     torch.backends.cudnn.deterministic=True
+
+    run = init_run(args)
     
     if args.model_type == 'resnet18':
-        if args.data=='cifar10':
-            full_bottom_model_A = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
-            full_bottom_model_B = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
-            full_top_model = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_top_model.pt", weights_only=False)
-            retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
-            retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
-            retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
-            
-        elif args.data == 'mnist':
-            full_bottom_model_A = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
-            full_bottom_model_B = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
-            full_top_model = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_top_model.pt", weights_only=False)
-            retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
-            retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
-            retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
-            
-        elif args.data == 'cifar100':
-            full_bottom_model_A = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
-            full_bottom_model_B = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
-            full_top_model = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_top_model.pt", weights_only=False)
-            retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
-            retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
-            retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
-
-        elif args.data == "mri":
-            full_bottom_model_A = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_bottom_model_A.pt", weights_only=False)
-            full_bottom_model_B = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_bottom_model_B.pt", weights_only=False)
-            full_top_model = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_top_model.pt", weights_only=False)
-            retrain_bottom_model_A = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_A.pt", weights_only=False)
-            retrain_bottom_model_B = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_B.pt", weights_only=False)
-            retrain_top_model = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_top_model.pt", weights_only=False)
-
-        elif args.data == "ct":
-            full_bottom_model_A = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_bottom_model_A.pt", weights_only=False)
-            full_bottom_model_B = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_bottom_model_B.pt", weights_only=False)
-            full_top_model = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_top_model.pt", weights_only=False)
-            retrain_bottom_model_A = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_A.pt", weights_only=False)
-            retrain_bottom_model_B = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_B.pt", weights_only=False)
-            retrain_top_model = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_top_model.pt", weights_only=False)
+        if args.vfl == 0:
+            full_bottom_model_A = torch.load(f"{args.model_path}/full_standard_model.pt", weights_only=False)
+            full_bottom_model_B = None
+            full_top_model = None
+            retrain_bottom_model_A = torch.load(f"{args.model_path}/retrain_standard_model.pt", weights_only=False)
+            retrain_bottom_model_B = None 
+            retrain_top_model = None
 
         else:
-            raise ValueError(f'No dataset named {args.data}!')
+
+            if args.data=='cifar10':
+                full_bottom_model_A = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load("/scratch/taehongxi/exp/emb_exp_resnet18_on_cifar10_lr0.001/full_train/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar10_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
+                
+            elif args.data == 'mnist':
+                full_bottom_model_A = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_mnist_lr0.001/full_train/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_mnist_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
+                
+            elif args.data == 'cifar100':
+                full_bottom_model_A = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load("/scratch/taehongxi/exp/EE_resnet18_on_cifar100_lr0.001/full_train/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load("C:/Users/Bryan/Documents/Vertical Federated Unlearning/exp/EE_resnet18_on_cifar100_lr0.001/retrain3/retrain_top_model.pt", weights_only=False)
+
+            elif args.data == "mri":
+                full_bottom_model_A = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load("/scratch/taehongxi/exp/_sub_exp_20241115165829 (1)/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_mri_lr0.001/_sub_exp_20241115165948/retrain_top_model.pt", weights_only=False)
+
+            elif args.data == "ct":
+                full_bottom_model_A = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load("/scratch/taehongxi/LUV/exp/LUV_resnet18_on_ct_lr0.001/_sub_exp_20260207153225/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load("/home/user/bryanthx/exp/EE_resnet18_on_ct_lr0.001/_sub_exp_20241115165948/retrain_top_model.pt", weights_only=False)
+
+            elif args.data == "custom":
+                full_bottom_model_A = torch.load(f"{args.model_path}/full_bottom_model_A.pt", weights_only=False)
+                full_bottom_model_B = torch.load(f"{args.model_path}/full_bottom_model_B.pt", weights_only=False)
+                full_top_model = torch.load(f"{args.model_path}/full_top_model.pt", weights_only=False)
+                retrain_bottom_model_A = torch.load(f"{args.model_path}/retrain_bottom_model_A.pt", weights_only=False)
+                retrain_bottom_model_B = torch.load(f"{args.model_path}/retrain_bottom_model_B.pt", weights_only=False)
+                retrain_top_model = torch.load(f"{args.model_path}/retrain_top_model.pt", weights_only=False)
+
+            else:
+                raise ValueError(f'No dataset named {args.data}!')
         
     elif args.model_type=='mixtext':
         full_bottom_model_A = torch.load("/scratch/taehongxi/LUV/exp/LUV_mixtext_on_yahoo_lr0.001/_sub_exp_20260207163427/full_bottom_model_A.pt", weights_only=False)
@@ -114,11 +179,14 @@ def main():
     
     
     full_bottom_model_A = full_bottom_model_A.to(args.device)
-    full_bottom_model_B = full_bottom_model_B.to(args.device)
-    full_top_model = full_top_model.to(args.device)
+    if full_bottom_model_B != None:
+        full_bottom_model_B = full_bottom_model_B.to(args.device)
+        full_top_model = full_top_model.to(args.device)
+
     retrain_bottom_model_A = retrain_bottom_model_A.to(args.device)
-    retrain_bottom_model_B = retrain_bottom_model_B.to(args.device)
-    retrain_top_model = retrain_top_model.to(args.device)
+    if retrain_bottom_model_B != None:
+        retrain_bottom_model_B = retrain_bottom_model_B.to(args.device)
+        retrain_top_model = retrain_top_model.to(args.device)
 
     if args.data == 'mri':
         traindir = os.path.join('./data/Brain_MRI', 'Training')
@@ -164,6 +232,10 @@ def main():
         file_path = './data/yahoo_answers_csv/'
         trainset, _, _, _, _ = read_data_text.get_data(file_path, 5000)
         _, _, _, testset, _ = read_data_text.get_data(file_path, 10)
+    elif args.data == 'custom':
+        dataset = get_dataset(args)
+        trainset = dataset.trainset
+        testset = dataset.testset        
     else:
         dataset = get_dataset(args)
         trainset = deepcopy(dataset.trainset)
@@ -194,10 +266,16 @@ def main():
 
     else:
         for i in range(len(trainset)):
-            if trainset.targets[i] in class_to_forget:
-                idx_train_forget.append(i)
+            if args.unlearn_bias == 1: 
+                if trainset.__biased__(i):
+                    idx_train_forget.append(i)
+                else:
+                    idx_train_retain.append(i)
             else:
-                idx_train_retain.append(i)
+                if trainset.targets[i] in class_to_forget:
+                    idx_train_forget.append(i)
+                else:
+                    idx_train_retain.append(i)
     
         for i in range(len(testset)):
             if testset.targets[i] in class_to_forget:
@@ -209,6 +287,9 @@ def main():
     forget_train_set = Subset(trainset,idx_train_forget)
     retain_test_set = Subset(testset, idx_test_retain)
     forget_test_set = Subset(testset, idx_test_forget)
+
+    if (args.unlearn_bias == 1):
+        print(f'Unlearn Train Samples: {len(forget_train_set)}')
 
     train_forget_loader = DataLoader(forget_train_set, batch_size = args.batch_size, shuffle=True, num_workers=args.num_workers)
     train_retain_loader = DataLoader(retain_train_set, batch_size = args.batch_size, shuffle=True, num_workers=args.num_workers)
@@ -255,9 +336,6 @@ def main():
                 else:
                     idx_subset_descent[trainset.targets[i]] = idx_subset_descent[trainset.targets[i]] + 1
                     idx_plus.append(i)
-                    
-
-    print("idx subset descent : ", idx_subset_descent)
 
     idx_few = []
     idx_subset = 0
@@ -285,25 +363,16 @@ def main():
     acc_remain_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_retain_loader, args)
     acc_forget_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_forget_loader, args)
 
+    print(f'Base Unbiased accuracy: {acc_remain}')
+    run.log({'Base Unbiased acc' : acc_remain})
+    print(f'Base Biased accuracy: {acc_forget}')
+    run.log({'Base Biased acc' : acc_forget})
 
-    logger.info("Evaluate full VFL performance before unlearning.")
-    logger.info("Evaluate full VFL performance on full dataset.")
-    logger.info(f"Accuracy : {acc_full*100}%")
-    logger.info("Full VFL performance on remaining dataset.")
-    logger.info(f"Accuracy : {acc_remain*100}%")
-    logger.info("Full VFL performance on forgetting dataset.")
-    logger.info(f"Accuracy : {acc_forget*100}%\n")
-   
+    print(f'Retrain Unbiased accuracy: {acc_remain_retrain}')
+    run.log({'Retrain Unbiased acc' : acc_remain_retrain})
+    print(f'Retrain Biased accuracy: {acc_forget_retrain}')
+    run.log({'Retrain Biased acc' : acc_forget_retrain})
 
-
-    logger.info("Evaluate retrain VFL performance.")
-    logger.info("Retrain VFL performance on remaining dataset.")
-    logger.info(f"Accuracy : {acc_remain_retrain*100}%")
-    logger.info("Retrain VFL performance on forgetting dataset.")
-    logger.info(f"Accuracy : {acc_forget_retrain*100}%\n")
-    
-
-    logger.info("MIA on original model privacy before unlearning")
     metric = MIA(
         retain_loader=train_retain_loader,
         forget_loader=train_forget_loader,
@@ -313,10 +382,8 @@ def main():
         top_model=full_top_model,
         args=args
     )
-    logger.info(metric*100)
-    logger.info("\n")
+    run.log({'Base MIA': metric * 100})
 
-    logger.info("MIA on retrain model privacy before unlearning")
     metric = MIA(
         retain_loader=train_retain_loader,
         forget_loader=train_forget_loader,
@@ -326,37 +393,44 @@ def main():
         top_model=retrain_top_model,
         args=args
     )
-    logger.info(metric*100)
-    logger.info("\n")
+    run.log({'Retrain MIA': metric * 100})
 
-    unlearn_method = unlearn.get_unlearn_method(args.unlearn_method)
+    if (args.unlearn_method == 'fisher'):
+        unlearn_method = 'fisher'
+    else:
+        unlearn_method = unlearn.get_unlearn_method(args.unlearn_method)
 
     criterion = nn.CrossEntropyLoss()
 
     #Start unlearning
     start_time = time.time()
-    unlearn_method(LUV_trainloader, fewshot_descent_loader, full_bottom_model_A, full_bottom_model_B, full_top_model, criterion, class_to_forget, args)
-    logger.info(f"Time for {args.unlearn_method} unlearning")
+    if unlearn_method == 'fisher' :
+        full_bottom_model_A, full_bottom_model_B = fisher_forgetting(full_bottom_model_A, full_bottom_model_B, full_top_model, train_retain_loader, train_forget_loader, test_retain_loader, 
+                                                                     test_forget_loader, args, run, args.u_batch_size, DEVICE=args.device, evals=args.evals, Method=args.f_method)
+    else :
+        unlearn_method(LUV_trainloader, fewshot_descent_loader, full_bottom_model_A, full_bottom_model_B, full_top_model, criterion, class_to_forget, args, run, test_retain_loader, test_forget_loader, args.alpha)
     end_time = time.time()
-    duration = end_time - start_time
-    duration = round(duration,2)
-    logger.info("--- %s seconds ---" % (duration))
-    logger.info("\n")
-
 
 
     acc_remain = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_retain_loader, args)
-    acc_forget = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_forget_loader, args)
+    acc_biased = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_forget_loader, args)
+    acc_forget = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, train_forget_loader, args)
 
-    logger.info("Evaluate full VFL performance on dataset after unlearning.")
-    logger.info("Full VFL performance on remaining dataset.")
-    logger.info(f"Accuracy : {acc_remain*100}%")
-    logger.info("Full VFL performance on forgetting dataset.")
-    logger.info(f"Accuracy : {acc_forget*100}%\n")
-    
+    run.log({
+        "Final Unbiased Class Accuracy" : acc_remain,
+        "Final Biased Class Accuracy" : acc_biased,
+        "Final Forgotten Label Accuracy" : acc_forget
+        })
+
+    duration = end_time - start_time
+    duration = round(duration,2)
+    run.log({"Training Time (s)" : duration})
+
+    print(f"unbiased accuracy: {acc_remain}")
+    print(f"biased accuracy: {acc_biased}")
+    print(f"forgotten label accuracy: {acc_forget}")
 
 
-    logger.info("MIA on original model privacy after unlearning")
     metric = MIA(
         retain_loader=train_retain_loader,
         forget_loader=train_forget_loader,
@@ -366,8 +440,7 @@ def main():
         top_model=full_top_model,
         args=args
     )
-    logger.info(metric*100)
-    logger.info("\n")
+    run.log({'Unlearned MIA': metric * 100})
 
 
 

@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "3.5.0"
+  python_check_max: "3.14"
+
+package:
+  name: secretstorage
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/S/SecretStorage/secretstorage-${{ version }}.tar.gz
+  sha256: f04b8e4689cbce351744d5537bf6b1329c6fc68f91fa666f60a380edddcd11be
+
+build:
+  number: 3
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --check-build-dependencies --disable-pip-version-check
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=77.0
+  run:
+    - __linux
+    - cryptography >=2.0
+    - dbus
+    - jeepney >=0.6
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports: secretstorage
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Provides a way for securely storing passwords and other secrets.
+  description: |
+    This module provides a way for securely storing passwords and other secrets.
+    It uses D-Bus Secret Service API that is supported by GNOME Keyring (since
+    version 2.30) and KSecretsService.
+    The main classes provided are secretstorage.Item, representing a secret item
+    (that has a label, a secret and some attributes) and secretstorage.Collection,
+    a place items are stored in.
+    SecretStorage supports most of the functions provided by Secret Service,
+    including creating and deleting items and collections, editing items, locking
+    and unlocking collections (asynchronous unlocking is also supported).
+  homepage: https://pypi.org/project//secretstorage
+  repository: https://github.com/mitya57/secretstorage
+  documentation: https://secretstorage.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - CurtLH
+    - ccordoba12

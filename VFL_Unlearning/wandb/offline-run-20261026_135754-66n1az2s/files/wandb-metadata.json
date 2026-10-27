@@ -1,0 +1,92 @@
+{
+    "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35",
+    "python": "3.10.9",
+    "heartbeatAt": "2026-10-26T13:57:54.850350",
+    "startedAt": "2026-10-26T13:57:54.714476",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_path=data/processed/1-0.9",
+        "--test_path=data/processed",
+        "--vfl=2",
+        "--model_path=data/processed/1-0.9/10",
+        "--device=1"
+    ],
+    "state": "running",
+    "program": "/home/eve/Tomos/Mechanistic_Unlearning/VFL_Unlearning/unlearn.py",
+    "codePathLocal": "unlearn.py",
+    "codePath": "unlearn.py",
+    "host": "eve",
+    "username": "eve",
+    "executable": "/home/eve/anaconda3/envs/epic-material/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1549.98825,
+        "min": 800.0,
+        "max": 4375.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1999.977,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1069.683,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 2000.318,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1999.156,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 2005.95,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 2000.742,
+            "min": 800.0,
+            "max": 4400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 227.67544174194336,
+            "used": 210.8187599182129
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 62.68330001831055
+    }
+}

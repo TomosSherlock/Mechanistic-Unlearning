@@ -1,0 +1,22 @@
+{
+  "name": "conda-content-trust",
+  "version": "0.2.0",
+  "build": "py313h06a4308_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "conda-content-trust-0.2.0-py313h06a4308_1.conda",
+  "md5": "aefc551e21e13ecc1de44ee589aea77d",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "cryptography >=41",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1728487079660,
+  "size": 62054
+}

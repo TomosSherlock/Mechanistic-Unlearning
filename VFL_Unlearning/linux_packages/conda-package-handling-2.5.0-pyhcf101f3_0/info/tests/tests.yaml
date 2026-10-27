@@ -1,0 +1,21 @@
+- python:
+    imports:
+    - conda_package_handling
+    - conda_package_handling.api
+    pip_check: false
+    python_version: 3.10.*
+- script:
+    content: pytest -v --cov=conda_package_handling --color=yes tests/
+    cwd: etc/conda/test-files/conda-package-handling/1
+  requirements:
+    run:
+    - mock
+    - bottle
+    - pytest
+    - pytest-cov
+    - pytest-mock
+    - requests
+    - python 3.10.*
+  files:
+    source:
+    - tests

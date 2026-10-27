@@ -1,0 +1,21 @@
+{
+  "name": "libsodium",
+  "version": "1.0.20",
+  "build": "heac8642_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "libsodium-1.0.20-heac8642_0.conda",
+  "md5": "fc677dc4b0fa21d20589f8b2a2943ea5",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "ISC",
+  "license_family": "Other",
+  "timestamp": 1754318767477,
+  "size": 294484
+}

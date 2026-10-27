@@ -1,0 +1,30 @@
+{
+  "build": "pyha191276_0",
+  "build_number": 0,
+  "constrains": [
+    "appnope >=0.1.2"
+  ],
+  "depends": [
+    "__linux",
+    "comm >=0.1.1",
+    "debugpy >=1.6.5",
+    "ipython >=7.23.1",
+    "jupyter_client >=8.9.0",
+    "jupyter_core >=5.1,!=6.0.*",
+    "matplotlib-inline >=0.1",
+    "nest-asyncio2 >=1.7.0",
+    "packaging >=22",
+    "psutil >=5.7",
+    "python >=3.10",
+    "pyzmq >=25",
+    "tornado >=6.4.1",
+    "traitlets >=5.4.0",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "ipykernel",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1781101665847,
+  "version": "7.3.0"
+}

@@ -1,0 +1,118 @@
+schema_version: 1
+
+context:
+  version: "2.5.2"
+
+package:
+  name: menuinst
+  version: ${{ version }}
+
+source:
+  url: https://github.com/conda/menuinst/archive/${{ version }}.tar.gz
+  sha256: 079ea48b73530907881526240d0bda1cc012659baee344a61b62090d52465109
+
+build:
+  number: 3
+  noarch: ${{ "python" if not win }}
+  skip:
+    # The noarch package only needs to be built once; Windows needs a real
+    # compiled build for menuinst.platforms.win_utils.winshortcut.
+    - not win and build_platform != "linux-64"
+  script:
+    env:
+      SETUPTOOLS_SCM_PRETEND_VERSION: ${{ version }}
+    content:
+      - if: win
+        then:
+          # Apparently these files make the post-build linkage analysis crash
+          # and we should not need them on Windows
+          - del /q "${{ SRC_DIR }}\\menuinst\\data\\osx_launcher_*"
+          - del /q "${{ SRC_DIR }}\\menuinst\\data\\appkit_launcher_*"
+      - ${{ PYTHON }} -m pip install . -vv
+      - if: win
+        # menuinst v1 expects cwp.py in PREFIX; backwards compat fix
+        then: copy "%SP_DIR%\\menuinst\\_legacy\cwp.py" "%PREFIX%\\"
+  python:
+    entry_points:
+      - menuinst = menuinst.cli:main
+    skip_pyc_compilation:
+      - if: win
+        then: cwp.py
+
+requirements:
+  build:
+    - if: win
+      then:
+        - if: build_platform != target_platform
+          then:
+            - python
+            - cross-python_${{ target_platform }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler('c') }}
+        - ${{ compiler('cxx') }}
+  host:
+    - if: win
+      then: python
+      else: python ${{ python_min }}.*
+    - pip
+    - setuptools
+    - setuptools_scm
+  run:
+    - if: win
+      then:
+        - python
+        - if: match(python, "<3.11")
+          then: tomli
+      else:
+        # noarch has no python variant to match against, so tomli is always
+        # declared; it is unused on 3.11+, where tomllib is in the stdlib.
+        - python >=${{ python_min }}
+        - tomli
+    - tomli-w
+
+tests:
+  - if: win
+    then:
+      - python:
+          imports:
+            - menuinst
+            - menuinst.api
+            - menuinst._legacy
+            - menuinst.platforms.win_utils.winshortcut
+          pip_check: false
+      - script:
+          - menuinst --help
+    else:
+      - python:
+          imports:
+            - menuinst
+            - menuinst.api
+          python_version: ${{ python_min }}.*
+          pip_check: false
+      - script:
+          - menuinst --help
+          - test -f "${SP_DIR}/menuinst/data/appkit_launcher_arm64"
+          - test -f "${SP_DIR}/menuinst/data/appkit_launcher_x86_64"
+          - test -f "${SP_DIR}/menuinst/data/osx_launcher_arm64"
+          - test -f "${SP_DIR}/menuinst/data/osx_launcher_x86_64"
+        requirements:
+          run:
+            - python ${{ python_min }}.*
+
+about:
+  license: BSD-3-Clause AND MIT
+  license_file:
+    - LICENSE.txt
+    - menuinst/_vendor/apipkg/LICENSE
+  summary: cross platform install of menu items
+  homepage: https://github.com/conda/menuinst/
+  documentation: https://conda.github.io/menuinst/
+
+extra:
+  recipe-maintainers:
+    - marcoesters
+    - goanpeca
+    - jakirkham
+    - carlodri
+    - isuruf
+    - jaimergp

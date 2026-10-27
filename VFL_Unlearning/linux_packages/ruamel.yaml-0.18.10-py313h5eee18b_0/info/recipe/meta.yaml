@@ -1,0 +1,97 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Tue Apr 29 20:58:18 2025
+# ------------------------------------------------
+
+package:
+  name: ruamel.yaml
+  version: 0.18.10
+source:
+  sha256: 20c86ab29ac2153f80a428e1254a8adf686d3383df04490514ca3b79a362db58
+  url: https://pypi.io/packages/source/r/ruamel.yaml/ruamel.yaml-0.18.10.tar.gz
+build:
+  number: '0'
+  script: /croot/ruamel.yaml_1745960305322/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python
+    -m pip install . --no-deps --no-build-isolation -vv
+  script_env:
+    - RUAMEL_NO_LONG_DESCRIPTION=1
+  string: py313h5eee18b_0
+requirements:
+  build:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - _sysroot_linux-64_curr_repodata_hack 3 haa98f57_10
+    - binutils_impl_linux-64 2.40 h5293946_0
+    - binutils_linux-64 2.40.0 hc2dff05_2
+    - gcc_impl_linux-64 11.2.0 h1234567_1
+    - gcc_linux-64 11.2.0 h5c386dc_2
+    - kernel-headers_linux-64 3.10.0 h57e8cba_10
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libgcc-devel_linux-64 11.2.0 h1234567_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - sysroot_linux-64 2.17 h57e8cba_10
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2025.2.25 h06a4308_0
+    - expat 2.7.1 h6a678d5_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.16 h5eee18b_0
+    - pip 25.0 py313h06a4308_0
+    - python 3.13.2 hf623796_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 75.8.0 py313h06a4308_0
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h39e8969_0
+    - tzdata 2025a h04d1e81_0
+    - wheel 0.45.1 py313h06a4308_0
+    - xz 5.6.4 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - libgcc-ng >=11.2.0
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+    - ruamel.yaml.clib >=0.2.7
+  run_constrained:
+    - ruamel.yaml.jinja2 >=0.2
+test:
+  commands:
+    - pip check
+  imports:
+    - ruamel.yaml
+  requires:
+    - pip
+about:
+  description: A YAML parser/emitter that supports roundtrip preservation of comments,
+    seq/map flow style, and map key order
+  dev_url: https://sourceforge.net/projects/ruamel-yaml/
+  doc_url: https://yaml.readthedocs.io
+  home: https://sourceforge.net/projects/ruamel-yaml/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: A YAML package for Python. It is a derivative of Kirill Simonov's PyYAML
+    3.11 which supports YAML1.1
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: 1e890e85-f271-4df4-bab0-9c827836963b
+  recipe-maintainers:
+    - jakirkham
+    - mbargull
+    - mwcraig
+    - ocefpaf
+    - pelson
+  remote_url: git@github.com:AnacondaRecipes/ruamel.yaml-feedstock.git
+  sha: 914fb09f4a9d1aa98518757a824738f896abcd27

@@ -1,0 +1,28 @@
+- python:
+    imports:
+    - frozendict
+    python_version:
+    - 3.10.*
+    - 3.14.*
+- script:
+    content: pytest -vv --tb=long --color=yes
+    cwd: etc/conda/test-files/frozendict/1
+  requirements:
+    run:
+    - pytest
+    - python 3.10.*
+  files:
+    source:
+    - test/
+    - pyproject.toml
+- script:
+    content: pytest -vv --tb=long --color=yes
+    cwd: etc/conda/test-files/frozendict/2
+  requirements:
+    run:
+    - pytest
+    - python 3.14.*
+  files:
+    source:
+    - test/
+    - pyproject.toml

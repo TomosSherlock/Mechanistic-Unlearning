@@ -1,0 +1,51 @@
+{% set name = "matplotlib-inline" %}
+{% set version = "0.2.2" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: 72f3fe8fce36b70d4a5b612f899090cd0401deddc4ea90e1572b9f4bfb058c79
+
+build:
+  noarch: python
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - flit-core >=3.2,<4
+    - pip
+  run:
+    - python >={{ python_min }}
+    - traitlets
+
+test:
+  imports:
+    - matplotlib_inline
+    - matplotlib_inline.backend_inline
+  requires:
+    - pip
+    - matplotlib-base
+    - ipython
+    - python {{ python_min }}
+  commands:
+    - pip check
+
+about:
+  home: https://github.com/ipython/matplotlib-inline
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Inline Matplotlib backend for Jupyter
+  dev_url: https://github.com/ipython/matplotlib-inline
+
+extra:
+  recipe-maintainers:
+    - Carreau
+    - SylvainCorlay
+    - martinRenou
+    - fperez

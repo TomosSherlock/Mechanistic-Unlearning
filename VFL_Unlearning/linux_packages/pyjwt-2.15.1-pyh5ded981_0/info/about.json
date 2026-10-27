@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/jpadilla/pyjwt",
+  "doc_url": "https://pyjwt.readthedocs.io/en/latest/",
+  "extra": {
+    "flow_run_id": "github_36500995203",
+    "recipe-maintainers": [
+      "pmlandwehr",
+      "ocefpaf",
+      "xylar"
+    ],
+    "remote_url": "https://github.com/conda-forge/pyjwt-feedstock",
+    "sha": "e2d726904e6c48d9d4527ed3a719e179730a287a"
+  },
+  "home": "https://github.com/jpadilla/pyjwt",
+  "license": "MIT",
+  "summary": "JSON Web Token implementation in Python"
+}

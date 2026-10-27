@@ -1,0 +1,21 @@
+{
+  "name": "libffi",
+  "version": "3.4.4",
+  "build": "h6a678d5_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "libffi-3.4.4-h6a678d5_1.conda",
+  "md5": "70646cc713f0c43926cfdcfe9b695fe0",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1714483282916,
+  "size": 144691
+}

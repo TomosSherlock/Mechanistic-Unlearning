@@ -1,0 +1,20 @@
+{
+  "name": "jeepney",
+  "version": "0.7.1",
+  "build": "pyhd3eb1b0_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "jeepney-0.7.1-pyhd3eb1b0_0.conda",
+  "md5": "f115ef0af90b59f35ef56743955979a4",
+  "depends": [
+    "python >=3.6"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "license_family": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1627537099507,
+  "size": 39004
+}

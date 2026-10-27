@@ -1,0 +1,23 @@
+{
+  "name": "xorg-libx11",
+  "version": "1.8.12",
+  "build": "h9b100fa_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "xorg-libx11-1.8.12-h9b100fa_1.conda",
+  "md5": "6298b27afae6f49f03765b2a03df2fcb",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "libxcb >=1.17.0,<2.0a0",
+    "xorg-xorgproto >=2024.1",
+    "xorg-xorgproto >=2024.1,<2025.0a0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1746110020649,
+  "size": 916212
+}

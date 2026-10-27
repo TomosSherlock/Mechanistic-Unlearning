@@ -1,0 +1,21 @@
+{
+  "name": "packaging",
+  "version": "25.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "packaging-25.0-py313h06a4308_0.conda",
+  "md5": "7396e4349c90a320cb4aa1edf684886d",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "Apache-2.0 or BSD-2-Clause",
+  "license_family": "Apache",
+  "timestamp": 1753775515808,
+  "size": 207513
+}

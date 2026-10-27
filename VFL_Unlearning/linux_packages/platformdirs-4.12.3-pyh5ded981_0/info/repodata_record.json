@@ -1,0 +1,22 @@
+{
+  "name": "platformdirs",
+  "version": "4.12.3",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "platformdirs-4.12.3-pyh5ded981_0.conda",
+  "md5": "96bd08b41fbb94da012c8f5c56132519",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/platformdirs-4.12.3-pyh5ded981_0.conda",
+  "sha256": "b93a46b1c1fb34a380b0afa309040d603ebefdb8184a87a4bfaeef989a07cbc4",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1791121724699,
+  "size": 33916
+}

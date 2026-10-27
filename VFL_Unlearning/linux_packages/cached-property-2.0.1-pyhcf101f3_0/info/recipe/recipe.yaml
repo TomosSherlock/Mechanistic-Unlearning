@@ -1,0 +1,71 @@
+schema_version: 1
+
+context:
+  version: "2.0.1"
+
+recipe:
+  name: cached_property
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/c/cached-property/cached_property-${{ version }}.tar.gz
+  sha256: 484d617105e3ee0e4f1f58725e72a8ef9e93deee462222dbd51cd91230897641
+
+build:
+  noarch: python
+  number: 0
+
+tests:
+  - python:
+      imports:
+        - cached_property
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+outputs:
+  - package:
+      name: cached_property
+    build:
+      script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    requirements:
+      host:
+        - pip
+        - python ${{ python_min }}.*
+        - setuptools
+      run:
+        - python >=${{ python_min }}
+    tests:
+      - script:
+          - pytest
+        requirements:
+          run:
+            - pytest
+            - freezegun
+        files:
+          source:
+            - tests/
+  - package:
+      name: cached-property
+    requirements:
+      run:
+        - ${{ pin_subpackage('cached_property', upper_bound="x.x.x") }}
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: A decorator for caching properties in classes.
+  description: |
+    Cached-property is a decorator for caching properties in classes. It
+    makes caching of time or computational expensive properties quick and easy.
+  homepage: https://github.com/pydanny/cached-property
+  repository: https://github.com/pydanny/cached-property
+  documentation: https://pypi.python.org/pypi/cached-property
+
+extra:
+  feedstock-name: cached-property
+  recipe-maintainers:
+    - anthchirp
+    - mvdbeek
+    - mgorny

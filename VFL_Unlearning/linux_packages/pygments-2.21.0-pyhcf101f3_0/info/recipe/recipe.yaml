@@ -1,0 +1,58 @@
+schema_version: 1
+
+context:
+  version: "2.21.0"
+
+package:
+  name: pygments
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/pygments/pygments-${{ version }}.tar.gz
+  sha256: 610ca751c9bc2492b38eb9a38a7fbc93edbbb2d7182edaf34e66ae493dee5c8c
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - pygmentize = pygments.cmdline:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling >=1.27
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - pygments
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}.*
+    script:
+      - pygmentize --help
+
+about:
+  summary: Pygments is a syntax highlighting package written in Python.
+  license: BSD-2-Clause
+  license_file: LICENSE
+  homepage: https://pygments.org
+  repository: https://github.com/pygments/pygments
+  documentation: https://pygments.org/docs
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - pelson
+    - ocefpaf
+    - scopatz

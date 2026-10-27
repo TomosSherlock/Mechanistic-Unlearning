@@ -1,0 +1,23 @@
+{
+  "name": "typing-inspection",
+  "version": "0.4.4",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "typing-inspection-0.4.4-pyhcf101f3_0.conda",
+  "md5": "880e91eac5d926568ef278e20554148e",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/typing-inspection-0.4.4-pyhcf101f3_0.conda",
+  "sha256": "293c66b208468d186a94ff486c2ffbf67859a2bde8c88e965fc9d06c517191b2",
+  "depends": [
+    "python >=3.10",
+    "typing_extensions >=4.15.0",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1786818918217,
+  "size": 21070
+}

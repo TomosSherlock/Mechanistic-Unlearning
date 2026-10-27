@@ -1,0 +1,25 @@
+- python:
+    imports:
+    - jupyter_core
+    python_version:
+    - 3.10.*
+    - 3.14.*
+- script:
+    content: |-
+      jupyter -h
+      jupyter-migrate -h
+      jupyter-troubleshoot --help
+      python run_test.py
+    cwd: etc/conda/test-files/jupyter_core/1
+  requirements:
+    run:
+    - pip
+    - pytest-cov
+    - python 3.10.*
+  files:
+    source:
+    - pyproject.toml
+    - tests/
+    recipe:
+    - run_test.py
+- downstream: ipython

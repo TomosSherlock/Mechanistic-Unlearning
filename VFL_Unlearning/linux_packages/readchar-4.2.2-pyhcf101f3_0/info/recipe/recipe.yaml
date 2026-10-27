@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: readchar
+  version: "4.2.2"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/readchar-${{ version }}.tar.gz
+  sha256: e3b270fe16fc90c50ac79107700330a133dd4c63d22939f5b03b4f24564d5dd8
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61.0
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - readchar
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  homepage: https://github.com/magmax/python-readchar
+  summary: Library to easily read single chars and key strokes
+  license: MIT
+  license_file: LICENCE
+
+extra:
+  recipe-maintainers:
+    - thewchan
+    - mxr-conda
+    - oblute
+    - benhuff
+    - rluria14

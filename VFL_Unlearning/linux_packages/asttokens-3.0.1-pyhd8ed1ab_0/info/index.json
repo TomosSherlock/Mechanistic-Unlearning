@@ -1,0 +1,19 @@
+{
+  "arch": null,
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "constrains": [
+    "astroid >=2,<5"
+  ],
+  "depends": [
+    "python >=3.10"
+  ],
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "name": "asttokens",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1763410017955,
+  "version": "3.0.1"
+}

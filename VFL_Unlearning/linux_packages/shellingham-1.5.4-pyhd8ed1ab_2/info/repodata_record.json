@@ -1,0 +1,21 @@
+{
+  "name": "shellingham",
+  "version": "1.5.4",
+  "build": "pyhd8ed1ab_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "shellingham-1.5.4-pyhd8ed1ab_2.conda",
+  "md5": "83ea3a2ddb7a75c1b09cea582aa4f106",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/shellingham-1.5.4-pyhd8ed1ab_2.conda",
+  "sha256": "1d6534df8e7924d9087bd388fbac5bd868c5bf8971c36885f9f016da0657d22b",
+  "depends": [
+    "python >=3.10"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1762858315311,
+  "size": 15018
+}

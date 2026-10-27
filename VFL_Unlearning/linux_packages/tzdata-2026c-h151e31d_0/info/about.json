@@ -1,0 +1,22 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "The Time Zone Database (called tz, tzdb or zoneinfo) contains code \n(the tzcode package) and data (this package) that represent the\nhistory of local time for many representative\nlocations around the globe.  It is updated periodically to reflect\nchanges made by political bodies to time zone boundaries, UTC offsets,\nand daylight-saving rules.",
+  "dev_url": "https://github.com/eggert/tz",
+  "doc_url": "https://data.iana.org/time-zones/tz-link.html",
+  "extra": {
+    "flow_run_id": "azure_20260716.6.1",
+    "recipe-maintainers": [
+      "ocefpaf",
+      "mbargull",
+      "pganssle",
+      "h-vetinari"
+    ],
+    "remote_url": "https://github.com/conda-forge/tzdata-feedstock",
+    "sha": "39a934dc0811ac7ce7f389d849c2bc3464f2ac33"
+  },
+  "home": "https://www.iana.org/time-zones",
+  "license": "LicenseRef-Public-Domain",
+  "summary": "The Time Zone Database (called tz, tzdb or zoneinfo) data"
+}

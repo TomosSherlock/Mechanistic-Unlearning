@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "backports.tarfile",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "jaraco.context",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1776862415793,
+  "version": "6.1.2"
+}

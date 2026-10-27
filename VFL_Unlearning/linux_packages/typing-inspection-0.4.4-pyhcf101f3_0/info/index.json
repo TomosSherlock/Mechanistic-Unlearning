@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "typing_extensions >=4.15.0",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "typing-inspection",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1786818918217,
+  "version": "0.4.4"
+}

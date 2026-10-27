@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "parso >=0.8.6,<0.9.0",
+    "python"
+  ],
+  "license": "Apache-2.0 AND MIT",
+  "name": "jedi",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1782251948616,
+  "version": "0.20.0"
+}

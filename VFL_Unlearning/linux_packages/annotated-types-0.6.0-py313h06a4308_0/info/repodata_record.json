@@ -1,0 +1,21 @@
+{
+  "name": "annotated-types",
+  "version": "0.6.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "annotated-types-0.6.0-py313h06a4308_0.conda",
+  "md5": "4dc276db59e14eaf187426b0040eb209",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1728386979138,
+  "size": 26111
+}

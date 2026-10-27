@@ -1,0 +1,65 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+      "size_in_bytes": 1072
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "66e81ac2e41775b5ebddcfbb9f4ae77158e4c5739fd52d231e14f2fffda9c8de",
+      "size_in_bytes": 5703
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "6d999593b30a8ef7cbd834b35dc049ddab534eaaf9741f7ece35defe330adf9f",
+      "size_in_bytes": 887
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "0a950253178741b44de54191407611268acee407fe432fdf1cc72d710f034862",
+      "size_in_bytes": 82
+    },
+    {
+      "_path": "site-packages/tomli_w-1.2.0.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "cfacbfe10ba19e399d50ac4601f05703eabdc820df5b9dfba67616b2bfcedf5e",
+      "size_in_bytes": 103
+    },
+    {
+      "_path": "site-packages/tomli_w/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "b85ea5a4b65f3f974a6a0327ece2d7d5702256eff8847315b8fba162afa3f410",
+      "size_in_bytes": 157
+    },
+    {
+      "_path": "site-packages/tomli_w/_writer.py",
+      "path_type": "hardlink",
+      "sha256": "76c89f152db161fd62efa9a64727f3f72d76e710bb67f1d0f38e592a126c617b",
+      "size_in_bytes": 6961
+    },
+    {
+      "_path": "site-packages/tomli_w/py.typed",
+      "path_type": "hardlink",
+      "sha256": "f0f8f2675695a10a5156fb7bd66bafbaae6a13e8d315990af862c792175e6e67",
+      "size_in_bytes": 26
+    }
+  ],
+  "paths_version": 1
+}

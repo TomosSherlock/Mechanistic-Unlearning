@@ -1,0 +1,15 @@
+{
+  "arch": null,
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.11"
+  ],
+  "license": "MIT",
+  "name": "filelock",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1791210321663,
+  "version": "4.0.12"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "tqdm",
+  "version": "4.70.1",
+  "build": "pyhfa0c392_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "tqdm-4.70.1-pyhfa0c392_0.conda",
+  "md5": "ffc91f29264eeb8d3ba96fdc897316c3",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/tqdm-4.70.1-pyhfa0c392_0.conda",
+  "sha256": "7c40c84de3de3624c2a753496122dbb880903c796d183e9d4be6c15c310c4bab",
+  "depends": [
+    "python >=3.11",
+    "__unix",
+    "python"
+  ],
+  "constrains": [
+    "envwrap >=0.2",
+    "ipywidgets >=6.0"
+  ],
+  "noarch": "python",
+  "license": "MPL-2.0 and MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1789187326570,
+  "size": 95977
+}

@@ -1,0 +1,45 @@
+schema_version: 1
+
+context:
+  name: backports.tarfile
+  version: 1.2.0
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/backports_tarfile-${{ version }}.tar.gz
+  sha256: d75e02c268746e1b8144c278978b6e98e85de6ad16f8e4b0844a154557eca991
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools >=61.2
+    - setuptools-scm >=3.4.1
+    - pip
+    - backports
+  run:
+    - python >=${{ python_min }}
+    - backports
+
+tests:
+  - python:
+      imports:
+        - backports.tarfile
+      python_version: ${{ python_min }}.*
+
+about:
+  summary: Backport of CPython tarfile module
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/jaraco/backports.tarfile
+
+extra:
+  recipe-maintainers:
+    - carlodri

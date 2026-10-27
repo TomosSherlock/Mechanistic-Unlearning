@@ -1,0 +1,14 @@
+{
+  "build": "pyhe01879c_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.9",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "comm",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1753453984907,
+  "version": "0.2.3"
+}

@@ -1,0 +1,14 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "pygments",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1786995678795,
+  "version": "2.21.0"
+}

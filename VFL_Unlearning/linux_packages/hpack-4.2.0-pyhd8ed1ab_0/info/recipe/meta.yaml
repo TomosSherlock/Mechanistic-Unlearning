@@ -1,0 +1,69 @@
+# This file created by conda-build 26.5.0
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Wed Jun 24 06:50:39 2026
+# ------------------------------------------------
+
+package:
+  name: hpack
+  version: 4.2.0
+source:
+  fn: hpack-4.2.0.tar.gz
+  url: https://pypi.org/packages/source/h/hpack/hpack-4.2.0.tar.gz
+  sha256: 0895cfa3b5531fc65fe439c05eb65144f123bf7a394fcaa56aa423548d8e45c0
+build:
+  number: '0'
+  noarch: python
+  script: /home/conda/feedstock_root/build_artifacts/hpack_1782283902770/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python
+    -m pip install . -vv
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_9
+    - ca-certificates 2026.6.17 hbd8a1cb_0
+    - ld_impl_linux-64 2.45.1 default_hbd61a6d_102
+    - libexpat 2.8.1 hecca717_1
+    - libffi 3.5.2 h3435931_0
+    - libgcc 15.2.0 he0feb66_19
+    - libgcc-ng 15.2.0 h69a702a_19
+    - libgomp 15.2.0 he0feb66_19
+    - liblzma 5.8.3 hb03c661_0
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libsqlite 3.53.2 h0c1763c_0
+    - libuuid 2.42.2 h5347b49_0
+    - libxcrypt 4.4.36 hd590300_1
+    - libzlib 1.3.2 h25fd6f3_2
+    - ncurses 6.6 hdb14827_0
+    - openssl 3.6.3 h35e630c_0
+    - packaging 26.2 pyhc364b38_0
+    - pip 26.1.2 pyh8b19718_0
+    - python 3.10.20 h267e890_1_cpython
+    - readline 8.3 h853b02a_0
+    - setuptools 82.0.1 pyh332efcf_0
+    - tk 8.6.13 noxft_h366c992_103
+    - tzdata 2025c hc9c84f9_1
+    - wheel 0.47.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_6
+  run:
+    - python >=3.10
+test:
+  requires:
+    - python 3.10.*
+  imports:
+    - hpack
+about:
+  home: http://python-hyper.org/hpack/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: HTTP/2 Header Encoding for Python
+  dev_url: https://github.com/python-hyper/hpack
+extra:
+  recipe-maintainers:
+    - astaric
+    - primozgodec
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_28080712370
+  remote_url: https://github.com/conda-forge/hpack-feedstock
+  sha: 520d6d3acdd5800da23e322ea32f1dcae43c0009

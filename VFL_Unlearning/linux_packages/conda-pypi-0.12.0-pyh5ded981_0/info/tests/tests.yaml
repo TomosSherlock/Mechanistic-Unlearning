@@ -1,0 +1,15 @@
+- python:
+    imports:
+    - conda_pypi
+    - conda_pypi.main
+    pip_check: false
+    python_version:
+    - 3.11.*
+    - '*'
+- script:
+  - pip check
+  - python -m conda pypi --help
+  requirements:
+    run:
+    - pip
+    - ruamel.yaml >=0.11.14,<0.19

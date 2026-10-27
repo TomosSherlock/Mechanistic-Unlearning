@@ -1,0 +1,23 @@
+{
+  "name": "fmt",
+  "version": "9.1.0",
+  "build": "h924138e_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "fmt-9.1.0-h924138e_0.tar.bz2",
+  "md5": "b57864c85261a0fbc7132d2cc17478c7",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/fmt-9.1.0-h924138e_0.tar.bz2",
+  "sha256": "bd48506faffa86e07f7b40d54f2d7e13b0fc956eda9760236750f5ea20db7129",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12",
+    "libstdcxx-ng >=12"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1661661115134,
+  "size": 189730
+}

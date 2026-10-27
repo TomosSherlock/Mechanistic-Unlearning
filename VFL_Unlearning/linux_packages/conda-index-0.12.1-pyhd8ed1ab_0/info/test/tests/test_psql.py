@@ -1,0 +1,558 @@
+"""
+Test postgresql support.
+"""
+
+import hashlib
+import json
+from pathlib import Path
+from typing import Callable, NamedTuple
+
+import pytest
+
+from conda_index.index import ChannelIndex
+from conda_index.index.sqlitecache import ICON_PATH
+from conda_index.utils import CONDA_PACKAGE_EXTENSIONS
+
+try:
+    from conda_index.postgres import model
+    from conda_index.postgres.cache import PsqlCache
+except ImportError:
+    pytest.skip("Could not import PsqlCache", allow_module_level=True)
+
+
+class MockResult:
+    def first(self):
+        return None
+
+
+class MockConnection:
+    def __init__(self, results_factory: Callable = MockResult) -> None:
+        self.calls: list[tuple[object, dict | None]] = []
+        self.results_factory = results_factory
+
+    def execute(self, statement, params=None):
+        self.calls.append((statement, params))
+        return self.results_factory()
+
+
+class MockBegin:
+    def __init__(self, connection: MockConnection) -> None:
+        self.connection = connection
+
+    def __enter__(self) -> MockConnection:
+        return self.connection
+
+    def __exit__(self, exc_type, exc, tb) -> bool:
+        return False
+
+
+class MockEngine:
+    def __init__(self, connection: MockConnection) -> None:
+        self.connection = connection
+
+    def begin(self) -> MockBegin:
+        return MockBegin(self.connection)
+
+
+def test_load_all_from_cache_filters_by_stage_and_path(tmp_path: Path):
+    """
+    Verify load_all_from_cache() filters by both stage AND path.
+    """
+    cache = PsqlCache(tmp_path, "noarch", db_url="postgresql://example")
+
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    cache.load_all_from_cache("test-package.conda")
+
+    assert len(connection.calls) == 1
+    query = str(connection.calls[0][0])
+    # Both conditions must be in the WHERE clause (joined by AND)
+    assert "WHERE stat.stage" in query
+    assert "AND stat.path" in query
+
+
+@pytest.mark.needs_postgresql
+@pytest.mark.parametrize("v3_repodata", (True, False))
+def test_psql(v3_repodata: bool, tmp_path: Path, index_data: Path, postgresql_database):
+    """
+    Test that conda-index can store its cache in postgresql.
+    """
+    channel_root = index_data / "packages"
+    output = tmp_path / "output"  # default same as channel
+    output.mkdir()
+
+    test_subdirs = ("noarch", "osx-64")
+
+    assert PsqlCache
+
+    channel_index = ChannelIndex(
+        channel_root,
+        channel_name="psql",
+        output_root=output,
+        subdirs=test_subdirs,  # listdir('tests/index_data/packages')?
+        write_bz2=False,
+        write_zst=False,
+        threads=1,
+        write_run_exports=True,
+        compact_json=True,
+        cache_class=PsqlCache,
+        cache_kwargs={"db_url": postgresql_database.url},
+        write_shards=True,
+        write_monolithic=True,
+        repodata_v3=v3_repodata,
+    )
+
+    channel_index.index(
+        patch_generator=None, current_index_versions=None, progress=False
+    )
+
+    channel_index.update_channeldata(rss=True)
+
+    print("Done")
+
+
+def test_psql_cache_engine_is_cached(tmp_path: Path, monkeypatch):
+    assert PsqlCache
+    import conda_index.postgres.cache as cache_module
+
+    monkeypatch.setattr(cache_module, "_engine", None)
+
+    calls = {"create_engine": 0, "create": 0}
+    engine_value = object()
+
+    def fake_create_engine(url, echo=False):
+        calls["create_engine"] += 1
+        return engine_value
+
+    def fake_model_create(engine):
+        calls["create"] += 1
+
+    monkeypatch.setattr(cache_module.sqlalchemy, "create_engine", fake_create_engine)
+    monkeypatch.setattr(cache_module.model, "create", fake_model_create)
+
+    cache = PsqlCache(tmp_path, "noarch", db_url="postgresql://example")
+    first = cache.engine
+    second = cache.engine
+
+    assert first is engine_value
+    assert second is engine_value
+    assert calls == {"create_engine": 1, "create": 1}
+
+
+def test_psql_cache_getstate_omits_engine(tmp_path: Path):
+    assert PsqlCache
+    cache = PsqlCache(tmp_path, "noarch", db_url="postgresql://example")
+    cache.engine = object()  # type: ignore
+    state = cache.__getstate__()
+    assert "engine" not in state
+
+
+def test_psql_cache_database_prefix_root(tmp_path: Path):
+    assert PsqlCache
+    cache = PsqlCache(tmp_path, "noarch", db_url="postgresql://example")
+    cache.subdir = ""
+    assert cache.database_prefix == f"{cache.channel_id}/_ROOT/"
+
+
+def test_psql_cache_invalid_channel_id(tmp_path: Path):
+    assert PsqlCache
+    cache_dir = tmp_path / ".cache"
+    cache_dir.mkdir()
+    (cache_dir / "cache.json").write_text(json.dumps({"channel_id": "bad-id"}))
+    with pytest.raises(ValueError):
+        PsqlCache(tmp_path, "noarch", db_url="postgresql://example")
+
+
+@pytest.mark.parametrize("update_only", (True, False))
+def test_psql_store_fs_state_update_only(tmp_path: Path, update_only):
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        update_only=update_only,
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    listdir_stat = [
+        {"path": cache.database_path("foo-1.0-0.conda"), "mtime": 1, "size": 10},
+        {"path": cache.database_path("bar-1.0-0.conda"), "mtime": 2, "size": 20},
+    ]
+
+    cache.store_fs_state(listdir_stat)
+
+    if update_only:
+        assert len(connection.calls) == 1  # no delete and an insert-many
+        insert_params = connection.calls[-1][1]
+        assert all(param["stage"] == "fs" for param in insert_params)
+    else:
+        assert len(connection.calls) == 2  # a delete followed by an insert-many
+        assert "Delete" in str(connection.calls[0])
+        assert connection.calls[0][1] is None
+        insert_params = connection.calls[-1][1]
+        assert all(param["stage"] == "fs" for param in insert_params)
+
+
+def test_psql_model_create_calls_metadata(monkeypatch):
+    assert model
+    called = {}
+
+    def fake_create_all(engine):
+        called["engine"] = engine
+
+    monkeypatch.setattr(model.metadata_obj, "create_all", fake_create_all)
+    engine = object()
+    model.create(engine)
+    assert called["engine"] is engine
+
+
+def test_psql_bad_channel_id(tmp_path: Path):
+    """
+    Error if channel_id doesn't match a pattern.
+    """
+    assert PsqlCache
+    db_filename = tmp_path / ".cache" / "cache.json"
+    db_filename.parent.mkdir()
+    db_filename.write_text('{"channel_id": "%"}')
+    with pytest.raises(ValueError, match="invalid channel_id"):
+        PsqlCache(
+            tmp_path,
+            "noarch",
+            update_only=False,
+            db_url="",  # doesn't eagerly connect
+        )
+
+
+def test_psql_store_tolerates_null_md5(tmp_path: Path):
+    """
+    store() accepts index_json with None/null md5 (e.g. PyPI/wheel records).
+    """
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    cache.store(
+        "pkg-1.0-py3_none.whl",
+        size=1234,
+        mtime=1000,
+        members={},
+        index_json={
+            "name": "pkg",
+            "version": "1.0",
+            "sha256": hashlib.sha256().hexdigest(),
+            "md5": None,
+            "size": 0,
+        },
+    )
+
+    stat_insert = next(
+        (c for c in connection.calls if "stat" in str(c[0]).lower()),
+        None,
+    )
+    assert stat_insert is not None
+    params = stat_insert[1] or {}
+    assert params["md5"] is None
+
+
+def test_psql_no_parse_icon_bad_package(tmp_path: Path):
+    """
+    Coverage for 'doesn't parse ICON_PATH as json', OperationalError
+    """
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    import conda_index.postgres.cache
+
+    def raise_error():
+        raise conda_index.postgres.cache.OperationalError()
+
+    connection.results_factory = raise_error
+
+    with pytest.raises(conda_index.postgres.cache.OperationalError):
+        # test not parsing icon, inserting the wrong extension, raising error on
+        # insert.
+        cache.store(
+            "package.notconda",
+            size=1,
+            mtime=1,
+            members={ICON_PATH: b""},
+            index_json={
+                "sha256": hashlib.sha256().hexdigest(),
+                "md5": hashlib.md5().hexdigest(),
+            },
+        )
+
+
+def test_psql_skip_unknown_extension(tmp_path: Path):
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    class DummyResultWithRunExports(NamedTuple):
+        name: str
+        path: str
+        index_json: object
+        run_exports: object
+
+    class DummyResultWithoutRunExports(NamedTuple):
+        name: str
+        path: str
+        index_json: object
+
+    def results_factory():
+        # Get the last call to determine which query is being executed, and return
+        # the correct number of columns.
+        last_call = connection.calls[-1]
+        if len(last_call[0].columns) == 4:
+            return [
+                DummyResultWithRunExports("package", "package.notconda", {}, {}),
+                DummyResultWithRunExports("package", "package-1.0.notconda", {}, {}),
+                DummyResultWithRunExports(
+                    "package", "package-1.0.conda", {}, {"weak": ["zlib"]}
+                ),
+                DummyResultWithRunExports("package", "package-1.0.tar.bz2", {}, {}),
+            ]
+        elif len(last_call[0].columns) == 3:
+            return [
+                DummyResultWithoutRunExports("package", "package.notconda", {}),
+                DummyResultWithoutRunExports("package", "package-1.0.notconda", {}),
+                DummyResultWithoutRunExports("package", "package-1.0.conda", {}),
+                DummyResultWithoutRunExports("package", "package-1.0.tar.bz2", {}),
+            ]
+
+    # no index.json validation at this step, empty {} as record is passed on.
+    connection.results_factory = results_factory
+    shards = list(cache.indexed_shards())
+    assert len(shards) == 1
+    shard = shards[0]
+    assert shard.name == "package"
+    assert len(shard.packages) == 1
+    assert len(shard.packages_conda) == 1
+    assert shard.packages_conda["package-1.0.conda"]["run_exports"] == {
+        "weak": ["zlib"]
+    }
+
+    indexed_packages = cache.indexed_packages()
+    assert len(indexed_packages.packages) == 1
+    assert len(indexed_packages.packages_conda) == 1
+    assert "run_exports" not in indexed_packages.packages_conda["package-1.0.conda"]
+
+
+def test_psql_include_wheel_extension(tmp_path: Path):
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+        package_extensions=CONDA_PACKAGE_EXTENSIONS + (".whl",),
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    class DummyResultWithRunExports(NamedTuple):
+        name: str
+        path: str
+        index_json: object
+        run_exports: object
+
+    class DummyResultWithoutRunExports(NamedTuple):
+        name: str
+        path: str
+        index_json: object
+
+    def results_factory():
+        # Get the last call to determine which query is being executed, and return
+        # the correct number of columns.
+        last_call = connection.calls[-1]
+        if len(last_call[0].columns) == 4:
+            return [
+                DummyResultWithRunExports("package", "package.whl", {}, {}),
+                DummyResultWithRunExports("package", "package.conda", {}, {}),
+            ]
+        elif len(last_call[0].columns) == 3:
+            return [
+                DummyResultWithoutRunExports("package", "package.whl", {}),
+                DummyResultWithoutRunExports("package", "package.conda", {}),
+            ]
+
+    connection.results_factory = results_factory
+    shards = list(cache.indexed_shards())
+    assert len(shards) == 1
+    assert len(shards[0].packages_whl) == 1
+    assert len(shards[0].packages_conda) == 1
+
+    indexed_packages = cache.indexed_packages()
+    assert indexed_packages.packages == {}
+    assert len(indexed_packages.packages_conda) == 1
+
+    shards_2 = list(cache.indexed_shards())
+    assert len(shards_2) == 1
+    assert len(shards_2[0].packages_whl) == 1
+    assert len(shards_2[0].packages_conda) == 1
+
+
+def test_psql_run_exports(tmp_path: Path):
+    # XXX this should be tested end-to-end
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    class DummyResult(NamedTuple):
+        path: str
+        run_exports: object
+
+    # no index.json validation at this step, empty {} as record is passed on.
+    connection.results_factory = lambda: [
+        DummyResult("package.conda", {"weak": ["zlib"]}),
+    ]
+    run_exports = list(cache.run_exports())
+    assert run_exports == [("package.conda", {"weak": ["zlib"]})]
+
+
+def test_psql_load_all_from_cache_coverage(tmp_path: Path):
+    """
+    Test load_all_from_cache() edge cases. Missing packages, bad types, etc.
+    """
+    assert PsqlCache
+    cache = PsqlCache(
+        tmp_path,
+        "noarch",
+        db_url="postgresql://example",
+    )
+    connection = MockConnection()
+    cache.engine = MockEngine(connection)  # type: ignore
+
+    class stat_result:
+        mtime = 0
+
+    class result:
+        def first(self):
+            return next(results)
+
+    connection.results_factory = result
+
+    # not in stat table
+    results = iter([None])
+
+    missing = cache.load_all_from_cache("missing.conda")
+    assert missing == {}
+
+    # in stat table, not in index_json table
+    results = iter([stat_result, None])
+    missing = cache.load_all_from_cache("missing.conda")
+    assert missing == {}
+
+    # catch error when source is not a dict
+    class about:
+        recipe = {}
+        post_install = {}
+        index_json = {}
+        about = {"source": []}
+
+    results = iter([stat_result, about])
+    channeldata = cache.load_all_from_cache("source_is_list.conda")
+    assert channeldata == {"source": [], "mtime": 0, "run_exports": {}}
+
+
+def repodata_paths(repodata: dict):
+    """
+    Yield every key in repodata['packages'], repodata['packages.conda']
+    """
+    for group in ("packages", "packages.conda"):
+        yield from repodata[group]
+
+
+def test_repodata_paths():
+    """
+    Test helper function.
+    """
+    assert list(repodata_paths({"packages": {"a": 1}, "packages.conda": {"b": 2}})) == [
+        "a",
+        "b",
+    ]
+
+
+# conda-index is expected to attempt to index, but skip these files.
+INVALID_PACKAGES_IN_SUITE = {
+    "subfolder.tar.bz2",
+    "a.tar.bz2",
+    "subfolder2.tar.bz2",
+    "b.tar.bz2",
+}
+
+
+@pytest.mark.needs_postgresql
+def test_psql_channel_separation(
+    tmp_path: Path, index_data: Path, archives_data: Path, postgresql_database
+):
+    """
+    Test that conda-index can store multiple channels in PostgreSQL and keep
+    them separate.
+    """
+    output_base = tmp_path / "output"
+
+    # Twice so that combined packages are written to first output if the bug
+    # occurs:
+    for _ in range(2):
+        for channel_root in (index_data, archives_data):
+            # tmp_path is the same as used for the fixtures, contains the
+            # index_data, archives_data directories
+            output = output_base / channel_root.name  # default same as channel
+            output.mkdir(parents=True, exist_ok=True)
+
+            channel_index = ChannelIndex(
+                channel_root,
+                channel_name="psql",
+                output_root=output,
+                write_bz2=False,
+                write_zst=False,
+                threads=1,
+                write_run_exports=True,
+                compact_json=True,
+                cache_class=PsqlCache,
+                cache_kwargs={"db_url": postgresql_database.url},
+                write_shards=True,
+                write_monolithic=True,
+            )
+
+            channel_index.index(
+                patch_generator=None, current_index_versions=None, progress=False
+            )
+
+            for subdir in output.glob("*"):
+                if not subdir.is_dir():
+                    continue
+                expected_packages = (
+                    set(
+                        p.name
+                        for p in (channel_root / subdir.name).glob("*")
+                        if p.name.endswith((".tar.bz2", ".conda"))
+                    )
+                    - INVALID_PACKAGES_IN_SUITE
+                )
+                actual_packages = set(
+                    repodata_paths(json.loads((subdir / "repodata.json").read_text()))
+                )
+                assert actual_packages == expected_packages

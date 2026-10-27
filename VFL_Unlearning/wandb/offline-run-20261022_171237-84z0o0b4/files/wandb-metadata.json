@@ -1,0 +1,95 @@
+{
+    "os": "Linux-6.8.0-85-generic-x86_64-with-glibc2.35",
+    "python": "3.10.9",
+    "heartbeatAt": "2026-10-22T16:12:37.734837",
+    "startedAt": "2026-10-22T16:12:37.638121",
+    "docker": null,
+    "cuda": null,
+    "args": [
+        "--data_path=data/processed/1-0.9",
+        "--test_path=data/processed",
+        "--expname=fisher_unlearn-1_class_1-0.9",
+        "--vfl=0",
+        "--model_path=data/processed/1-0.9/1",
+        "--unlearn_method=fisher",
+        "--u_batch_size=16",
+        "--device=0"
+    ],
+    "state": "running",
+    "program": "/home/eve/Tomos/Mechanistic_Unlearning/VFL_Unlearning/unlearn.py",
+    "codePathLocal": "unlearn.py",
+    "codePath": "unlearn.py",
+    "host": "eve",
+    "username": "eve",
+    "executable": "/home/eve/anaconda3/envs/epic-material/bin/python",
+    "cpu_count": 4,
+    "cpu_count_logical": 8,
+    "cpu_freq": {
+        "current": 1475.168,
+        "min": 800.0,
+        "max": 4375.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 1699.966,
+            "min": 800.0,
+            "max": 4200.0
+        },
+        {
+            "current": 1701.056,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1699.675,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1700.001,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1700.327,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 1699.984,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 800.0,
+            "min": 800.0,
+            "max": 4400.0
+        },
+        {
+            "current": 2253.392,
+            "min": 800.0,
+            "max": 4400.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 227.67544174194336,
+            "used": 210.54611206054688
+        }
+    },
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        },
+        {
+            "name": "NVIDIA GeForce GTX 1080 Ti",
+            "memory_total": 11811160064
+        }
+    ],
+    "memory": {
+        "total": 62.68330001831055
+    }
+}

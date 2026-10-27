@@ -1,0 +1,6 @@
+- python:
+    imports:
+    - secretstorage
+    python_version:
+    - 3.11.*
+    - 3.14.*

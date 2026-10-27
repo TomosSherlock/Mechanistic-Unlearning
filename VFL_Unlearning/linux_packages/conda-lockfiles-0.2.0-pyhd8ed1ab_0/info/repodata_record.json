@@ -1,0 +1,25 @@
+{
+  "name": "conda-lockfiles",
+  "version": "0.2.0",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "conda-lockfiles-0.2.0-pyhd8ed1ab_0.conda",
+  "md5": "6248ea5c3194d00fb1db6d68fcdcfd3e",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/conda-lockfiles-0.2.0-pyhd8ed1ab_0.conda",
+  "sha256": "3a9934ecf483d46b56a59547c63bd40bef4c398bfc671acb2ba0f98a045ccb8b",
+  "depends": [
+    "conda >=25.9.0",
+    "pydantic >=2,<3",
+    "python >=3.10",
+    "ruamel.yaml"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "package_type": "noarch_python",
+  "timestamp": 1778023975685,
+  "size": 20396
+}

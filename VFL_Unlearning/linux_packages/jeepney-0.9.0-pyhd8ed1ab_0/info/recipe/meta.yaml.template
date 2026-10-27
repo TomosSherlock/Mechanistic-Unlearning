@@ -1,0 +1,49 @@
+{% set name = "jeepney" %}
+{% set version = "0.9.0" %}
+{% set sha256 = "cf0e9e845622b81e4a28df94c40345400256ec608d0e55bb8a3feaa9163f5732" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  noarch: python
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-build-isolation -vv"
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - pip
+    - flit-core >=3.11
+  run:
+    - python >={{ python_min }}
+
+test:
+  requires:
+    - python {{ python_min }}
+  imports:
+    - jeepney
+
+about:
+  home: https://gitlab.com/takluyver/jeepney
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Pure Python DBus interface
+  description: |
+    This is a low-level, pure Python DBus protocol client. It has
+    an I/O-free core, and integration modules for different event
+    loops.
+  doc_url: https://jeepney.readthedocs.io/en/latest/
+  dev_url: https://gitlab.com/takluyver/jeepney
+
+extra:
+  recipe-maintainers:
+    - ccordoba12
+    - takluyver

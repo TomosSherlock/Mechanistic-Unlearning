@@ -1,0 +1,14 @@
+{
+  "build": "pyhe01879c_1",
+  "build_number": 1,
+  "depends": [
+    "python >=3.9",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "six",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1753199211006,
+  "version": "1.17.0"
+}

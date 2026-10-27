@@ -1,0 +1,14 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/jaraco/jaraco.classes",
+  "extra": {
+    "flow_run_id": "azure_20260101.3.1",
+    "remote_url": "https://github.com/conda-forge/jaraco.classes-feedstock",
+    "sha": "2e26937fefe37ceb0d2f1f5d256404c6bffe13b5"
+  },
+  "home": "https://github.com/jaraco/jaraco.classes",
+  "license": "MIT",
+  "summary": "jaraco.classes"
+}

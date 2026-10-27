@@ -1,0 +1,22 @@
+{
+  "name": "asttokens",
+  "version": "3.0.1",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "asttokens-3.0.1-pyhd8ed1ab_0.conda",
+  "md5": "9673a61a297b00016442e022d689faa6",
+  "depends": [
+    "python >=3.10"
+  ],
+  "constrains": [
+    "astroid >=2,<5"
+  ],
+  "noarch": "python",
+  "license": "Apache-2.0",
+  "license_family": "Apache",
+  "package_type": "noarch_python",
+  "timestamp": 1763410017955,
+  "size": 28797
+}

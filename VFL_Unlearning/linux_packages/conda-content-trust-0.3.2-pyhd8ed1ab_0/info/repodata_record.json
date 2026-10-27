@@ -1,0 +1,23 @@
+{
+  "name": "conda-content-trust",
+  "version": "0.3.2",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "conda-content-trust-0.3.2-pyhd8ed1ab_0.conda",
+  "md5": "a0d31c6b4c1de77ed9cf00a9d4070424",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/conda-content-trust-0.3.2-pyhd8ed1ab_0.conda",
+  "sha256": "9ed4a074210ee89fec60778a84b0010f07d8b17fdae7493e583d90720b61fcb2",
+  "depends": [
+    "cryptography >=41",
+    "python >=3.10"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "package_type": "noarch_python",
+  "timestamp": 1777562959702,
+  "size": 69919
+}

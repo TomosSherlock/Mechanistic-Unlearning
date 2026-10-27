@@ -1,0 +1,14 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "annotated-doc",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1785335690199,
+  "version": "0.0.5"
+}

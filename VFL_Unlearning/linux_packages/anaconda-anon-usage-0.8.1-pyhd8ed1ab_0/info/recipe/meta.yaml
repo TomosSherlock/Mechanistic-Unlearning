@@ -1,0 +1,86 @@
+# This file created by conda-build 26.3.0
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Fri May 15 01:26:06 2026
+# ------------------------------------------------
+
+package:
+  name: anaconda-anon-usage
+  version: 0.8.1
+source:
+  url: https://github.com/anaconda/anaconda-anon-usage/archive/refs/tags/0.8.1.tar.gz
+  sha256: 822eb9591fbe588e0a42dc55fc685ebc202b6b24ef74597519b8a9518935ac67
+build:
+  noarch: python
+  number: '0'
+  script: /home/conda/feedstock_root/build_artifacts/anaconda-anon-usage_1778808421555/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/bin/python
+    -m pip install . -vv --no-deps --no-build-isolation
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_9
+    - ca-certificates 2026.4.22 hbd8a1cb_0
+    - ld_impl_linux-64 2.45.1 default_hbd61a6d_102
+    - libexpat 2.8.0 hecca717_0
+    - libffi 3.5.2 h3435931_0
+    - libgcc 15.2.0 he0feb66_19
+    - libgcc-ng 15.2.0 h69a702a_19
+    - libgomp 15.2.0 he0feb66_19
+    - liblzma 5.8.3 hb03c661_0
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libsqlite 3.53.1 h0c1763c_0
+    - libuuid 2.42 h5347b49_0
+    - libxcrypt 4.4.36 hd590300_1
+    - libzlib 1.3.2 h25fd6f3_2
+    - ncurses 6.6 hdb14827_0
+    - openssl 3.6.2 h35e630c_0
+    - packaging 26.2 pyhc364b38_0
+    - pip 26.1.1 pyh8b19718_0
+    - python 3.10.20 h3c07f61_0_cpython
+    - readline 8.3 h853b02a_0
+    - setuptools 82.0.1 pyh332efcf_0
+    - tk 8.6.13 noxft_h366c992_103
+    - tzdata 2025c hc9c84f9_1
+    - wheel 0.47.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_6
+  run:
+    - python >=3.10
+  run_constrained:
+    - conda >=23.7
+test:
+  requires:
+    - conda
+    - pip
+    - python 3.10.*
+  imports:
+    - anaconda_anon_usage
+    - anaconda_anon_usage.patch
+    - anaconda_anon_usage.tokens
+  commands:
+    - pip check
+    - python -m conda info | grep -q "user-agent.*aau/"
+about:
+  home: https://github.com/Anaconda-Platform/anaconda-anon-usage
+  summary: basic anonymous telemetry for conda clients
+  description: 'This package augments the request header data that conda delivers
+    to package
+
+    servers during index and package requests. Specifically, three randomly generated
+
+    tokens are appended to the "user agent" that Conda already sends with each request.
+
+    '
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  doc_url: https://github.com/anaconda/anaconda-anon-usage/README.md
+  dev_url: https://github.com/anaconda/anaconda-anon-usage
+extra:
+  recipe-maintainers:
+    - mattkram
+    - mcg1969
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_25895162556
+  remote_url: https://github.com/conda-forge/anaconda-anon-usage-feedstock
+  sha: 1a32d3d2d9981a9d4d987d53b8f9f741a35cff44

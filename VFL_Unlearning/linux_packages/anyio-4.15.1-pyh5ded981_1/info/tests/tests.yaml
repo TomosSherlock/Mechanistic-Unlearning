@@ -1,0 +1,71 @@
+- python:
+    imports:
+    - anyio
+    python_version:
+    - 3.11.*
+    - 3.14.*
+- script:
+    interpreter: python
+    env:
+      PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+    content: |
+      import sys
+      import platform
+      from subprocess import call
+
+
+      FAIL_UNDER = 0
+
+      if platform.system() == "Linux":
+          FAIL_UNDER = 84
+
+      COV = ["coverage"]
+      RUN = ["run", "--source=anyio", "--branch", "-m"]
+      PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
+      REPORT = ["report", "--show-missing", "--skip-covered", f"--fail-under={FAIL_UNDER}"]
+
+      SKIPS = [
+          "bind_link_local",
+          "block_device",
+          "connection_refused",
+          "happy_eyeballs",
+          "ipv6",
+          # https://github.com/conda-forge/anyio-feedstock/pull/78
+          "tcp_listener_retry_after_partial_failure",
+          "tcp_listener_dualstack_disabled",
+          "tcp_listener_same_port",
+          # https://github.com/conda-forge/anyio-feedstock/pull/88
+          "sourceless_install",
+      ]
+
+      SKIP_OR = " or ".join(SKIPS)
+      K = ["-k", f"not ({SKIP_OR})"]
+
+
+      if __name__ == "__main__":
+          sys.exit(
+              # run the tests
+              call([*COV, *RUN, *PYTEST, *K])
+              # maybe run coverage
+              or call([*COV, *REPORT])
+          )
+    cwd: etc/conda/test-files/anyio/1
+  requirements:
+    run:
+    - coverage >=7
+    - hypothesis >=4.18.2
+    - psutil >=5.9
+    - pytest >=9
+    - pytest-mock >=3.14
+    - pytest-timeout >=2.4.0
+    - python 3.11.*
+    - python-blockbuster >=1.5.23
+    - tomli
+    - trio
+    - trustme >=1.0.0
+    - truststore >=0.9.1
+    - uvloop
+  files:
+    source:
+    - tests/
+    - pyproject.toml

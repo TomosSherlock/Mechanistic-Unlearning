@@ -1,0 +1,13 @@
+{
+  "mod": "",
+  "etag": "",
+  "cache_control": "public, max-age=30",
+  "url": "https://repo.anaconda.com/pkgs/r/linux-64",
+  "size": 12479343,
+  "mtime_ns": 1791283265922185447,
+  "refresh_ns": 1791283284162037000,
+  "has_shards": {
+    "last_checked": "2026-10-06T10:41:24.161854Z",
+    "value": false
+  }
+}

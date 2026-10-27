@@ -1,0 +1,11 @@
+- python:
+    imports:
+    - semver
+    python_version:
+    - 3.11.*
+    - '*'
+- script:
+    content: pysemver -h
+  requirements:
+    run:
+    - python 3.11.*

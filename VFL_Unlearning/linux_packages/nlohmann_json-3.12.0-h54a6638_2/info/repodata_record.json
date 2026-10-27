@@ -1,0 +1,21 @@
+{
+  "name": "nlohmann_json",
+  "version": "3.12.0",
+  "build": "h54a6638_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "nlohmann_json-3.12.0-h54a6638_2.conda",
+  "md5": "fe93be7dd9209e6ae673962e3031ff51",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/nlohmann_json-3.12.0-h54a6638_2.conda",
+  "sha256": "8f8b554c74b032b3e63a8828fb0ecc7ae4f5c5a6bd0afcf75423d5ff79290cb0",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [],
+  "constrains": [
+    "nlohmann_json-abi 3.12.0"
+  ],
+  "license": "MIT",
+  "timestamp": 1785920438981,
+  "size": 136372
+}

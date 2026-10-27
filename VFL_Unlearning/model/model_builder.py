@@ -1,4 +1,4 @@
-from model.resnet import ResNet18_Bottom, ResNet18_Top
+from model.resnet import ResNet18_Bottom, ResNet18_Top, ResNet18_Full
 from model.vgg import VGG16_Bottom, VGG16_Top
 from model.MixText import MixText_Bottom, MixText_Top
 
@@ -6,7 +6,10 @@ from model.MixText import MixText_Bottom, MixText_Top
 
 def get_model(args):
     if args.model_type == 'resnet18':
-        bottom_model, top_model = ResNet18_Bottom(args), ResNet18_Top(args)
+        if args.vfl == 0:
+            bottom_model, top_model = ResNet18_Full(args), ResNet18_Full(args)
+        else:
+            bottom_model, top_model = ResNet18_Bottom(args), ResNet18_Top(args)
     elif args.model_type == 'vgg16':
         bottom_model, top_model = VGG16_Bottom(args), VGG16_Top(args)
     elif args.model_type == 'mixtext':

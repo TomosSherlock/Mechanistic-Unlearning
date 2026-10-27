@@ -1,0 +1,22 @@
+{
+  "name": "typing-extensions",
+  "version": "4.12.2",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "typing-extensions-4.12.2-py313h06a4308_0.conda",
+  "md5": "f011fee76cd912d47567c6cedb0074c9",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313",
+    "typing_extensions 4.12.2 py313h06a4308_0"
+  ],
+  "constrains": [],
+  "license": "PSF-2.0",
+  "license_family": "PSF",
+  "timestamp": 1734715001519,
+  "size": 9184
+}

@@ -1,0 +1,137 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/build/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e2509f5428e076bccd14ff80070dcebf763aa38675cd96789d422b1dab4aa4b0",
+      "size_in_bytes": 1000
+    },
+    {
+      "_path": "site-packages/build/__main__.py",
+      "path_type": "hardlink",
+      "sha256": "4ea6636f67c1710f085924050b8bca2543386e4e923fddb57b5ef1ebb722c300",
+      "size_in_bytes": 31708
+    },
+    {
+      "_path": "site-packages/build/_builder.py",
+      "path_type": "hardlink",
+      "sha256": "7e34fad7d625706a150321eb293afcab76bb31de7a4b28a84aea45b7e36a794e",
+      "size_in_bytes": 15804
+    },
+    {
+      "_path": "site-packages/build/_compat/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/build/_compat/importlib.py",
+      "path_type": "hardlink",
+      "sha256": "9b8979949bb91093142d3c0633887a17928c6429591d5b3e204a11f98e9a757c",
+      "size_in_bytes": 466
+    },
+    {
+      "_path": "site-packages/build/_compat/tarfile.py",
+      "path_type": "hardlink",
+      "sha256": "fb27b279d1875fd03c5577df41482558e0499cbc16bcb6cd6b01be68bd29e348",
+      "size_in_bytes": 2474
+    },
+    {
+      "_path": "site-packages/build/_compat/tomllib.py",
+      "path_type": "hardlink",
+      "sha256": "cc9c5a9fe66d49cb52d7a26766b10e4a5d486d73e01cb28336c8b9792e80bc08",
+      "size_in_bytes": 337
+    },
+    {
+      "_path": "site-packages/build/_ctx.py",
+      "path_type": "hardlink",
+      "sha256": "1c6928b26cfba5323b77fc3355542daaa1104a5fcdc4aa79700ecadce3fc8d18",
+      "size_in_bytes": 2620
+    },
+    {
+      "_path": "site-packages/build/_exceptions.py",
+      "path_type": "hardlink",
+      "sha256": "cc49948322317f204bc2296143447d62ab4cb3912e5bc9cb309865ac383e8cd0",
+      "size_in_bytes": 1499
+    },
+    {
+      "_path": "site-packages/build/_types.py",
+      "path_type": "hardlink",
+      "sha256": "eff873ced695823c5091fc0d40668e3e8c9a87319f7a249f22246bcbb5759742",
+      "size_in_bytes": 1380
+    },
+    {
+      "_path": "site-packages/build/_util.py",
+      "path_type": "hardlink",
+      "sha256": "76190951907cde22305e61587b944df2ce206f654cecb798cfe08d194caed0c2",
+      "size_in_bytes": 3745
+    },
+    {
+      "_path": "site-packages/build/env.py",
+      "path_type": "hardlink",
+      "sha256": "60968f8016aef9ab8b887948001ee2cf0de0de3a1dda7ad119fbc6cc09daf26d",
+      "size_in_bytes": 20283
+    },
+    {
+      "_path": "site-packages/build/py.typed",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/build/util.py",
+      "path_type": "hardlink",
+      "sha256": "1b31ee3592178a653c85537616f949e97433c0186b67da4a7a4276e643d7d3c3",
+      "size_in_bytes": 2019
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "bc33022edcb7639ff53355b4e91dade50a0bbf0299efeb6171d1ec0ba5029cfc",
+      "size_in_bytes": 6
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "f3623590844a25dcf308a71a988c73e293b7ef779a1f43acb83ad1be218d61a0",
+      "size_in_bytes": 5624
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "82cc4a3a7a39068ad1ac36fc99191673a32a54a77d42a509c5cd588f68028522",
+      "size_in_bytes": 2417
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "ff23073da055face9f40cc14a28f3735275308cddcf315d6157461a9a7cdfbb6",
+      "size_in_bytes": 81
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "609f990b69d58fc33a5bf0d6f18043eaf20feb2bfdcd875057422e558aa53059",
+      "size_in_bytes": 123
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/entry_points.txt",
+      "path_type": "hardlink",
+      "sha256": "3186db33a24662e6e02234e070ba4d219a5cd0f59b8bd991016ed586d733952f",
+      "size_in_bytes": 105
+    },
+    {
+      "_path": "site-packages/build-1.6.1.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f",
+      "size_in_bytes": 1113
+    }
+  ],
+  "paths_version": 1
+}

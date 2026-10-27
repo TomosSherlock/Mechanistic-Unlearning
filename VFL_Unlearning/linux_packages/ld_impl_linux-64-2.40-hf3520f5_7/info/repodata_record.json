@@ -1,0 +1,21 @@
+{
+  "name": "ld_impl_linux-64",
+  "version": "2.40",
+  "build": "hf3520f5_7",
+  "build_number": 7,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "ld_impl_linux-64-2.40-hf3520f5_7.conda",
+  "md5": "b80f2f396ca2c28b8c14c437a4ed1e74",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/ld_impl_linux-64-2.40-hf3520f5_7.conda",
+  "sha256": "764b6950aceaaad0c67ef925417594dd14cd2e22fff864aeef455ac259263d15",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [],
+  "constrains": [
+    "binutils_impl_linux-64 2.40"
+  ],
+  "license": "GPL-3.0-only",
+  "timestamp": 1718625640445,
+  "size": 707602
+}

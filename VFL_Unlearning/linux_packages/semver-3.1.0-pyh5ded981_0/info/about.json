@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "A Python module for semantic versioning. Simplifies comparing versions.",
+  "dev_url": "https://github.com/k-bx/python-semver",
+  "doc_url": "https://github.com/k-bx/python-semver",
+  "extra": {
+    "flow_run_id": "github_35497699874",
+    "recipe-maintainers": [
+      "rmax",
+      "carlodri"
+    ],
+    "remote_url": "https://github.com/conda-forge/semver-feedstock",
+    "sha": "589fd5952864f17dfe3970a8e5bb024f8a9d651e"
+  },
+  "home": "https://github.com/k-bx/python-semver",
+  "license": "BSD-3-Clause",
+  "summary": "Python package to work with Semantic Versioning"
+}

@@ -1,0 +1,12 @@
+site-packages/pyproject_hooks-1.2.0.dist-info/INSTALLER
+site-packages/pyproject_hooks-1.2.0.dist-info/LICENSE
+site-packages/pyproject_hooks-1.2.0.dist-info/METADATA
+site-packages/pyproject_hooks-1.2.0.dist-info/RECORD
+site-packages/pyproject_hooks-1.2.0.dist-info/REQUESTED
+site-packages/pyproject_hooks-1.2.0.dist-info/WHEEL
+site-packages/pyproject_hooks-1.2.0.dist-info/direct_url.json
+site-packages/pyproject_hooks/__init__.py
+site-packages/pyproject_hooks/_impl.py
+site-packages/pyproject_hooks/_in_process/__init__.py
+site-packages/pyproject_hooks/_in_process/_in_process.py
+site-packages/pyproject_hooks/py.typed

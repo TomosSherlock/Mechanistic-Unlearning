@@ -1,0 +1,13 @@
+{
+  "has_zst": {
+    "last_checked": "2026-10-06T11:30:26.815076Z",
+    "value": false
+  },
+  "mod": "Thu, 01 Oct 2026 19:40:47 GMT",
+  "etag": "W/\"12e43f7faf0494eb530967d29d8777ae3ae6a4f3b2190e99e0911dcac04971b0\"",
+  "cache_control": "max-age=60",
+  "url": "https://repo.anaconda.cloud/repo/main-x/noarch",
+  "size": 13119788,
+  "mtime_ns": 1791286228283531042,
+  "refresh_ns": 1791286466723268000
+}

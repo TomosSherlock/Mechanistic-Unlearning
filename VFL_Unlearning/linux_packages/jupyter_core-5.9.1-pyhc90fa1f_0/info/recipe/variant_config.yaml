@@ -1,0 +1,6 @@
+__unix: __unix
+channel_sources: conda-forge
+channel_targets: conda-forge main
+noarch_platform: unix
+python_min: '3.10'
+target_platform: noarch

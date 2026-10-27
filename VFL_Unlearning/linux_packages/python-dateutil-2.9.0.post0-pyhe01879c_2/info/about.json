@@ -1,0 +1,16 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "The dateutil module provides powerful extensions to the standard datetime\nmodule, available in Python.",
+  "dev_url": "https://github.com/dateutil/dateutil/",
+  "doc_url": "https://dateutil.readthedocs.org/en/latest/",
+  "extra": {
+    "flow_run_id": "azure_20250628.1.1",
+    "remote_url": "https://github.com/conda-forge/python-dateutil-feedstock",
+    "sha": "335bbadf18bbf088eadbe18b4710df751e1aaef3"
+  },
+  "home": "https://dateutil.readthedocs.org/",
+  "license": "Apache-2.0",
+  "summary": "Extensions to the standard Python datetime module."
+}

@@ -1,0 +1,24 @@
+{
+  "name": "prompt-toolkit",
+  "version": "3.0.53",
+  "build": "pyha770c72_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "prompt-toolkit-3.0.53-pyha770c72_0.conda",
+  "md5": "39c92a39517316e5001d645ae63d9ab9",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/prompt-toolkit-3.0.53-pyha770c72_0.conda",
+  "sha256": "efe8def2c93aa34cd8d3c9af1dc4c7d312791cf769d8b2b615e32733e6df6051",
+  "depends": [
+    "python >=3.10",
+    "wcwidth"
+  ],
+  "constrains": [
+    "prompt_toolkit 3.0.53"
+  ],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1785160613307,
+  "size": 276081
+}

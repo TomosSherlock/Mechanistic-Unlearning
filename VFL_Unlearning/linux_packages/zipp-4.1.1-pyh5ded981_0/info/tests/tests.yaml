@@ -1,0 +1,17 @@
+- python:
+    imports:
+    - zipp
+    python_version: 3.11.*
+- script:
+    content: python -m unittest tests/test_path.py
+    cwd: etc/conda/test-files/zipp/1
+  requirements:
+    run:
+    - importlib_metadata
+    - jaraco.itertools
+    - jaraco.test
+    - jaraco.functools
+    - more-itertools
+  files:
+    source:
+    - tests

@@ -1,0 +1,21 @@
+{
+  "name": "gettext-tools",
+  "version": "0.22.5",
+  "build": "h59595ed_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "gettext-tools-0.22.5-h59595ed_2.conda",
+  "md5": "985f2f453fb72408d6b6f1be0f324033",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/gettext-tools-0.22.5-h59595ed_2.conda",
+  "sha256": "67d7b1d6fe4f1c516df2000640ec7dcfebf3ff6ea0785f0276870e730c403d33",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12"
+  ],
+  "constrains": [],
+  "license": "GPL-3.0-or-later",
+  "timestamp": 1712512328692,
+  "size": 2728420
+}

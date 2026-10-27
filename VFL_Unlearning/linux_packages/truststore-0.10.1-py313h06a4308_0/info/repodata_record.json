@@ -1,0 +1,21 @@
+{
+  "name": "truststore",
+  "version": "0.10.1",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "truststore-0.10.1-py313h06a4308_0.conda",
+  "md5": "fee67c1946f31ba7b45962c20b7b1d8c",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1753907226470,
+  "size": 51427
+}

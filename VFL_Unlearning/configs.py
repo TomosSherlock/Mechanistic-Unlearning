@@ -13,22 +13,34 @@ def config():
     ################################### Experiment ###############################################
     parser.add_argument('--outdir', default='exp', type=str,
                         help='output directory')
-    parser.add_argument('--expname', default='', type=str,
+    parser.add_argument('--expname', default='---', type=str,
                         help='detailed exp name to distinguish different sub-exp')
+    parser.add_argument('--evals', default=20, type=int,
+                        help='Number of times to evaluate each model')
     # parser.add_argument('--expname_tag', default='', type=str,
     #                     help=' detailed exp tag to distinguish different sub-exp with the same expname')
 
     ##################################### Dataset #################################################
-    parser.add_argument('--data', default='cifar10', type=str,
+    parser.add_argument('--data', default='custom', type=str,
                         help='name of dataset',
-                        choices=['cifar10', 'mnist', 'cifar100', 'modelnet', 'yahoo', 'mri', 'ct'])
+                        choices=['cifar10', 'mnist', 'cifar100', 'modelnet', 'yahoo', 'mri', 'ct', 'custom', 'custom-1'])
     parser.add_argument('--data_path', default='data', type=str,
-                        help='path of dataset')
+                        help='path of training data')
+    parser.add_argument('--test_path', default='data', type=str,
+                        help='path of testing data')
     parser.add_argument('--batch_size', default=32, type=int,
                         help = 'Number of data per batch')
     parser.add_argument('--num_workers', default=0, type=int)
     parser.add_argument('--num_classes', default=10, type=int,
                         help = 'Number of classes in data')
+    parser.add_argument('--test_prefix', default='t10k', type=str,
+                        help='file name prefix for the test data when using a custom dataset')
+    parser.add_argument('--train_prefix', default='train', type=str,
+                        help='file name prefix for the train data when using a custom dataset')
+    parser.add_argument('--data_suffix', default='-images.idx3-ubyte', type=str,
+                        help='file name suffix for the x datas when using a custom dataset')
+    parser.add_argument('--label_suffix', default='-labels.idx1-ubyte', type=str,
+                        help='file name suffix for the y labels when using a custom dataset')
 
     #################################### Training ################################################
     parser.add_argument('--epochs', default=100, type=int,
@@ -38,6 +50,8 @@ def config():
                         choices=['full', 'retrain'])
     parser.add_argument('--std', default=0.1, type=float)
     parser.add_argument('--percent', default=0.999, type=float)
+    parser.add_argument('--vfl', default=2, type=int,
+                        help = 'Number of active parties in vfl (set to 0 for non-federated learning)')
 
     ##################################### Unlearn #################################################
     parser.add_argument('--unlearn_method', default='LUV', type=str,
@@ -54,6 +68,19 @@ def config():
                         help='Samples of data use in EE unlearning')
     parser.add_argument('--unlearn_epochs', default=16, type=int,
                         help='Unlearning epochs')
+    parser.add_argument('--unlearn_bias', default=0, type=int,
+                        help="Whether or not to unlearn the biased samples instead of a class")
+    parser.add_argument('--u_batch_size', default=32, type=int,
+                        help='Batch size for any unlearning method')
+    parser.add_argument('--f_method', default='EWC', type=str,
+                        help='Method for more complex unlearning methods')
+    parser.add_argument('--alpha', default=1, type=float,
+                        help='Alpha value for manifold mixup')
+    parser.add_argument('--target_unlearned_performance', default=999, type=int,
+                        help='Percent unlearned sample performance to stop unlearning at. ' \
+                        'If unspecified, unlearning will occur for the specified number of epochs instead.')
+    parser.add_argument('--alpha-momentum', default=1.5, type=float,
+                        help='Factor to multiply manifold mixup alpha by after each unlearning epoch')
 
     ###################################### Model ##################################################
     parser.add_argument('--model_type', default='resnet18', type=str,
@@ -63,5 +90,7 @@ def config():
     parser.add_argument('--momentum', default=0.9, type=float)
     parser.add_argument('--weight_decay', default=5e-4, type=float)
     parser.add_argument('--gamma', default=0.99, type=float)
+    parser.add_argument('--model_path', default='exp/', type=str,
+                            help='Path of trained model to unlearn')
 
     return parser.parse_args()

@@ -1,0 +1,4 @@
+- python:
+    imports:
+    - nest_asyncio2
+    python_version: 3.11.*

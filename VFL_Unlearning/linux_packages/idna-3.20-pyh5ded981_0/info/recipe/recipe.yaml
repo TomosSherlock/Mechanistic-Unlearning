@@ -1,0 +1,74 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "3.20"
+  python_check_max: "3.14"
+  cov_run: coverage run --source=idna --branch --append
+  cov_fail_under: "93"
+
+package:
+  name: idna
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/i/idna/idna-${{ version }}.tar.gz
+  sha256: a7db850025b95ded1eae8a46181a1a6c56c92c96f0e2b005d9ff8dc0210cab44
+
+build:
+  noarch: python
+  number: 0
+  script:
+    - ${{ PYTHON }} -m pip install . -vvv --no-deps --no-build-isolation --disable-pip-version-check
+  python:
+    entry_points:
+      - idna = idna.cli:main
+
+requirements:
+  host:
+    - flit-core >=3.11,<5
+    - python ${{ python_min }}.*
+    - pip
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports: idna
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+  - files:
+      source:
+        - tests/
+    requirements:
+      run:
+        - hypothesis
+        - python ${{ python_min }}.*
+        - pytest >=8.3.2
+        - pytest-cov
+    script:
+      - ${{ cov_run }} -m idna --help
+      - ${{ cov_run }} -m idna.cli --help
+      - ${{ cov_run }} -m idna --version
+      - idna --version | ${{ "grep -iE" if unix else "findstr /c" }} "idna ${{ version | replace('.', '\\.') }}($| )"
+      - ${{ cov_run }} -m pytest -vv --tb=long --color=yes
+      - coverage report --show-missing --skip-covered --fail-under=${{ cov_fail_under }}
+
+about:
+  homepage: https://pypi.org/project/idna
+  repository: https://github.com/kjd/idna
+  license: BSD-3-Clause
+  license_file: LICENSE.md
+  summary: Internationalized Domain Names in Applications (IDNA).
+  description: |
+    A library to support the Internationalised Domain Names in Applications
+    (IDNA) protocol as specified in RFC 5891. This version of the protocol
+    is often referred to as "IDNA2008".
+
+extra:
+  recipe-maintainers:
+    - goanpeca
+    - jschueller
+    - bollwyvl

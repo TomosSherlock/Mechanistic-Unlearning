@@ -1,0 +1,21 @@
+{
+  "name": "shellingham",
+  "version": "1.5.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "shellingham-1.5.0-py313h06a4308_0.conda",
+  "md5": "fec77e08b241c9bae71940db00e14b65",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "ISC",
+  "license_family": "OTHER",
+  "timestamp": 1728395325806,
+  "size": 20962
+}

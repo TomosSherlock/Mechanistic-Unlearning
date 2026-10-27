@@ -1,0 +1,13 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "extra": {
+    "flow_run_id": "azure_20250425.8.1",
+    "remote_url": "https://github.com/conda-forge/httpcore-feedstock",
+    "sha": "be471b1831ed3f30cc69eb6937b7eef4e2bf8cae"
+  },
+  "home": "https://github.com/encode/httpcore",
+  "license": "BSD-3-Clause",
+  "summary": "The next generation HTTP client."
+}

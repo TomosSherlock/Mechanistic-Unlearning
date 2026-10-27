@@ -1,0 +1,22 @@
+{
+  "name": "cached_property",
+  "version": "2.0.1",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "cached_property-2.0.1-pyhcf101f3_0.conda",
+  "md5": "256d863ded0f79464391a075944d24a6",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/cached_property-2.0.1-pyhcf101f3_0.conda",
+  "sha256": "4bd96dab5a434e4ee59fb6910cae704d4c5b453907d4886272a9943d37e42b6f",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1787678456483,
+  "size": 16597
+}

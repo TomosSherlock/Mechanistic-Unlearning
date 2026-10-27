@@ -1,0 +1,13 @@
+{
+  "etag": "\"3cb05ed6aed88ee27d6ef79fa0f76794\"",
+  "mod": "Tue, 06 Oct 2026 10:30:21 GMT",
+  "url": "https://conda.anaconda.org/pytorch/noarch/repodata_shards.msgpack.zst",
+  "cache_control": "public, max-age=1200",
+  "has_shards": {
+    "last_checked": "2026-10-06T10:41:05.649675Z",
+    "value": true
+  },
+  "mtime_ns": 1791283265650053465,
+  "size": 537,
+  "refresh_ns": 1791283265650374000
+}

@@ -1,0 +1,21 @@
+{
+  "name": "backports",
+  "version": "1.0",
+  "build": "pyhd8ed1ab_5",
+  "build_number": 5,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "backports-1.0-pyhd8ed1ab_5.conda",
+  "md5": "767d508c1a67e02ae8f50e44cacfadb2",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/backports-1.0-pyhd8ed1ab_5.conda",
+  "sha256": "e1c3dc8b5aa6e12145423fed262b4754d70fec601339896b9ccf483178f690a6",
+  "depends": [
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1733218168786,
+  "size": 7069
+}

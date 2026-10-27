@@ -1,0 +1,69 @@
+# This file created by conda-build 24.3.0
+# ------------------------------------------------
+
+package:
+  name: libasprintf
+  version: 0.22.5
+source:
+  patches: null
+  sha256: fe10c37353213d78a5b83d48af231e005c4da84db5ce88037d88355938259640
+  url: https://ftp.gnu.org/pub/gnu/gettext/gettext-0.22.5.tar.xz
+build:
+  ignore_run_exports:
+    - libcxx
+    - libiconv
+  number: 2
+  run_exports:
+    - libasprintf >=0.22.5,<1.0a0
+  string: h661eb56_2
+requirements:
+  build:
+    - _libgcc_mutex 0.1 conda_forge
+    - _openmp_mutex 4.5 2_gnu
+    - binutils_impl_linux-64 2.40 hf600244_0
+    - binutils_linux-64 2.40 hdade7a5_3
+    - gcc_impl_linux-64 12.3.0 he2b93b0_5
+    - gcc_linux-64 12.3.0 h6477408_3
+    - gxx_impl_linux-64 12.3.0 he2b93b0_5
+    - gxx_linux-64 12.3.0 h4a1b8e8_3
+    - kernel-headers_linux-64 2.6.32 he073ed8_17
+    - ld_impl_linux-64 2.40 h41732ed_0
+    - libgcc-devel_linux-64 12.3.0 h8bca6fd_105
+    - libgcc-ng 13.2.0 h807b86a_5
+    - libgomp 13.2.0 h807b86a_5
+    - libsanitizer 12.3.0 h0f45ef3_5
+    - libstdcxx-devel_linux-64 12.3.0 h8bca6fd_105
+    - libstdcxx-ng 13.2.0 h7e041cc_5
+    - libtool 2.4.7 h27087fc_0
+    - make 4.3 hd18ef5c_1
+    - sysroot_linux-64 2.12 he073ed8_17
+  host:
+    - _libgcc_mutex 0.1 conda_forge
+    - _openmp_mutex 4.5 2_gnu
+    - libgcc-ng 13.2.0 h807b86a_5
+    - libgomp 13.2.0 h807b86a_5
+    - libstdcxx-ng 13.2.0 h7e041cc_5
+  run:
+    - libgcc-ng >=12
+    - libstdcxx-ng >=12
+test:
+  commands:
+    - test -f ${PREFIX}/lib/libasprintf.so.0
+    - test ! -f ${PREFIX}/lib/libasprintf$SHLIB_EXT
+about:
+  home: https://www.gnu.org/software/gettext/
+  license: LGPL-2.1-or-later
+  license_file: COPYING
+  summary: C-style formatted output in C++
+extra:
+  copy_test_source_files: true
+  feedstock-name: gettext
+  final: true
+  flow_run_id: azure_20240407.2.1
+  recipe-maintainers:
+    - ocefpaf
+    - pkgw
+    - scopatz
+    - xhochy
+  remote_url: https://github.com/conda-forge/gettext-feedstock
+  sha: 5fd89834e7b3df53d5c92afde6a8099a2c68d134

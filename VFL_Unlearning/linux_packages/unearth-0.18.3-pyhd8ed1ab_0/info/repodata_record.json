@@ -1,0 +1,25 @@
+{
+  "name": "unearth",
+  "version": "0.18.3",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "unearth-0.18.3-pyhd8ed1ab_0.conda",
+  "md5": "2f0f2fb0f8a61529464d95a87b10eda0",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/unearth-0.18.3-pyhd8ed1ab_0.conda",
+  "sha256": "00a56cdd16bf3a398f6e87d7696c92a3012d823b8e42ba7d3bda2ec2fa5d8947",
+  "depends": [
+    "cached-property >=1.5.2",
+    "httpx",
+    "packaging >=20",
+    "python >=3.10",
+    "requests >=2.25"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1786845009822,
+  "size": 288616
+}

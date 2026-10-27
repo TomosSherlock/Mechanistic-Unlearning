@@ -1,0 +1,50 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 0.2.3
+
+package:
+  name: comm
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/c/comm/comm-${{ version }}.tar.gz
+  sha256: 2dc8048c10962d55d7ad693be1e7045d891b7ce8d999c97963a5e3e99c055971
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - hatchling
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports:
+        - comm
+        - comm.base_comm
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - 3.13.*
+
+about:
+  summary: Python Comm implementation for the Jupyter kernel protocol
+  description: Python Comm implementation for the Jupyter kernel protocol
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/ipython/comm
+
+extra:
+  recipe-maintainers:
+    - apmorton
+    - martinRenou
+    - bollwyvl

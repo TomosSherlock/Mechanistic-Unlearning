@@ -1,0 +1,22 @@
+{
+  "name": "semver",
+  "version": "3.1.0",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "semver-3.1.0-pyh5ded981_0.conda",
+  "md5": "82ad3c5449650f22625ee569fe61c518",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/semver-3.1.0-pyh5ded981_0.conda",
+  "sha256": "982fe22d9c84d32fd0c87f6651b4013917ad381b640e93376a5c311b84c0dd7c",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1789890356943,
+  "size": 23394
+}

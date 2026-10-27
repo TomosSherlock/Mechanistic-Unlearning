@@ -1,0 +1,27 @@
+{
+  "name": "httpcore",
+  "version": "1.0.9",
+  "build": "pyh29332c3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "httpcore-1.0.9-pyh29332c3_0.conda",
+  "md5": "4f14640d58e2cc0aa0819d9d8ba125bb",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/httpcore-1.0.9-pyh29332c3_0.conda",
+  "sha256": "04d49cb3c42714ce533a8553986e1642d0549a05dc5cc48e0d43ff5be6679a5b",
+  "depends": [
+    "python >=3.9",
+    "h11 >=0.16",
+    "h2 >=3,<5",
+    "sniffio 1.*",
+    "anyio >=4.0,<5.0",
+    "certifi",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1745602916758,
+  "size": 49483
+}

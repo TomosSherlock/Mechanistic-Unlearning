@@ -1,0 +1,1 @@
+["click ==8.*", "pip", "python 3.9.*", "pygments ==2.*", "rich >=10,<13"]

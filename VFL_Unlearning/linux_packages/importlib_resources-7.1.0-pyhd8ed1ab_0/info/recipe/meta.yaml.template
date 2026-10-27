@@ -1,0 +1,68 @@
+{% set version = "7.1.0" %}
+
+package:
+  name: importlib_resources
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/i/importlib_resources/importlib_resources-{{ version }}.tar.gz
+  sha256: 0722d4c6212489c530f2a145a34c0a7a3b4721bc96a15fada5930e2a0b760708
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - pip
+    - setuptools
+    - setuptools_scm >=3.4.1
+    # setuptools_scm[toml]
+    - toml
+  run:
+    - python >={{ python_min }}
+    - zipp >=3.1.0
+  run_constrained:
+    - {{ pin_subpackage("importlib-resources", max_pin="x.x.x") }}
+
+test:
+  requires:
+    - pip
+    - python {{ python_min }}
+  commands:
+    - pip check
+  imports:
+    - importlib_resources
+
+outputs:
+  - name: importlib_resources
+  - name: importlib-resources
+    build:
+      noarch: python
+    requirements:
+      host:
+        - python {{ python_min }}
+      run:
+        - {{ pin_subpackage("importlib_resources", max_pin="x.x.x") }}
+        - python >={{ python_min }}
+    test:
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+      imports:
+        - importlib_resources
+
+about:
+  home: http://importlib-resources.readthedocs.io
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Backport of Python 3.7's standard library `importlib.resources`
+
+extra:
+  feedstock-name: importlib_resources
+  recipe-maintainers:
+    - ocefpaf

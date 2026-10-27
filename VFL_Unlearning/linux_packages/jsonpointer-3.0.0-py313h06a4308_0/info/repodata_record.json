@@ -1,0 +1,21 @@
+{
+  "name": "jsonpointer",
+  "version": "3.0.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "jsonpointer-3.0.0-py313h06a4308_0.conda",
+  "md5": "af07fefbc353b9e3292ad9e0d563d9be",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1753788560523,
+  "size": 21361
+}

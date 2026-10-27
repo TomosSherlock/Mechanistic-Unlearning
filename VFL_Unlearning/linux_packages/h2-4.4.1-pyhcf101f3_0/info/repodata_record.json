@@ -1,0 +1,24 @@
+{
+  "name": "h2",
+  "version": "4.4.1",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "h2-4.4.1-pyhcf101f3_0.conda",
+  "md5": "e652ac7756069c456d0da2a922cd7df5",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/h2-4.4.1-pyhcf101f3_0.conda",
+  "sha256": "307dd6ec90140c3cf4171071b0e5e870abec314f4565c1edd5bc433e942cdcc0",
+  "depends": [
+    "python >=3.10",
+    "hyperframe >=6.1,<7",
+    "hpack >=4.2,<5",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1785796355216,
+  "size": 100789
+}

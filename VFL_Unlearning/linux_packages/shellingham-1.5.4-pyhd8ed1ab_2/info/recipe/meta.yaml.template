@@ -1,0 +1,45 @@
+{% set name = "shellingham" %}
+{% set version = "1.5.4" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/shellingham-{{ version }}.tar.gz
+  sha256: 8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de
+
+build:
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 2
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - setuptools
+    - pip
+  run:
+    - python >={{ python_min }}
+
+test:
+  imports:
+    - shellingham
+    - shellingham.posix
+  commands:
+    - pip check
+  requires:
+    - pip
+    - python {{ python_min }}
+
+about:
+  home: https://github.com/sarugaku/shellingham
+  dev_url: https://github.com/sarugaku/shellingham
+  summary: Tool to Detect Surrounding Shell
+  license: MIT
+  license_file:
+    - LICENSE
+
+extra:
+  recipe-maintainers:
+    - ocefpaf

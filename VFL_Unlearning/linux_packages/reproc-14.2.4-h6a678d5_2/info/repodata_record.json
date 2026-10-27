@@ -1,0 +1,20 @@
+{
+  "name": "reproc",
+  "version": "14.2.4",
+  "build": "h6a678d5_2",
+  "build_number": 2,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "reproc-14.2.4-h6a678d5_2.conda",
+  "md5": "3c6dbc6c60b3897222d79359343e90fa",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1714680903817,
+  "size": 29681
+}

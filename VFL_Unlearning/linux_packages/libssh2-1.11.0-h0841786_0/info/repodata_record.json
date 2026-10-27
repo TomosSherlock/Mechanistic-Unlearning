@@ -1,0 +1,24 @@
+{
+  "name": "libssh2",
+  "version": "1.11.0",
+  "build": "h0841786_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libssh2-1.11.0-h0841786_0.conda",
+  "md5": "1f5a58e686b13bcfde88b93f547d23fe",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libssh2-1.11.0-h0841786_0.conda",
+  "sha256": "50e47fd9c4f7bf841a11647ae7486f65220cfc988ec422a4475fe8d5a823824d",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12",
+    "libzlib >=1.2.13,<2.0.0a0",
+    "openssl >=3.1.1,<4.0a0"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1685837707056,
+  "size": 271133
+}

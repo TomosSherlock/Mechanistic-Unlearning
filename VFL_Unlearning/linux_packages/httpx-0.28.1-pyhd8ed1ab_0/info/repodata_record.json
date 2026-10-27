@@ -1,0 +1,26 @@
+{
+  "name": "httpx",
+  "version": "0.28.1",
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "httpx-0.28.1-pyhd8ed1ab_0.conda",
+  "md5": "d6989ead454181f4f9bc987d3dc4e285",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/httpx-0.28.1-pyhd8ed1ab_0.conda",
+  "sha256": "cd0f1de3697b252df95f98383e9edb1d00386bfdd03fdf607fa42fe5fcb09950",
+  "depends": [
+    "anyio",
+    "certifi",
+    "httpcore 1.*",
+    "idna",
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "package_type": "noarch_python",
+  "timestamp": 1733663449209,
+  "size": 63082
+}

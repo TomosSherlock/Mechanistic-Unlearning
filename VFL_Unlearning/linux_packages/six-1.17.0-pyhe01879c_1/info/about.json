@@ -1,0 +1,16 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "Six provides simple utilities for wrapping over differences between\nPython 2 and Python 3. It is intended to support codebases that work on\nboth Python 2 and 3 without modification. six consists of only one Python\nfile, so it is painless to copy into a project.",
+  "dev_url": "https://github.com/benjaminp/six",
+  "doc_url": "https://six.readthedocs.io/",
+  "extra": {
+    "flow_run_id": "azure_20250722.1.1",
+    "remote_url": "https://github.com/conda-forge/six-feedstock",
+    "sha": "13b94bce84df53837f84192511998ace91439cbb"
+  },
+  "home": "https://six.readthedocs.io/",
+  "license": "MIT",
+  "summary": "Python 2 and 3 compatibility utilities"
+}

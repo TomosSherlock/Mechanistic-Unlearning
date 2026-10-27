@@ -1,0 +1,21 @@
+{
+  "name": "libgettextpo",
+  "version": "0.22.5",
+  "build": "h59595ed_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "libgettextpo-0.22.5-h59595ed_2.conda",
+  "md5": "172bcc51059416e7ce99e7b528cede83",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/libgettextpo-0.22.5-h59595ed_2.conda",
+  "sha256": "e2f784564a2bdc6f753f00f63cc77c97601eb03bc89dccc4413336ec6d95490b",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12"
+  ],
+  "constrains": [],
+  "license": "GPL-3.0-or-later",
+  "timestamp": 1712512286907,
+  "size": 170582
+}

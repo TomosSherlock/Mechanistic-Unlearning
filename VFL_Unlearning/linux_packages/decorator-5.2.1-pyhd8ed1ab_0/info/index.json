@@ -1,0 +1,15 @@
+{
+  "arch": null,
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.9"
+  ],
+  "license": "BSD-2-Clause",
+  "name": "decorator",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1740385067843,
+  "version": "5.2.1"
+}

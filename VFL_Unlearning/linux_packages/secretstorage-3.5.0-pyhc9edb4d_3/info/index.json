@@ -1,0 +1,18 @@
+{
+  "build": "pyhc9edb4d_3",
+  "build_number": 3,
+  "depends": [
+    "__linux",
+    "cryptography >=2.0",
+    "dbus",
+    "jeepney >=0.6",
+    "python >=3.11",
+    "python"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "secretstorage",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1790028131640,
+  "version": "3.5.0"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "python-installer",
+  "version": "1.0.1",
+  "build": "pyh332efcf_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "python-installer-1.0.1-pyh332efcf_0.conda",
+  "md5": "5cc7e2e78962dc902cae9e29c2aa4b2f",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/python-installer-1.0.1-pyh332efcf_0.conda",
+  "sha256": "9c18fa1ebd0c839b6ea12e99d510a0968c2288cc423185cb34bf7332b97684e9",
+  "depends": [
+    "python >=3.10"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1778554210561,
+  "size": 239330
+}

@@ -1,0 +1,68 @@
+{% set name = "anaconda-auth" %}
+{% set version = "0.12.3" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/anaconda_auth-{{ version }}.tar.gz
+  sha256: 46825c346084a311f4f2cb76862cdbf5494b997609d9af30d61571738771cab6
+
+build:
+  entry_points:
+    - conda-token = anaconda_auth._conda.conda_token:cli
+  noarch: python
+  script:
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+    # Do not use python -m ... here to avoid unnecessary imports
+    - {{ PYTHON }} ./src/anaconda_auth/_conda/config.py --install
+  number: 0
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - hatchling
+    - hatch-vcs >=0.3
+    - setuptools-scm >=7.1
+    - pip
+  run:
+    - python >={{ python_min }}
+    - keyring
+    - pkce
+    - python-dotenv
+    - pydantic
+    - pyjwt
+    - requests
+    - cryptography >=3.4.0
+    - semver <4
+    - anaconda-cli-base >=0.7.0
+  run_constrained:
+    - conda >=23.9.0
+    - conda-token >=0.7.0
+    - anaconda-cloud-auth >=0.8
+
+test:
+  imports:
+    - anaconda_auth
+  commands:
+    - conda-token --help
+    - anaconda auth --help
+    - python -c "from anaconda_auth import __version__; assert __version__ == \"{{ version }}\""
+    - python -m anaconda_auth._conda.config --verify
+  requires:
+    - python {{ python_min }}
+    - conda
+
+about:
+  summary: A client auth library for Anaconda APIs
+  doc_url: https://anaconda.github.io/anaconda-auth
+  dev_url: https://github.com/anaconda/anaconda-auth
+  home: https://anaconda.com
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - AlbertDeFusco
+    - mattkram

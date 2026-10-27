@@ -1,0 +1,27 @@
+{
+  "name": "gettext",
+  "version": "0.22.5",
+  "build": "h59595ed_2",
+  "build_number": 2,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "gettext-0.22.5-h59595ed_2.conda",
+  "md5": "219ba82e95d7614cf7140d2a4afc0926",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/gettext-0.22.5-h59595ed_2.conda",
+  "sha256": "386181254ddd2aed1fccdfc217da5b6545f6df4e9979ad8e08f5e91e22eaf7dc",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "gettext-tools 0.22.5 h59595ed_2",
+    "libasprintf 0.22.5 h661eb56_2",
+    "libasprintf-devel 0.22.5 h661eb56_2",
+    "libgcc-ng >=12",
+    "libgettextpo 0.22.5 h59595ed_2",
+    "libgettextpo-devel 0.22.5 h59595ed_2",
+    "libstdcxx-ng >=12"
+  ],
+  "constrains": [],
+  "license": "LGPL-2.1-or-later AND GPL-3.0-or-later",
+  "timestamp": 1712512357949,
+  "size": 475058
+}

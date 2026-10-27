@@ -1,0 +1,4 @@
+{
+  "channel_targets": "conda-forge main",
+  "antic": "0.2"
+}

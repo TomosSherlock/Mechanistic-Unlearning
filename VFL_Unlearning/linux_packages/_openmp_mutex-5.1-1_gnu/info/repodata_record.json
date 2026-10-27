@@ -1,0 +1,22 @@
+{
+  "name": "_openmp_mutex",
+  "version": "5.1",
+  "build": "1_gnu",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "_openmp_mutex-5.1-1_gnu.conda",
+  "md5": "71d281e9c2192cb3fa425655a8defb85",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "_libgcc_mutex 0.1 main",
+    "libgomp >=7.5.0"
+  ],
+  "constrains": [
+    "openmp_impl 9999"
+  ],
+  "license": "BSD-3-Clause",
+  "timestamp": 1652859733309,
+  "size": 21315
+}

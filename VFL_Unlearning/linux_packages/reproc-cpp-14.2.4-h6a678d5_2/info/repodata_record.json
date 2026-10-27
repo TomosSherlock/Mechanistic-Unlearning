@@ -1,0 +1,22 @@
+{
+  "name": "reproc-cpp",
+  "version": "14.2.4",
+  "build": "h6a678d5_2",
+  "build_number": 2,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "reproc-cpp-14.2.4-h6a678d5_2.conda",
+  "md5": "b03aa4903158279f003e7032ab9f5601",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0",
+    "reproc 14.2.4 h6a678d5_2"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1714680919761,
+  "size": 21248
+}

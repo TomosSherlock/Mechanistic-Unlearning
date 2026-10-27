@@ -1,0 +1,21 @@
+{
+  "name": "pluggy",
+  "version": "1.5.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "pluggy-1.5.0-py313h06a4308_0.conda",
+  "md5": "ea142d52281afe8e9a79e4a33c023e41",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1733169630034,
+  "size": 47336
+}

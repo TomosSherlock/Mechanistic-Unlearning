@@ -1,0 +1,18 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/jaraco/jaraco.context",
+  "doc_url": "https://jaracocontext.readthedocs.io/",
+  "extra": {
+    "flow_run_id": "github_24779302023",
+    "recipe-maintainers": [
+      "carlodri"
+    ],
+    "remote_url": "https://github.com/conda-forge/jaraco.context-feedstock",
+    "sha": "608bbc8d3be7715f055cba97eacca21c8f8406e1"
+  },
+  "home": "https://github.com/jaraco/jaraco.context",
+  "license": "MIT",
+  "summary": "Context managers by jaraco"
+}

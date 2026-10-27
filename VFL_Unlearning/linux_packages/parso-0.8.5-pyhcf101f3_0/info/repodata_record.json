@@ -1,0 +1,20 @@
+{
+  "name": "parso",
+  "version": "0.8.5",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "parso-0.8.5-pyhcf101f3_0.conda",
+  "md5": "a110716cdb11cf51482ff4000dc253d7",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1755974222274,
+  "size": 81562
+}

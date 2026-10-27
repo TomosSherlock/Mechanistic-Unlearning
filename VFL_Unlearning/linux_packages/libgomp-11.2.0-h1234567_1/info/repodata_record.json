@@ -1,0 +1,19 @@
+{
+  "name": "libgomp",
+  "version": "11.2.0",
+  "build": "h1234567_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "libgomp-11.2.0-h1234567_1.conda",
+  "md5": "b372c0eea9b60732fdae4b817a63c8cd",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "_libgcc_mutex 0.1 main"
+  ],
+  "constrains": [],
+  "license": "GPL-3.0-only WITH GCC-exception-3.1",
+  "timestamp": 1654090775721,
+  "size": 485145
+}

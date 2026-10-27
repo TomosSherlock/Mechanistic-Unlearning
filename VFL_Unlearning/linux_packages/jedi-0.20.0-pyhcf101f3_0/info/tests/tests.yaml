@@ -1,0 +1,14 @@
+- python:
+    imports:
+    - jedi
+    - jedi.api
+    - jedi.common
+    - jedi.inference
+    - jedi.inference.compiled
+    - jedi.inference.compiled.subprocess
+    - jedi.inference.gradual
+    - jedi.inference.value
+    - jedi.plugins
+    python_version:
+    - 3.10.*
+    - '*'

@@ -1,0 +1,29 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/ipython/traitlets",
+  "doc_url": "https://traitlets.readthedocs.org/",
+  "extra": {
+    "flow_run_id": "github_30815602719",
+    "recipe-maintainers": [
+      "jakirkham",
+      "pelson",
+      "minrk",
+      "SylvainCorlay",
+      "ocefpaf",
+      "Carreau",
+      "takluyver",
+      "rmorshea",
+      "blink1073",
+      "zsailer",
+      "bollwyvl",
+      "davidbrochart"
+    ],
+    "remote_url": "https://github.com/conda-forge/traitlets-feedstock",
+    "sha": "e5bcc2a0652d7c9bf6972f4d279271c58a330bf6"
+  },
+  "home": "https://pypi.org/project/traitlets",
+  "license": "BSD-3-Clause",
+  "summary": "Configuration system for Python applications"
+}

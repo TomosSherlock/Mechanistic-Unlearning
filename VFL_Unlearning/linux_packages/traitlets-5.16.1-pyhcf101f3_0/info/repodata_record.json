@@ -1,0 +1,22 @@
+{
+  "name": "traitlets",
+  "version": "5.16.1",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "traitlets-5.16.1-pyhcf101f3_0.conda",
+  "md5": "a79bf97561232a31447b6246c2153ab5",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/traitlets-5.16.1-pyhcf101f3_0.conda",
+  "sha256": "03dba5917f944c6684ab44c81daacac1624cd148e4b2cae215dcec594a210c48",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1785761789772,
+  "size": 116935
+}

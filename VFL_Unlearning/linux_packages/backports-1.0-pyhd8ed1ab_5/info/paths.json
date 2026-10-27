@@ -1,0 +1,11 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/backports/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "28db1c8cbca9b4151e534ecab70c1115d4c9a8055444c7f81a333d0aa5e7c4c2",
+      "size_in_bytes": 227
+    }
+  ],
+  "paths_version": 1
+}

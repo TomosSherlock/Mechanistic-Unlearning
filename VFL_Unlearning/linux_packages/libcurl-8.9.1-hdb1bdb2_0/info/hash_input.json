@@ -1,0 +1,11 @@
+{
+  "libssh2": "1",
+  "zstd": "1.5",
+  "target_platform": "linux-64",
+  "openssl": "3",
+  "zlib": "1",
+  "krb5": "1.21",
+  "c_compiler_version": "12",
+  "channel_targets": "conda-forge main",
+  "c_compiler": "gcc"
+}

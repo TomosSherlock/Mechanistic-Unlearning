@@ -1,0 +1,9 @@
+{
+  "noarch": {
+    "type": "python",
+    "entry_points": [
+      "pysemver = semver.cli:main"
+    ]
+  },
+  "package_metadata_version": 1
+}

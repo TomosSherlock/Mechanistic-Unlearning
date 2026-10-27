@@ -1,0 +1,22 @@
+{
+  "name": "icu",
+  "version": "73.2",
+  "build": "h59595ed_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "icu-73.2-h59595ed_0.conda",
+  "md5": "cc47e1facc155f91abd89b11e48e72ff",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/icu-73.2-h59595ed_0.conda",
+  "sha256": "e12fd90ef6601da2875ebc432452590bc82a893041473bc1c13ef29001a73ea8",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12",
+    "libstdcxx-ng >=12"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "timestamp": 1692900650789,
+  "size": 12089150
+}

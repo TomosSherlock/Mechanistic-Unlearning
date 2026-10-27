@@ -1,0 +1,96 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /work/perseverance-python-buildout/aggregate/secretstorage-feedstock/recipe, last modified Tue Oct  8 10:19:53 2024
+# ------------------------------------------------
+
+package:
+  name: secretstorage
+  version: 3.3.1
+source:
+  sha256: fd666c51a6bf200643495a04abb261f83229dcb6fd8472ec393df7ffc8b6f195
+  url: https://pypi.io/packages/source/S/SecretStorage/SecretStorage-3.3.1.tar.gz
+build:
+  number: '1'
+  script: /work/perseverance-python-buildout/croot/secretstorage_1728387678881/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold/bin/python
+    -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+  string: py313h06a4308_1
+requirements:
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2024.9.24 h06a4308_0
+    - dbus 1.13.18 hb2f20db_0
+    - expat 2.6.3 h6a678d5_0
+    - glib 2.78.4 h6a678d5_0
+    - glib-tools 2.78.4 h6a678d5_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libglib 2.78.4 hdc74915_0
+    - libgomp 11.2.0 h1234567_1
+    - libiconv 1.16 h5eee18b_3
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.15 h5eee18b_0
+    - pcre2 10.42 hebb0a14_1
+    - pip 24.2 py313h06a4308_0
+    - python 3.13.0 hf623796_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 75.1.0 py313h06a4308_0
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h39e8969_0
+    - tzdata 2024b h04d1e81_0
+    - wheel 0.37.1 pyhd3eb1b0_0
+    - xz 5.4.6 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - cryptography >=2.0
+    - dbus >=1.13.18,<2.0a0
+    - jeepney >=0.6
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+test:
+  commands:
+    - pip check
+  imports:
+    - secretstorage
+  requires:
+    - pip
+about:
+  description: 'This module provides a way for securely storing passwords and other
+    secrets.
+
+    It uses D-Bus Secret Service API that is supported by GNOME Keyring (since
+
+    version 2.30) and KSecretsService.
+
+    The main classes provided are secretstorage.Item, representing a secret item
+
+    (that has a label, a secret and some attributes) and secretstorage.Collection,
+
+    a place items are stored in.
+
+    SecretStorage supports most of the functions provided by Secret Service,
+
+    including creating and deleting items and collections, editing items, locking
+
+    and unlocking collections (asynchronous unlocking is also supported).
+
+    '
+  dev_url: https://github.com/mitya57/secretstorage
+  doc_url: https://secretstorage.readthedocs.io/en/latest/
+  home: https://github.com/mitya57/secretstorage
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: Provides a way for securely storing passwords and other secrets.
+extra:
+  copy_test_source_files: true
+  final: true
+  recipe-maintainers:
+    - CurtLH
+    - ccordoba12

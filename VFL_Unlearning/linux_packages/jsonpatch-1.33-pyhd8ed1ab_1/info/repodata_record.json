@@ -1,0 +1,23 @@
+{
+  "name": "jsonpatch",
+  "version": "1.33",
+  "build": "pyhd8ed1ab_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jsonpatch-1.33-pyhd8ed1ab_1.conda",
+  "md5": "cb60ae9cf02b9fcb8004dec4089e5691",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jsonpatch-1.33-pyhd8ed1ab_1.conda",
+  "sha256": "304955757d1fedbe344af43b12b5467cca072f83cce6109361ba942e186b3993",
+  "depends": [
+    "jsonpointer >=1.9",
+    "python >=3.9"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "package_type": "noarch_python",
+  "timestamp": 1733814664790,
+  "size": 17311
+}

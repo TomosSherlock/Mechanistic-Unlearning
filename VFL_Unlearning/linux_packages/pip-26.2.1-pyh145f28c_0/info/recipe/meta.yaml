@@ -1,0 +1,78 @@
+# This file created by conda-build 26.7.0
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Wed Aug  5 07:18:51 2026
+# ------------------------------------------------
+
+package:
+  name: pip
+  version: 26.2.1
+source:
+  url: https://pypi.org/packages/source/p/pip/pip-26.2.1.tar.gz
+  sha256: f6ad667e89a1fe78046c8f13232b247200f5258d7828f3f7883d660878e0813f
+build:
+  noarch: python
+  number: '0'
+  disable_pip: true
+  entry_points:
+    - pip = pip._internal.cli.main:main
+    - pip3 = pip._internal.cli.main:main
+  string: pyh145f28c_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_10
+    - ca-certificates 2026.7.22 hbd8a1cb_0
+    - flit-core 4.0.2 pyhc364b38_0
+    - icu 78.3 h54a6638_2
+    - ld_impl_linux-64 2.46.1 default_hbd61a6d_102
+    - libexpat 2.8.1 hecca717_1
+    - libffi 3.5.2 h3435931_0
+    - libgcc 16.1.0 ha9f2e26_1
+    - libgomp 16.1.0 he0feb66_1
+    - liblzma 5.8.3 hb03c661_0
+    - libmpdec 4.0.0 hb03c661_1
+    - libsqlite 3.53.4 hf4e2dac_0
+    - libstdcxx 16.1.0 h934c35e_1
+    - libuuid 2.42.2 h5347b49_0
+    - libzlib 1.3.2 h25fd6f3_3
+    - ncurses 6.6 hdb14827_0
+    - openssl 3.6.3 h35e630c_0
+    - packaging 26.3 pyhc364b38_0
+    - python 3.14.6 habeac84_101_cp314
+    - python_abi 3.14 8_cp314
+    - readline 8.3 h853b02a_0
+    - setuptools 83.0.0 pyh332efcf_0
+    - tk 8.6.13 noxft_hd70dff1_3
+    - tzdata 2026c h151e31d_0
+    - wheel 0.47.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_6
+  run:
+    - python >=3.13.0a0
+test:
+  requires:
+    - python 3.13.0.*
+  commands:
+    - pip -h
+    - pip list
+  imports:
+    - pip
+about:
+  home: https://pip.pypa.io/en/stable/
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: PyPA recommended tool for installing Python packages
+  doc_url: https://pip.pypa.io/en/stable/
+  dev_url: https://github.com/pypa/pip
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - mingwandroid
+    - msarahan
+    - ocefpaf
+    - pelson
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_30984532431
+  remote_url: https://github.com/conda-forge/pip-feedstock
+  sha: e90f5ef13d4da0781a8980c8ee9f56dfff9ef10e

@@ -1,0 +1,17 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "description": "By design asyncio does not allow its event loop to be nested. This presents a practical problem: When in an environment where the event loop is already running it's impossible to run tasks and wait for the result. Trying to do so will give the error \"RuntimeError: This event loop is already running\".\n\nThe issue pops up in various environments, such as web servers, GUI applications and in Jupyter notebooks.\n\nThis module patches asyncio to allow nested use of asyncio.run and loop.run_until_complete.\nnest-asyncio2 is a fork of the unmaintained nest_asyncio, with the following changes:\n\n- Support setting run_close_loop to avoid leaked event loop.\n- Python 3.12 support\n  - loop_factory parameter support\n- Python 3.14 support\n  - Fix broken asyncio.current_task() and others\n  - Fix DeprecationWarning: 'asyncio.get_event_loop_policy' is deprecated and slated for removal in Python 3.16\n- To avoid potential bugs, apply() will warn if asyncio is already patched by nest_asyncio on Python 3.12+.\n  You can also set error_on_mispatched=True to turn the warning into a RuntimeError, regardless of the Python version. See #1 for details.\n\nThere is no behavior change on Python < 3.12.\nAll interfaces are kept as they are. To migrate, you just need to change the package and module name to nest_asyncio2.",
+  "extra": {
+    "flow_run_id": "github_35977853581",
+    "recipe-maintainers": [
+      "claudiushaag"
+    ],
+    "remote_url": "https://github.com/conda-forge/nest-asyncio2-feedstock",
+    "sha": "a892a71a430954f0031e7945788a0cdec94d7f91"
+  },
+  "home": "https://github.com/Chaoses-Ib/nest-asyncio2",
+  "license": "BSD-2-Clause",
+  "summary": "Patch asyncio to allow nested event loops"
+}

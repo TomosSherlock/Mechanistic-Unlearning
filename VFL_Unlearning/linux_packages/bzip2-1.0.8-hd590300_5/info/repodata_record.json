@@ -1,0 +1,22 @@
+{
+  "name": "bzip2",
+  "version": "1.0.8",
+  "build": "hd590300_5",
+  "build_number": 5,
+  "channel": "https://conda.anaconda.org/conda-forge/linux-64",
+  "subdir": "linux-64",
+  "fn": "bzip2-1.0.8-hd590300_5.conda",
+  "md5": "69b8b6202a07720f448be700e300ccf4",
+  "url": "https://conda.anaconda.org/conda-forge/linux-64/bzip2-1.0.8-hd590300_5.conda",
+  "sha256": "242c0c324507ee172c0e0dd2045814e746bb303d1eb78870d182ceb0abc726a8",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=12"
+  ],
+  "constrains": [],
+  "license": "bzip2-1.0.6",
+  "license_family": "BSD",
+  "timestamp": 1699279927352,
+  "size": 254228
+}

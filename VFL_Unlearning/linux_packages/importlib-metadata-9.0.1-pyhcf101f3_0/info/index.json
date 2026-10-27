@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "depends": [
+    "python >=3.10",
+    "zipp >=3.20",
+    "python"
+  ],
+  "license": "Apache-2.0",
+  "name": "importlib-metadata",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1787943971257,
+  "version": "9.0.1"
+}

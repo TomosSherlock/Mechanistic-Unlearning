@@ -1,0 +1,20 @@
+{
+  "name": "pthread-stubs",
+  "version": "0.3",
+  "build": "h0ce48e5_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "pthread-stubs-0.3-h0ce48e5_1.conda",
+  "md5": "973a642312d2a28927aaf5b477c67250",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=7.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1505733967605,
+  "size": 5360
+}

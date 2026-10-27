@@ -1,0 +1,22 @@
+{
+  "name": "wcwidth",
+  "version": "0.8.5",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "wcwidth-0.8.5-pyh5ded981_0.conda",
+  "md5": "94639b8adfe53d0dc64f6ff501f11a37",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/wcwidth-0.8.5-pyh5ded981_0.conda",
+  "sha256": "f438b67dacd81b78bdbcb2a06c0a658b34ccf626b608b47d74e56f2220c7810a",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1790184282876,
+  "size": 141273
+}

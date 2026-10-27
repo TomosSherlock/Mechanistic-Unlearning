@@ -1,0 +1,16 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "extra": {
+    "flow_run_id": "github_35895298501",
+    "recipe-maintainers": [
+      "ocefpaf"
+    ],
+    "remote_url": "https://github.com/conda-forge/wcwidth-feedstock",
+    "sha": "f675ba56e383bdfed604b93a3e48632cab032da2"
+  },
+  "home": "https://github.com/jquast/wcwidth",
+  "license": "MIT",
+  "summary": "Measures the displayed width of unicode strings in a terminal"
+}

@@ -1,0 +1,9 @@
+{
+  "noarch": {
+    "type": "python",
+    "entry_points": [
+      "cph = conda_package_handling.cli:main"
+    ]
+  },
+  "package_metadata_version": 1
+}

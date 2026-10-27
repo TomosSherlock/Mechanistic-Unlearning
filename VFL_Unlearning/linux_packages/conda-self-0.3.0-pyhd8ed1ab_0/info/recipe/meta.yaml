@@ -1,0 +1,86 @@
+# This file created by conda-build 26.7.1
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Tue Sep 22 18:26:10 2026
+# ------------------------------------------------
+
+package:
+  name: conda-self
+  version: 0.3.0
+source:
+  url: https://github.com/conda-incubator/conda-self/archive/0.3.0.tar.gz
+  sha256: 59ac0446537c94fc16177007ee4593dbd713e04432ca4a191badb799dfb26068
+build:
+  number: '0'
+  noarch: python
+  script_env:
+    - SETUPTOOLS_SCM_PRETEND_VERSION=0.3.0
+  script:
+    - python -m pip install . --no-deps --no-build-isolation -vv
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_10
+    - ca-certificates 2026.7.22 hbd8a1cb_0
+    - editables 0.6 pyhcf101f3_0
+    - hatch-vcs 0.5.0 pyhd8ed1ab_0
+    - hatchling 1.32.4 pyh5ded981_0
+    - icu 78.3 py310h44b86e0_2
+    - ld_impl_linux-64 2.46.1 default_hbd61a6d_102
+    - libexpat 2.8.4 hd2095e1_0
+    - libffi 3.7.0 h81df57d_1
+    - libgcc 16.2.0 ha9f2e26_5
+    - libgomp 16.2.0 he0feb66_5
+    - liblzma 5.8.3 hb03c661_1
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libpython 3.11.16 h0c77377_2_cpython
+    - libsqlite 3.53.4 h13e7031_1
+    - libstdcxx 16.2.0 h934c35e_5
+    - libuuid 2.42.3 hcfc3c73_0
+    - libxcrypt 4.4.38 h280c20c_0
+    - libzlib 1.3.2 h25fd6f3_3
+    - ncurses 6.6 hdb14827_1
+    - openssl 3.6.4 h781a0a9_0
+    - packaging 26.3 pyhc364b38_0
+    - pathspec 1.1.1 pyhd8ed1ab_0
+    - pip 26.2.1 pyh8b19718_0
+    - pluggy 1.6.0 pyhf9edf01_1
+    - python 3.11.16 h5f976f7_2_cpython
+    - readline 8.3 hd6e31c0_1
+    - setuptools 84.0.0 pyh332efcf_0
+    - setuptools-scm 10.2.3 pyh5ded981_0
+    - tk 8.6.13 noxft_h1df4ec4_4
+    - tomli 2.4.1 pyhcf101f3_0
+    - tomlkit 0.15.1 pyhcf101f3_0
+    - trove-classifiers 2026.6.1.19 pyhcf101f3_0
+    - typing_extensions 4.16.0 pyhcf101f3_0
+    - tzdata 2026c h151e31d_0
+    - vcs_versioning 2.3.4 pyh5ded981_0
+    - wheel 0.48.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_7
+  run:
+    - conda >=26.1.1
+    - python >=3.11
+test:
+  requires:
+    - python 3.11.*
+  imports:
+    - conda_self
+  commands:
+    - conda self --help
+about:
+  home: https://github.com/conda-incubator/conda-self
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: A `self` command for conda
+  dev_url: https://github.com/conda-incubator/conda-self
+extra:
+  recipe-maintainers:
+    - jaimergp
+    - jezdez
+    - soapy1
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_35767120743
+  remote_url: https://github.com/conda-forge/conda-self-feedstock
+  sha: 08269ece534fa224f89553316bb550c89d2d7645

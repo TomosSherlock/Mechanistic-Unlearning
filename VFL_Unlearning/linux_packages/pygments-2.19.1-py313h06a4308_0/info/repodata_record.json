@@ -1,0 +1,21 @@
+{
+  "name": "pygments",
+  "version": "2.19.1",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "pygments-2.19.1-py313h06a4308_0.conda",
+  "md5": "8fcbba71964f3d4d936e846c3bc9fb13",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-2-Clause",
+  "license_family": "BSD",
+  "timestamp": 1744664137670,
+  "size": 2287169
+}

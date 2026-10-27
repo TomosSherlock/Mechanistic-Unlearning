@@ -1,0 +1,19 @@
+{
+  "name": "ld_impl_linux-64",
+  "version": "2.40",
+  "build": "h12ee557_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "ld_impl_linux-64-2.40-h12ee557_0.conda",
+  "md5": "ee672b5f635340734f58d618b7bca024",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [],
+  "constrains": [
+    "binutils_impl_linux-64 2.40"
+  ],
+  "license": "GPL-3.0-only",
+  "timestamp": 1727336193185,
+  "size": 726762
+}

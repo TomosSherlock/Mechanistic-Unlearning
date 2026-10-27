@@ -1,0 +1,129 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Tue Jun 24 14:30:56 2025
+# ------------------------------------------------
+
+package:
+  name: urllib3
+  version: 2.5.0
+source:
+  patches:
+    - patches/0001-remove-dummyserver-usage-in-tests.patch
+  sha256: 3fc47733c7e419d4bc3f6b3dc2b4f890bb743906a30d56ba4a5bfa4bbff92760
+  url: https://pypi.io/packages/source/u/urllib3/urllib3-2.5.0.tar.gz
+build:
+  number: '0'
+  script: /croot/urllib3_1750775463400/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold/bin/python
+    -m pip install . -vv --no-deps --no-build-isolation
+  string: py313h06a4308_0
+requirements:
+  build:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - patch 2.7.6 h7b6447c_1001
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2025.2.25 h06a4308_0
+    - expat 2.7.1 h6a678d5_0
+    - hatch-vcs 0.4.0 py313h06a4308_0
+    - hatchling 1.27.0 py313h06a4308_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - libxcb 1.17.0 h9b100fa_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.16 h5eee18b_0
+    - packaging 24.2 py313h06a4308_0
+    - pathspec 0.10.3 py313h06a4308_0
+    - pip 25.1 pyhc872135_2
+    - pluggy 1.5.0 py313h06a4308_0
+    - pthread-stubs 0.3 h0ce48e5_1
+    - python 3.13.5 h4612cfd_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 78.1.1 py313h06a4308_0
+    - setuptools-scm 8.3.1 py313h06a4308_1
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h993c535_1
+    - trove-classifiers 2024.10.14 py313h06a4308_0
+    - tzdata 2025b h04d1e81_0
+    - wheel 0.45.1 py313h06a4308_0
+    - xorg-libx11 1.8.12 h9b100fa_1
+    - xorg-libxau 1.0.12 h9b100fa_0
+    - xorg-libxdmcp 1.1.5 h9b100fa_0
+    - xorg-xorgproto 2024.1 h5eee18b_1
+    - xz 5.6.4 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - brotlicffi>=0.8.0
+    - pysocks >=1.5.6,<2.0,!=1.5.7
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+  run_constrained:
+    - h2 >=4,<5
+    - zstandard>=0.18.0
+test:
+  commands:
+    - pip check
+    - python -c "from importlib.metadata import version; assert(version('urllib3')=='2.5.0')"
+    - cd test && pytest -v test_collections.py test_compatibility.py test_connection.py
+      test_connectionpool.py test_exceptions.py test_fields.py test_filepost.py test_http2_connection.py
+      test_no_ssl.py test_poolmanager.py test_proxymanager.py test_queue_monkeypatch.py
+      test_response.py test_retry.py test_ssl.py test_util.py test_wait.py tz_stub.py
+  imports:
+    - urllib.parse
+    - urllib3
+    - urllib3.connection
+    - urllib3.contrib
+    - urllib3.http2
+    - urllib3.util
+  requires:
+    - h2 >=4,<5
+    - pip
+    - pytest >=8.3.4
+    - trio >=0.27.0
+    - trustme >=1.2.1
+  source_files:
+    - dummyserver
+    - test
+about:
+  description: 'urllib3 is a powerful, sanity-friendly HTTP client for Python. Much
+    of the
+
+    Python ecosystem already uses urllib3. urllib3 brings many critical features
+
+    that are missing from the Python standard libraries, such as thread safety,
+
+    connection pooling, client side ssl/tls verification, support for gzip and
+
+    deflate encodings, HTTP and SOCKS proxy support, helpers for retrying requests
+
+    and dealing with HTTP redirects.
+
+    '
+  dev_url: https://github.com/urllib3/urllib3
+  doc_url: https://urllib3.readthedocs.io
+  home: https://urllib3.readthedocs.io
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.txt
+  summary: HTTP library with thread-safe connection pooling, file post, and more.
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: e2bd0407-028a-4f23-8097-66b05a7e7cac
+  recipe-maintainers:
+    - ocefpaf
+    - pmlandwehr
+    - sethmlarson
+    - sigmavirus24
+  remote_url: git@github.com:AnacondaRecipes/urllib3-feedstock.git
+  sha: 0e800895d95672c32e111edc5f48d9be0a8210c9

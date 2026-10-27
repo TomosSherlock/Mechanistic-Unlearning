@@ -1,0 +1,22 @@
+{
+  "name": "c-ares",
+  "version": "1.34.5",
+  "build": "hef5626c_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "c-ares-1.34.5-hef5626c_0.conda",
+  "md5": "4a0059c416e26b3c5e8a8fdf11dfa811",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "__glibc >=2.17,<3.0.a0",
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1756141536117,
+  "size": 220802
+}

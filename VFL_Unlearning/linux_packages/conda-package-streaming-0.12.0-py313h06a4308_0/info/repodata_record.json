@@ -1,0 +1,23 @@
+{
+  "name": "conda-package-streaming",
+  "version": "0.12.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "conda-package-streaming-0.12.0-py313h06a4308_0.conda",
+  "md5": "adef8a1cc0462068a51c68144f05be3c",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313",
+    "requests",
+    "zstandard >=0.15"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1751307626547,
+  "size": 39456
+}

@@ -1,0 +1,78 @@
+{% set version = "3.0.53" %}
+
+package:
+  name: prompt-toolkit
+  version: {{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/prompt_toolkit/prompt_toolkit-{{ version }}.tar.gz
+  sha256: 9ec8a0ad96d5c56148b3f914aa79c1564c3fde5d2e6b876e7bc327e353cf8fa6
+
+build:
+  number: 0
+
+outputs:
+  - name: prompt-toolkit
+    build:
+      noarch: python
+    script: build_base.bat  # [win]
+    script: build_base.sh  # [not win]
+    requirements:
+      build:
+        - python                                 # [build_platform != target_platform]
+        - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+      host:
+        - python {{ python_min }}
+        - setuptools
+        - pip
+      run:
+        - python >={{ python_min }}
+        - wcwidth
+      run_constrained:
+        - prompt_toolkit {{ version }}
+    test:
+      requires:
+        - pip
+        - python {{ python_min }}
+      commands:
+        - pip check
+      imports:
+        - prompt_toolkit
+        - prompt_toolkit.clipboard
+        - prompt_toolkit.contrib
+        - prompt_toolkit.contrib.completers
+        - prompt_toolkit.contrib.regular_languages
+        - prompt_toolkit.eventloop
+        - prompt_toolkit.filters
+        - prompt_toolkit.key_binding
+        - prompt_toolkit.key_binding.bindings
+        - prompt_toolkit.layout
+
+  - name: prompt_toolkit
+    build:
+      noarch: generic
+    requirements:
+      run:
+        - {{ pin_subpackage('prompt-toolkit', max_pin="x.x.x") }}
+    test:
+      imports:
+        - prompt_toolkit
+
+about:
+  home: https://github.com/jonathanslenders/python-prompt-toolkit
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: Library for building powerful interactive command lines in Python
+  description: |
+    prompt_toolkit is a library for building powerful interactive command
+    lines and terminal applications in Python. It can be a pure Python
+    replacement for GNU readline, but it can be much more than that.
+  doc_url: http://python-prompt-toolkit.readthedocs.io
+  dev_url: https://github.com/jonathanslenders/python-prompt-toolkit
+
+extra:
+  recipe-maintainers:
+    - jakirkham
+    - ocefpaf
+    - scopatz
+    - asmeurer

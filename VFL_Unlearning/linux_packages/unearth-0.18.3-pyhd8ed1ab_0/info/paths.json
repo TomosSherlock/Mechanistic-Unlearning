@@ -1,0 +1,185 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "26cd0abded07d09d8206567d4e2777571da04f5dc1d06f35d5b20c0e9abcc5fd",
+      "size_in_bytes": 3822
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "25145b000b07add00101095636bf333d896512a379d4475bbef349ac020e0d4a",
+      "size_in_bytes": 3478
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "54ff83e133d2db7d2c304f59def6f720d5efa35cadd3ddb86119b900eb24fdd1",
+      "size_in_bytes": 90
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "ce0b596d5a8d4a84b3ca083426279ddedb68f9134f946975d7820eebc8b4b5ae",
+      "size_in_bytes": 103
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/entry_points.txt",
+      "path_type": "hardlink",
+      "sha256": "a5b4d97595383863e26f0ec02d741e2f2336a23fae40d8aacd8d805c2e8893d3",
+      "size_in_bytes": 65
+    },
+    {
+      "_path": "site-packages/unearth-0.18.3.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "f41fb5f1a24c28cdf0217aefc7b18fb9ad3500f5988d7f232c7eaa21b9bf595f",
+      "size_in_bytes": 1059
+    },
+    {
+      "_path": "site-packages/unearth/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "05bcaf1bb92b23d51b989916435686a90c56266883ef16ae2fcdc1b42aaf2ce7",
+      "size_in_bytes": 601
+    },
+    {
+      "_path": "site-packages/unearth/__main__.py",
+      "path_type": "hardlink",
+      "sha256": "4119e3d68a151d4c5094fb6a943015036b7478e0a23f7b9c406dca0119d03dea",
+      "size_in_bytes": 5461
+    },
+    {
+      "_path": "site-packages/unearth/auth.py",
+      "path_type": "hardlink",
+      "sha256": "2b92f3ed01a91994019cfb5605ec28634ca34b5e218e8a3e9b46296fd5e0ec0d",
+      "size_in_bytes": 18681
+    },
+    {
+      "_path": "site-packages/unearth/collector.py",
+      "path_type": "hardlink",
+      "sha256": "cc89f0374af76ee34c641ee6fd04a941b0a1e37aaffd7f66722285c61fe37f80",
+      "size_in_bytes": 9792
+    },
+    {
+      "_path": "site-packages/unearth/errors.py",
+      "path_type": "hardlink",
+      "sha256": "c14534cff89f71f6fc4bfb075178e87d1d0bb18279c824937e689ff119cd8584",
+      "size_in_bytes": 970
+    },
+    {
+      "_path": "site-packages/unearth/evaluator.py",
+      "path_type": "hardlink",
+      "sha256": "cc8940b2416be6941086f2cd39bbc3d296cafc300eb750d6bf45b56a780e6e69",
+      "size_in_bytes": 12637
+    },
+    {
+      "_path": "site-packages/unearth/fetchers/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "14652a9665698693e1ccccad48885c6efba69d64ceebb20d2b76a4fa80712311",
+      "size_in_bytes": 1312
+    },
+    {
+      "_path": "site-packages/unearth/fetchers/legacy.py",
+      "path_type": "hardlink",
+      "sha256": "3444c9219519f7840b2e93d39e3db99028d45e0866486b2e4266dc5852e42291",
+      "size_in_bytes": 5853
+    },
+    {
+      "_path": "site-packages/unearth/fetchers/sync.py",
+      "path_type": "hardlink",
+      "sha256": "1d4c743d2398bc80c44c123d4a386bb7b6f5e25b5e25fbd5b7de84ec607cf3eb",
+      "size_in_bytes": 4202
+    },
+    {
+      "_path": "site-packages/unearth/finder.py",
+      "path_type": "hardlink",
+      "sha256": "3cd0def5a193a2ef1309141320729dfd6223a9cf8bc2e4770213305225ffdad4",
+      "size_in_bytes": 18358
+    },
+    {
+      "_path": "site-packages/unearth/link.py",
+      "path_type": "hardlink",
+      "sha256": "e34f35ee31d805f555996a7bc7968cdd9fc3fe77c9d19795c435cc6939e0e85b",
+      "size_in_bytes": 5511
+    },
+    {
+      "_path": "site-packages/unearth/pep425tags.py",
+      "path_type": "hardlink",
+      "sha256": "ab0b96d8a916d68c16bdbe9375453ea52db5cfaf706157d34d63b25633dda9ac",
+      "size_in_bytes": 5387
+    },
+    {
+      "_path": "site-packages/unearth/preparer.py",
+      "path_type": "hardlink",
+      "sha256": "805c0ecf9d91333479ad9f4e6d305679999c387b9045a033cfc2d2e2860a72b6",
+      "size_in_bytes": 15528
+    },
+    {
+      "_path": "site-packages/unearth/py.typed",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/unearth/session.py",
+      "path_type": "hardlink",
+      "sha256": "761a2ea316aa163c68b0c081b12dc1cde92857758d3b81d5416aa377622b355d",
+      "size_in_bytes": 327
+    },
+    {
+      "_path": "site-packages/unearth/utils.py",
+      "path_type": "hardlink",
+      "sha256": "831f86c366911683c40dda3d5a648a6ce33b0413fbde8f5cac05de258080e4f6",
+      "size_in_bytes": 8972
+    },
+    {
+      "_path": "site-packages/unearth/vcs/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "35e7d7dd0d317802fccd72f3d1b2d066ac5728278428301780d2353f421922e3",
+      "size_in_bytes": 258
+    },
+    {
+      "_path": "site-packages/unearth/vcs/base.py",
+      "path_type": "hardlink",
+      "sha256": "be1894decc859a108f269ad6766b28142ee75a9e92ff7ddb62c6b8f26c43edfb",
+      "size_in_bytes": 8709
+    },
+    {
+      "_path": "site-packages/unearth/vcs/bazaar.py",
+      "path_type": "hardlink",
+      "sha256": "4f709c483107c2a85211160342d23c8a5423a9dbd1ba21a7b62bd5ced65f4465",
+      "size_in_bytes": 2659
+    },
+    {
+      "_path": "site-packages/unearth/vcs/git.py",
+      "path_type": "hardlink",
+      "sha256": "296ce9e6042b5a8082aad0cbc5190b7e650ff4aaf4dd62e2ea0ae803e739ee0b",
+      "size_in_bytes": 7159
+    },
+    {
+      "_path": "site-packages/unearth/vcs/hg.py",
+      "path_type": "hardlink",
+      "sha256": "65b2a161e95d9b3e7b5074477b2aedc0ea1e2c6924fc3f85b823840130292fd8",
+      "size_in_bytes": 1996
+    },
+    {
+      "_path": "site-packages/unearth/vcs/svn.py",
+      "path_type": "hardlink",
+      "sha256": "df7ba8233a4ff6d7b9830e3e174ea22d1225b25f58566c7e9681928fd408c303",
+      "size_in_bytes": 6205
+    }
+  ],
+  "paths_version": 1
+}

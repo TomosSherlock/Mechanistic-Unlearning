@@ -20,6 +20,7 @@ from tqdm import tqdm
 
 from copy import deepcopy
 import math
+from pathlib import Path
 
 
 
@@ -82,12 +83,22 @@ class VFL(object):
                             normalize,
                         ]))
 
+        elif self.args.data.lower()=="custom":
+            dataset = get_dataset(self.args)
+            train_set = dataset.trainset
+            test_set = dataset.testset
+
+        elif self.args.data.lower()=="custom-1":
+            dataset = get_dataset(self.args)
+            train_set = dataset.trainset
+            test_set = dataset.testset            
+
         else:
             dataset = get_dataset(self.args)
             train_set = deepcopy(dataset.trainset)
             test_set = deepcopy(dataset.testset)
         
-        #Train a retrain model with remaining data
+        # train a retrain model with remaining data
         if self.args.mode == 'retrain':
             idx_train_forget = []
             idx_train_retain = []
@@ -115,10 +126,16 @@ class VFL(object):
                     class_to_forget = [0,2,5,7]
                 
                 for i in range(len(train_set)):
-                    if train_set.targets[i] in class_to_forget:
-                        idx_train_forget.append(i)
+                    if self.args.unlearn_bias == 1: 
+                        if train_set.__biased__(i):
+                            idx_train_forget.append(i)
+                        else:
+                            idx_train_retain.append(i)
                     else:
-                        idx_train_retain.append(i)
+                        if train_set.targets[i] in class_to_forget:
+                            idx_train_forget.append(i)
+                        else:
+                            idx_train_retain.append(i)
 
                 for i in range(len(test_set)):
                     if test_set.targets[i] in class_to_forget:
@@ -148,6 +165,8 @@ class VFL(object):
         self.train_acc_meter = AvgMeter()
         self.train_loss_meter = AvgMeter()
         self.test_acc_meter = AvgMeter()
+        self.pc_train_acc_meter = [AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter()]
+        self.pc_test_acc_meter = [AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter(),AvgMeter()]
         self.bottom_model_A_optimizer = torch.optim.SGD(self.bottom_model_A.parameters(),
                                                         self.args.optimizer_lr, 
                                                         momentum=self.args.momentum,
@@ -168,6 +187,11 @@ class VFL(object):
         self.top_model.train()
         self.train_acc_meter.reset()
         self.train_loss_meter.reset()
+
+        # reset per-class accuracy
+        for i in range(10):
+            self.pc_train_acc_meter[i].reset()
+        
         for step, (batch_x, batch_y) in tqdm(enumerate(self.train_loader)):
             if self.args.data != 'yahoo':
                 batch_x, batch_y = batch_x.to(self.args.device), batch_y.to(self.args.device)
@@ -193,6 +217,14 @@ class VFL(object):
             elif self.args.data == 'ct':
                 x_a = batch_x[:, :, :, 0:112]
                 x_b = batch_x[:, :, :, 112:224]
+            elif self.args.data == 'custom':
+                x_a = batch_x[:, :, :, 0:14]
+                x_b = batch_x[:, :, :, 14:28]
+            elif self.args.data == 'custom-1':
+                    x_a = torch.stack([batch_x[:, :, 0:14]])
+                    x_b = torch.stack([batch_x[:, :, 14:28]])
+                    x_a = torch.permute(x_a, (1,0,2,3))
+                    x_b = torch.permute(x_b, (1,0,2,3))
             else:
                 raise ValueError(f'No dataset named {self.args.data}!')
             
@@ -208,8 +240,17 @@ class VFL(object):
             output = self.top_model(input_tensor_top_model_a, input_tensor_top_model_b)
 
             loss = self.criterion(output, batch_y)
+            
             acc = torch.sum(torch.argmax(output, dim=-1) == batch_y) / batch_y.size(0)
             self.train_acc_meter.update(acc.item(), batch_y.size(0))
+
+            # update per-class accuracy
+            for i in range(10):
+                c_count = torch.sum(batch_y.cpu() == i)
+                if (c_count > 0):
+                    c_acc = torch.sum(torch.where(batch_y.cpu() == i, torch.argmax(output.cpu(), dim=-1) == batch_y.cpu(), torch.zeros(batch_y.size(0)))) / c_count 
+                    self.pc_train_acc_meter[i].update(c_acc, c_count)
+
             loss.backward()
             self.top_model_optimizer.step()
             self.train_loss_meter.update(loss.item(), output.size(0))
@@ -232,6 +273,11 @@ class VFL(object):
         self.bottom_model_B.eval()
         self.top_model.eval()
         self.test_acc_meter.reset()
+
+        # reset per-class accuracy
+        for i in range(10):
+            self.pc_test_acc_meter[i].reset()
+
         labels = []
         preds = []
         with torch.no_grad():
@@ -260,14 +306,31 @@ class VFL(object):
                 elif self.args.data == 'ct':
                     x_a = batch_x[:, :, :, 0:112]
                     x_b = batch_x[:, :, :, 112:224]
+                elif self.args.data == 'custom':
+                    x_a = batch_x[:, :, :, 0:14]
+                    x_b = batch_x[:, :, :, 14:28]
+                elif self.args.data == 'custom-1':
+                    x_a = torch.stack([batch_x[:, :, 0:14]])
+                    x_b = torch.stack([batch_x[:, :, 14:28]])
+                    x_a = torch.permute(x_a, (1,0,2,3))
+                    x_b = torch.permute(x_b, (1,0,2,3))
                 else:
                     raise ValueError(f'No dataset named {self.args.data}!')
                 output_tensor_bottom_model_a = self.bottom_model_A(x_a)
                 output_tensor_bottom_model_b = self.bottom_model_B(x_b)
                 output = self.top_model(output_tensor_bottom_model_a, output_tensor_bottom_model_b)
+                # print(f'ground truth: {batch_y}')
                 acc = torch.sum(torch.argmax(output, dim=-1) == batch_y) / batch_y.size(0)
                 self.test_acc_meter.update(acc.item(), batch_y.size(0))
                 self.test_acc_history.append(self.test_acc_meter.get())
+
+                # update per-class accuracy
+                for i in range(10):
+                    c_count = torch.sum(batch_y.cpu() == i)
+                    if (c_count > 0):
+                        c_acc = torch.sum(torch.where(batch_y.cpu() == i, torch.argmax(output.cpu(), dim=-1) == batch_y.cpu(), torch.zeros(batch_y.size(0)))) / c_count 
+                        self.pc_test_acc_meter[i].update(c_acc, c_count)
+
             if self.test_acc_meter.get() > self.best_test_acc:
                 self.best_test_acc = self.test_acc_meter.get()
                 self.best_bottom_model_A = deepcopy(self.bottom_model_A)
@@ -284,7 +347,12 @@ class VFL(object):
             param_group['lr'] *= self.args.gamma
 
     def save(self):
-        save_path = self.args.outdir
+        save_path = f'{self.args.outdir}/{self.args.epochs}'
+        out_dir = Path(save_path)
+        if (out_dir.is_dir() == False) :
+            os.mkdir(out_dir)
+        print(f'Models Saved at {out_dir}')
+
         if self.args.mode == 'retrain':
             bottom_model_a_path = os.path.join(save_path, 'retrain_bottom_model_A.pt')
             torch.save(self.best_bottom_model_A.cpu(), bottom_model_a_path)

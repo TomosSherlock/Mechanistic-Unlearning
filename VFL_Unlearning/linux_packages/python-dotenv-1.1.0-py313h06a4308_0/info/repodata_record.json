@@ -1,0 +1,22 @@
+{
+  "name": "python-dotenv",
+  "version": "1.1.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "python-dotenv-1.1.0-py313h06a4308_0.conda",
+  "md5": "33e2c8b6a83ba5bdbda0639bfb37496c",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "click >=5.0",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1745610266126,
+  "size": 47980
+}

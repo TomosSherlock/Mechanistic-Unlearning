@@ -1,0 +1,19 @@
+{
+  "name": "ca-certificates",
+  "version": "2025.11.12",
+  "build": "hbd8a1cb_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "ca-certificates-2025.11.12-hbd8a1cb_0.conda",
+  "md5": "f0991f0f84902f6b6009b4d2350a83aa",
+  "depends": [
+    "__unix"
+  ],
+  "constrains": [],
+  "noarch": "generic",
+  "license": "ISC",
+  "package_type": "noarch_generic",
+  "timestamp": 1762967197890,
+  "size": 152432
+}

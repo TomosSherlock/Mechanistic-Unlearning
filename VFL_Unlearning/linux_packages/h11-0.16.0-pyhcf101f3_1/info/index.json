@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_1",
+  "build_number": 1,
+  "depends": [
+    "python >=3.10",
+    "typing_extensions",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "h11",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1767729720872,
+  "version": "0.16.0"
+}

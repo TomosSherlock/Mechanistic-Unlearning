@@ -1,0 +1,119 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "cd3cd6c269441ed75b596fa16352b0fe7684e7d9c6bb51e0b415378baec71100",
+      "size_in_bytes": 6446
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "ba1d72b481bbf451e3788a9fef774d07ae6cf8f7543c3f3c057601d19794ece8",
+      "size_in_bytes": 2396
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "41c708c5adba6e097513ab8ccb9f1d7865a2fb469e22491a9e01dcc64da459fc",
+      "size_in_bytes": 87
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "902611c19c2ff66ec3953dea22351560817d991e4b9fc9372d6572fb489a0ce4",
+      "size_in_bytes": 111
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/entry_points.txt",
+      "path_type": "hardlink",
+      "sha256": "85ab8512bb362c64ce46e813ade2bb491f8f22b75a8a6f8808d9fee4b486836c",
+      "size_in_bytes": 49
+    },
+    {
+      "_path": "site-packages/conda_lockfiles-0.2.0.dist-info/licenses/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "795145c6bdaa43d81998105f89ab06662fa956d519e24e080e662160ac21e3f8",
+      "size_in_bytes": 1544
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "684dc3d12e2c04054df4bc50b7affd988176c610bcb033b7b2e6299e5d5dbdbb",
+      "size_in_bytes": 925
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/_version.py",
+      "path_type": "hardlink",
+      "sha256": "0e0f00989a262d5a6328bea9ac9ca538e35900f46d07ce8b39c7bb768ad04bf0",
+      "size_in_bytes": 704
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/conda_lock/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/conda_lock/v1.py",
+      "path_type": "hardlink",
+      "sha256": "56bd39f6c93a6cc836b497d9c3eb98732d5a9b34caea41a6543fce0904308247",
+      "size_in_bytes": 12082
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/exceptions.py",
+      "path_type": "hardlink",
+      "sha256": "d0087da0d1d2de1ac768f2bf7174b0466d9846a907de0f596e8850b49bd89910",
+      "size_in_bytes": 3227
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/load_yaml.py",
+      "path_type": "hardlink",
+      "sha256": "f6016204ed0e6a9c089b05f9a2d9fc4543652d2a4bcfb0c82d523a56d887f594",
+      "size_in_bytes": 339
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/plugin.py",
+      "path_type": "hardlink",
+      "sha256": "7b656e1094b543da2b001ffb3108f9cc88bac1fa361c3579d9733a0f65b58b85",
+      "size_in_bytes": 2135
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/rattler_lock/__init__.py",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/rattler_lock/v6.py",
+      "path_type": "hardlink",
+      "sha256": "69e352ae428288ce6b7c182e3cf3fdb6b087d64e6ae490505391aa3891223274",
+      "size_in_bytes": 12811
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/records_from_conda_urls.py",
+      "path_type": "hardlink",
+      "sha256": "e5e855014d9d85f9a9c2fb9542585e1634994a651e82b9f0ef5cc5e875a99821",
+      "size_in_bytes": 2060
+    },
+    {
+      "_path": "site-packages/conda_lockfiles/validate_urls.py",
+      "path_type": "hardlink",
+      "sha256": "015ce231fd30d9966934dacb018101bdf749f1aaadb1146b5e8ec5a710471927",
+      "size_in_bytes": 556
+    }
+  ],
+  "paths_version": 1
+}

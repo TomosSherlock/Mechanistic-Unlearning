@@ -1,0 +1,22 @@
+{
+  "arch": null,
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "depends": [
+    "conda >=25",
+    "conda-package-streaming >=0.12.0",
+    "filelock",
+    "jinja2",
+    "msgpack-python >=1.0.2",
+    "python >=3.10",
+    "ruamel.yaml",
+    "zstandard"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "conda-index",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1782239750810,
+  "version": "0.12.1"
+}

@@ -1,0 +1,22 @@
+{
+  "name": "spdlog",
+  "version": "1.11.0",
+  "build": "hdb19cb5_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "spdlog-1.11.0-hdb19cb5_0.conda",
+  "md5": "023cfe6341f1d90dee2016e608538537",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "fmt >=9.1.0,<10.0a0",
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1676361400180,
+  "size": 239450
+}

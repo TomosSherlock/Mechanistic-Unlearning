@@ -1,0 +1,22 @@
+{
+  "name": "truststore",
+  "version": "0.10.4",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "truststore-0.10.4-pyhcf101f3_0.conda",
+  "md5": "c2db35b004913ec69bcac64fb0783de0",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/truststore-0.10.4-pyhcf101f3_0.conda",
+  "sha256": "eece5be81588c39a855a0b70da84e0febb878a6d91dd27d6d21370ce9e5c5a46",
+  "depends": [
+    "python >=3.10,<4",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1766494826559,
+  "size": 24279
+}

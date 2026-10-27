@@ -1,0 +1,23 @@
+{
+  "name": "importlib-metadata",
+  "version": "9.0.1",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "importlib-metadata-9.0.1-pyhcf101f3_0.conda",
+  "md5": "77ec68e0aa61c3fff9ecbf840f93d64e",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/importlib-metadata-9.0.1-pyhcf101f3_0.conda",
+  "sha256": "95a074a7d3f58b3494c068d4789c364dcb591c56b70ca6b12f149a540f9aeea4",
+  "depends": [
+    "python >=3.10",
+    "zipp >=3.20",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "Apache-2.0",
+  "package_type": "noarch_python",
+  "timestamp": 1787943971257,
+  "size": 34920
+}

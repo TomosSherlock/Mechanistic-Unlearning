@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: "2.4.1"
+  python_check_max: "3.14"
+
+package:
+  name: tomli
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/t/tomli/tomli-${{ version }}.tar.gz
+  sha256: 7c7e1a961a0b2f2472c1ac5b69affa0ae1132c39adcb67aba98568702b9cc23f
+
+build:
+  number: 0
+  noarch: python
+  script:
+    - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation --disable-pip-version-check
+
+requirements:
+  host:
+    - flit-core >=3.12.0,<4
+    - pip
+    - python ${{ python_min }}.*
+  run:
+    - python >=${{ python_min }}
+
+tests:
+  - python:
+      imports: tomli
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - ${{ python_check_max }}.*
+
+about:
+  summary: A simple TOML parser
+  license: MIT
+  license_file: LICENSE
+  homepage: https://pypi.org/project/tomli
+  repository: https://github.com/hukkin/tomli
+
+extra:
+  recipe-maintainers:
+    - thewchan
+    - bollwyvl

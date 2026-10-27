@@ -1,0 +1,22 @@
+{
+  "name": "prompt-toolkit",
+  "version": "3.0.52",
+  "build": "pyha770c72_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "noarch",
+  "fn": "prompt-toolkit-3.0.52-pyha770c72_0.conda",
+  "md5": "edb16f14d920fb3faf17f5ce582942d6",
+  "depends": [
+    "python >=3.10",
+    "wcwidth"
+  ],
+  "constrains": [
+    "prompt_toolkit 3.0.52"
+  ],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1756321848365,
+  "size": 273927
+}

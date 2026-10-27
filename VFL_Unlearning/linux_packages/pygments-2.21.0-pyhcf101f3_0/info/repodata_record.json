@@ -1,0 +1,22 @@
+{
+  "name": "pygments",
+  "version": "2.21.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "pygments-2.21.0-pyhcf101f3_0.conda",
+  "md5": "2882dee445dfa45b0c5afce3ffb7730a",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pygments-2.21.0-pyhcf101f3_0.conda",
+  "sha256": "f5f015ff1bc3e1b7fc08eee096b1865234189ae0b82bebdb86a5369116e42fa0",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-2-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1786995678795,
+  "size": 959376
+}

@@ -1,0 +1,59 @@
+{
+  "paths": [
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/INSTALLER",
+      "path_type": "hardlink",
+      "sha256": "d0edee15f91b406f3f99726e44eb990be6e34fd0345b52b910c568e0eef6a2a8",
+      "size_in_bytes": 5
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/LICENSE",
+      "path_type": "hardlink",
+      "sha256": "bece9f68655ff23b77413246c0650386b87da7c3682303dd0ee8e3ea7630e85b",
+      "size_in_bytes": 1322
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/METADATA",
+      "path_type": "hardlink",
+      "sha256": "6e23644710e488e993ac7138b44972a11d76948d62f58d3a9e03ba226bbd02dd",
+      "size_in_bytes": 2812
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/RECORD",
+      "path_type": "hardlink",
+      "sha256": "19952a2f21308b793b32b494540f5c38099d998b3536681effe5ef6a632ade6a",
+      "size_in_bytes": 819
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/REQUESTED",
+      "path_type": "hardlink",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_in_bytes": 0
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/WHEEL",
+      "path_type": "hardlink",
+      "sha256": "3d9504c5d7fbd548bfb28ebb417a724ae1ed0a2dfe277c2f1783912ba93f4bc5",
+      "size_in_bytes": 91
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/direct_url.json",
+      "path_type": "hardlink",
+      "sha256": "6477610c65ed1eb33de6129d91830ca3dded3f3f68a721eac995d243b01bd8b6",
+      "size_in_bytes": 108
+    },
+    {
+      "_path": "site-packages/nest_asyncio-1.6.0.dist-info/top_level.txt",
+      "path_type": "hardlink",
+      "sha256": "71014133f7cf6c37615558a15b04bedbd5a25b5ecb677af89525f2bf0173373b",
+      "size_in_bytes": 13
+    },
+    {
+      "_path": "site-packages/nest_asyncio.py",
+      "path_type": "hardlink",
+      "sha256": "2a45b5e1bab4ec3e41a0e4e9923970bfc7455f9b91c3d67ce1347fbb9c11effa",
+      "size_in_bytes": 7490
+    }
+  ],
+  "paths_version": 1
+}

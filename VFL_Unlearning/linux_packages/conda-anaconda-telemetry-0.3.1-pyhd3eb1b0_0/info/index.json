@@ -1,0 +1,17 @@
+{
+  "arch": null,
+  "build": "pyhd3eb1b0_0",
+  "build_number": 0,
+  "depends": [
+    "conda >=24.11",
+    "python >=3.10"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "conda-anaconda-telemetry",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1790002771699,
+  "version": "0.3.1"
+}

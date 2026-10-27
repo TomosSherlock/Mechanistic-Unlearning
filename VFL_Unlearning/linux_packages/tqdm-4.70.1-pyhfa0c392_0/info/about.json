@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/tqdm/tqdm",
+  "doc_url": "https://tqdm.github.io/",
+  "extra": {
+    "flow_run_id": "github_34673050550",
+    "recipe-maintainers": [
+      "casperdcl",
+      "pmlandwehr",
+      "synapticarbors"
+    ],
+    "remote_url": "https://github.com/conda-forge/tqdm-feedstock",
+    "sha": "81d4396607127df69f7b2b5075a3e68db7677a08"
+  },
+  "home": "https://pypi.org/project/tqdm/",
+  "license": "MPL-2.0 and MIT",
+  "summary": "A Fast, Extensible Progress Meter"
+}

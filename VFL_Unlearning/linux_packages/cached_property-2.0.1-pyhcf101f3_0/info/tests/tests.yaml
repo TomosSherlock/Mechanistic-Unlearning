@@ -1,0 +1,16 @@
+- python:
+    imports:
+    - cached_property
+    python_version:
+    - 3.10.*
+    - '*'
+- script:
+    content: pytest
+    cwd: etc/conda/test-files/cached_property/1
+  requirements:
+    run:
+    - pytest
+    - freezegun
+  files:
+    source:
+    - tests/

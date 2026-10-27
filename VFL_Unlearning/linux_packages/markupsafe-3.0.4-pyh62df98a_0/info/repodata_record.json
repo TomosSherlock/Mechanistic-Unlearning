@@ -1,0 +1,25 @@
+{
+  "name": "markupsafe",
+  "version": "3.0.4",
+  "build": "pyh62df98a_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "markupsafe-3.0.4-pyh62df98a_0.conda",
+  "md5": "62c9f5275dca9a21d308f22af65b7695",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/markupsafe-3.0.4-pyh62df98a_0.conda",
+  "sha256": "b800a8549b6b7772e8e8f7ef6745742fa584a52ccbdd4dc3e2f26d323e065c1d",
+  "depends": [
+    "python >=3.11"
+  ],
+  "constrains": [
+    "jinja2 >=3.0.0"
+  ],
+  "track_features": "markupsafe_no_compile",
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "package_type": "noarch_python",
+  "timestamp": 1791014719030,
+  "size": 16342
+}

@@ -1,0 +1,15 @@
+{
+  "build": "pyhcf101f3_2",
+  "build_number": 2,
+  "depends": [
+    "python >=3.10",
+    "backports",
+    "python"
+  ],
+  "license": "MIT",
+  "name": "backports.tarfile",
+  "noarch": "python",
+  "subdir": "noarch",
+  "timestamp": 1767290467820,
+  "version": "1.2.0"
+}

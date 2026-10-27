@@ -1,0 +1,25 @@
+{
+  "name": "pydantic-settings",
+  "version": "2.15.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "pydantic-settings-2.15.0-pyhcf101f3_0.conda",
+  "md5": "687adac0b3eb2dd73762e9f912b4549e",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/pydantic-settings-2.15.0-pyhcf101f3_0.conda",
+  "sha256": "674e1ba12010a88441f817a318d3cec7e7a7682813ebd3f427fbd1c6766a16af",
+  "depends": [
+    "typing-inspection >=0.4.0",
+    "python >=3.10",
+    "pydantic >=2.7.0",
+    "python-dotenv >=0.21.0",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1786146776076,
+  "size": 60984
+}

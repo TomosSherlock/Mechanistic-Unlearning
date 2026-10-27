@@ -1,0 +1,21 @@
+{
+  "name": "colorama",
+  "version": "0.4.6",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "colorama-0.4.6-py313h06a4308_0.conda",
+  "md5": "9c0c672e71bd0523bdaa9376ea056ebd",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "timestamp": 1728388457499,
+  "size": 53113
+}

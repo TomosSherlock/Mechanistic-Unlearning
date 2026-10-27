@@ -1,0 +1,64 @@
+# This file created by conda-build 24.11.2
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Tue Dec  3 09:27:04 2024
+# ------------------------------------------------
+
+package:
+  name: backports
+  version: '1.0'
+build:
+  noarch: python
+  number: '5'
+  script:
+    - cd /home/conda/feedstock_root/build_artifacts/backports_1733218084076/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/lib/python3.12/site-packages
+    - mkdir -p backports
+    - cp /home/conda/recipe_root/init.py backports/__init__.py
+  string: pyhd8ed1ab_5
+requirements:
+  host:
+    - _libgcc_mutex 0.1 conda_forge
+    - _openmp_mutex 4.5 2_gnu
+    - bzip2 1.0.8 h4bc722e_7
+    - ca-certificates 2024.8.30 hbcca054_0
+    - ld_impl_linux-64 2.43 h712a8e2_2
+    - libffi 3.4.2 h7f98852_5
+    - libgcc 14.2.0 h77fa898_1
+    - libgcc-ng 14.2.0 h69a702a_1
+    - libgomp 14.2.0 h77fa898_1
+    - libnsl 2.0.1 hd590300_0
+    - libsqlite 3.47.0 hadc24fc_1
+    - libuuid 2.38.1 h0b41bf4_0
+    - libxcrypt 4.4.36 hd590300_1
+    - libzlib 1.3.1 hb9d3cd8_2
+    - ncurses 6.5 he02047a_1
+    - openssl 3.4.0 hb9d3cd8_0
+    - python 3.9.20 h13acc7a_1_cpython
+    - readline 8.2 h8228510_1
+    - tk 8.6.13 noxft_h4845f30_101
+    - tzdata 2024b hc8b5060_0
+    - xz 5.2.6 h166bdaf_0
+  run:
+    - python >=3.9
+test:
+  commands:
+    - unset PIP_NO_INDEX
+    - python -m pip install --target alt-site backports.tarfile
+    - export PYTHONPATH="${SP_DIR}:alt-site"
+    - python -c "import backports.tarfile"
+  requires:
+    - pip
+    - python 3.9.*
+about:
+  home: http://github.com/conda-forge/backports-feedstock
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  summary: A package to ensure the `backports` namespace is available.
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: azure_20241203.2.1
+  recipe-maintainers:
+    - isuruf
+    - jakirkham
+  remote_url: https://github.com/conda-forge/backports-feedstock
+  sha: fd51a5af2c8fe3f7aa7e202e09580183c4e05a77

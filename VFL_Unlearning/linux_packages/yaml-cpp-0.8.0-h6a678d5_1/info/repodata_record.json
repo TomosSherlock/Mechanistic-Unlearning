@@ -1,0 +1,21 @@
+{
+  "name": "yaml-cpp",
+  "version": "0.8.0",
+  "build": "h6a678d5_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "yaml-cpp-0.8.0-h6a678d5_1.conda",
+  "md5": "015d2d74ad3c8e53eec3358637433718",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1714510789193,
+  "size": 621367
+}

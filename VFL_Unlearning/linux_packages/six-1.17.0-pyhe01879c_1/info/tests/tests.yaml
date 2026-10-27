@@ -1,0 +1,6 @@
+- python:
+    imports:
+    - six
+    python_version:
+    - 3.9.*
+    - 3.13.*

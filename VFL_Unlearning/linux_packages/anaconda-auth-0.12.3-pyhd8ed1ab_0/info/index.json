@@ -1,0 +1,29 @@
+{
+  "arch": null,
+  "build": "pyhd8ed1ab_0",
+  "build_number": 0,
+  "constrains": [
+    "conda >=23.9.0",
+    "conda-token >=0.7.0",
+    "anaconda-cloud-auth >=0.8"
+  ],
+  "depends": [
+    "anaconda-cli-base >=0.7.0",
+    "cryptography >=3.4.0",
+    "keyring",
+    "pkce",
+    "pydantic",
+    "pyjwt",
+    "python >=3.10",
+    "python-dotenv",
+    "requests",
+    "semver <4"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "anaconda-auth",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1765839798342,
+  "version": "0.12.3"
+}

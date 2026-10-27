@@ -1,0 +1,23 @@
+{
+  "name": "jaraco.context",
+  "version": "6.1.2",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jaraco.context-6.1.2-pyhcf101f3_0.conda",
+  "md5": "b9d2b1ffa307961f6bb7d83c8ba8a8be",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jaraco.context-6.1.2-pyhcf101f3_0.conda",
+  "sha256": "108b3919db8ef81b5585b38a3fedbe9eeccdf8fa576c250a13559a1188f597cc",
+  "depends": [
+    "python >=3.10",
+    "backports.tarfile",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1776862415793,
+  "size": 16222
+}

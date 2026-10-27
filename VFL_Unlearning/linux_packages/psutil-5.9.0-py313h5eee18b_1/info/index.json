@@ -1,0 +1,17 @@
+{
+  "arch": "x86_64",
+  "build": "py313h5eee18b_1",
+  "build_number": 1,
+  "depends": [
+    "libgcc-ng >=11.2.0",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "name": "psutil",
+  "platform": "linux",
+  "subdir": "linux-64",
+  "timestamp": 1736367210623,
+  "version": "5.9.0"
+}

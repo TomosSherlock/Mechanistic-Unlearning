@@ -1,0 +1,115 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Tue Jun 24 08:45:24 2025
+# ------------------------------------------------
+
+package:
+  name: pydantic-core
+  version: 2.33.2
+source:
+  sha256: 7cb8bc3605c29176e1b105350d2e6474142d7c1bd1d9327c4a9bdb46bf827acc
+  url: https://pypi.org/packages/source/p/pydantic-core/pydantic_core-2.33.2.tar.gz
+build:
+  number: '0'
+  script:
+    - /croot/pydantic-core_1750754736071/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pla/bin/python
+      -m pip install . -vv --no-deps --no-build-isolation
+    - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
+  script_env: null
+  string: py313hc6f7160_0
+requirements:
+  build:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - _sysroot_linux-64_curr_repodata_hack 3 haa98f57_10
+    - binutils_impl_linux-64 2.40 h5293946_0
+    - binutils_linux-64 2.40.0 hc2dff05_2
+    - cargo-bundle-licenses 0.5.0 h52d8a92_0
+    - gcc_impl_linux-64 11.2.0 h1234567_1
+    - gcc_linux-64 11.2.0 h5c386dc_2
+    - gxx_impl_linux-64 11.2.0 h1234567_1
+    - gxx_linux-64 11.2.0 hc2dff05_2
+    - kernel-headers_linux-64 3.10.0 h57e8cba_10
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libgcc-devel_linux-64 11.2.0 h1234567_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libstdcxx-devel_linux-64 11.2.0 h1234567_1
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - rust 1.87.0 h6a678d5_0
+    - rust_linux-64 1.87.0 h6a678d5_0
+    - sysroot_linux-64 2.17 h57e8cba_10
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2025.2.25 h06a4308_0
+    - expat 2.7.1 h6a678d5_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - libxcb 1.17.0 h9b100fa_0
+    - maturin 1.8.6 py313h4aa5aa6_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.16 h5eee18b_0
+    - pip 25.1 pyhc872135_2
+    - pthread-stubs 0.3 h0ce48e5_1
+    - python 3.13.5 h4612cfd_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 78.1.1 py313h06a4308_0
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h993c535_1
+    - typing-extensions 4.12.2 py313h06a4308_0
+    - typing_extensions 4.12.2 py313h06a4308_0
+    - tzdata 2025b h04d1e81_0
+    - wheel 0.45.1 py313h06a4308_0
+    - xorg-libx11 1.8.12 h9b100fa_1
+    - xorg-libxau 1.0.12 h9b100fa_0
+    - xorg-libxdmcp 1.1.5 h9b100fa_0
+    - xorg-xorgproto 2024.1 h5eee18b_1
+    - xz 5.6.4 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - libgcc-ng >=11.2.0
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+    - typing-extensions >=4.6.0,!=4.7.0
+test:
+  commands:
+    - pip check
+    - python -c "from pydantic_core import PydanticUndefinedType"
+  imports:
+    - pydantic_core
+  requires:
+    - pip
+about:
+  description: 'This package provides the core functionality for pydantic validation
+    and serialization.
+
+    '
+  dev_url: https://github.com/pydantic/pydantic-core
+  doc_url: https://docs.pydantic.dev
+  home: https://github.com/pydantic/pydantic-core
+  license: MIT
+  license_family: MIT
+  license_file:
+    - LICENSE
+    - THIRDPARTY.yml
+  summary: Core validation logic for pydantic written in rust
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: 88caf870-aa06-4c71-9403-e61f51123b54
+  recipe-maintainers:
+    - adriangb
+    - dmontagu
+    - pavelzw
+    - samuelcolvin
+    - xhochy
+  remote_url: git@github.com:AnacondaRecipes/pydantic-core-feedstock.git
+  sha: 0a015eeaaacd9608135bf6e10e1db0dd40d56eaa

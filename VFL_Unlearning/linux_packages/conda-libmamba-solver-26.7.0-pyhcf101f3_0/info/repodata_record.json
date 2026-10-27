@@ -1,0 +1,26 @@
+{
+  "name": "conda-libmamba-solver",
+  "version": "26.7.0",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "conda-libmamba-solver-26.7.0-pyhcf101f3_0.conda",
+  "md5": "49592004caf4336815fd5282bbb72172",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/conda-libmamba-solver-26.7.0-pyhcf101f3_0.conda",
+  "sha256": "b7cc67470a361330edd8d9e331cafd4807dd77bc766ca197a3783ed3db66dfeb",
+  "depends": [
+    "python >=3.10",
+    "libmambapy >=2.0.0,!=2.6.2",
+    "boltons >=23.0.0",
+    "python"
+  ],
+  "constrains": [
+    "conda >=26.5"
+  ],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1784200590190,
+  "size": 46828
+}

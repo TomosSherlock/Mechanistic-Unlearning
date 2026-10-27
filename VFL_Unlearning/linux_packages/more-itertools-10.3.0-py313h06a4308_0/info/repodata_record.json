@@ -1,0 +1,21 @@
+{
+  "name": "more-itertools",
+  "version": "10.3.0",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "more-itertools-10.3.0-py313h06a4308_0.conda",
+  "md5": "ee08e17a18339269f11ba3109f4fb225",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1728388688961,
+  "size": 143988
+}

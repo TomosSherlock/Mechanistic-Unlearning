@@ -1,0 +1,28 @@
+- python:
+    imports:
+    - ipykernel
+    python_version:
+    - 3.10.*
+    - 3.14.*
+- script:
+    content: |-
+      jupyter kernelspec list
+      python run_test.py
+    cwd: etc/conda/test-files/ipykernel/1
+  requirements:
+    run:
+    - flaky
+    - ipyparallel
+    - matplotlib-base
+    - numpy
+    - pytest >=7.0,<10
+    - pytest-asyncio >=0.23.5
+    - pytest-cov
+    - pytest-timeout
+    - python 3.10.*
+    - curio
+  files:
+    source:
+    - tests/
+    recipe:
+    - run_test.py

@@ -1,0 +1,22 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/fastapi/typer",
+  "doc_url": "https://typer.tiangolo.com/",
+  "extra": {
+    "feedstock-name": "typer",
+    "flow_run_id": "github_33172301039",
+    "recipe-maintainers": [
+      "thewchan",
+      "dfornika",
+      "bollwyvl",
+      "fcollonval"
+    ],
+    "remote_url": "https://github.com/conda-forge/typer-feedstock",
+    "sha": "a33153aa22c1f4b7496eee1f7a4b962e5b996144"
+  },
+  "home": "https://pypi.org/project/typer",
+  "license": "MIT AND BSD-3-Clause",
+  "summary": "Typer, build great CLIs. Easy to code. Based on Python type hints."
+}

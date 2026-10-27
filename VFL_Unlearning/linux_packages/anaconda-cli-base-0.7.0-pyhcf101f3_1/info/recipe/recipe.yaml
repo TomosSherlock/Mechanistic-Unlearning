@@ -1,0 +1,69 @@
+schema_version: 1
+
+context:
+  name: anaconda-cli-base
+  version: "0.7.0"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/anaconda_cli_base-${{ version }}.tar.gz
+  sha256: 4ebec5d913039b6ac208a4c6abed737f7ad1f311f54c14b768bd5cb266092207
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - anaconda = anaconda_cli_base.cli:app
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - hatch-vcs >=0.3
+    - setuptools-scm >=7.1
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - click
+    - readchar
+    - rich
+    - typer >=0.17
+    - pydantic-settings >=2.3
+    - tomli
+    - packaging >=23.0
+  run_constraints:
+    # Ensure coordinated rollout of changes related to multi-site configuration
+    - anaconda-auth >=0.12.0
+    # Ensure that a version of anaconda-cli-base cannot be installed if an incompatible
+    # older version of anaconda-client is installed.
+    - anaconda-client >=1.13.0
+    - anaconda-cloud-cli >=0.3.0
+
+tests:
+  - python:
+      imports:
+        - anaconda_cli_base
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - python -c "from anaconda_cli_base import __version__; assert __version__ == \"${{ version }}\""
+
+about:
+  summary: A base CLI entrypoint supporting Anaconda CLI plugins
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://github.com/anaconda/anaconda-cli-base
+
+extra:
+  recipe-maintainers:
+    - albertdefusco
+    - mattkram

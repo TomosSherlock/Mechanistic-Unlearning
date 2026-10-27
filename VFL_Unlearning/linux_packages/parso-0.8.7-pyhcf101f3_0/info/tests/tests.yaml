@@ -1,0 +1,6 @@
+- python:
+    imports:
+    - parso
+    - parso.pgen2
+    - parso.python
+    python_version: 3.10.*

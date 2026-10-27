@@ -1,0 +1,23 @@
+{
+  "name": "jinja2",
+  "version": "3.1.6",
+  "build": "pyhcf101f3_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "jinja2-3.1.6-pyhcf101f3_1.conda",
+  "md5": "04558c96691bed63104678757beb4f8d",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/jinja2-3.1.6-pyhcf101f3_1.conda",
+  "sha256": "fc9ca7348a4f25fed2079f2153ecdcf5f9cf2a0bc36c4172420ca09e1849df7b",
+  "depends": [
+    "markupsafe >=2.0",
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1764517220861,
+  "size": 120685
+}

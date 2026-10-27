@@ -1,0 +1,23 @@
+{
+  "name": "zeromq",
+  "version": "4.3.5",
+  "build": "hb0a5e54_1",
+  "build_number": 1,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "zeromq-4.3.5-hb0a5e54_1.conda",
+  "md5": "5ed4ea876122e1fdf315791f2afdd9cd",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "__glibc >=2.28,<3.0.a0",
+    "libgcc-ng >=11.2.0",
+    "libsodium >=1.0.20,<1.0.21.0a0",
+    "libstdcxx-ng >=11.2.0"
+  ],
+  "constrains": [],
+  "license": "MPL-2.0",
+  "license_family": "Other",
+  "timestamp": 1757676487056,
+  "size": 340459
+}

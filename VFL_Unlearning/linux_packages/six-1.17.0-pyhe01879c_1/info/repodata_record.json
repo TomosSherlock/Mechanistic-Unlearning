@@ -1,0 +1,22 @@
+{
+  "name": "six",
+  "version": "1.17.0",
+  "build": "pyhe01879c_1",
+  "build_number": 1,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "six-1.17.0-pyhe01879c_1.conda",
+  "md5": "3339e3b65d58accf4ca4fb8748ab16b3",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/six-1.17.0-pyhe01879c_1.conda",
+  "sha256": "458227f759d5e3fcec5d9b7acce54e10c9e1f4f4b7ec978f3bfd54ce4ee9853d",
+  "depends": [
+    "python >=3.9",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1753199211006,
+  "size": 18455
+}

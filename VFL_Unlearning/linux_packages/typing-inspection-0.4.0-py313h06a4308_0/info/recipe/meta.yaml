@@ -1,0 +1,86 @@
+# This file created by conda-build 24.1.2
+# meta.yaml template originally from:
+# /feedstock/recipe, last modified Wed Apr 30 14:31:05 2025
+# ------------------------------------------------
+
+package:
+  name: typing-inspection
+  version: 0.4.0
+source:
+  sha256: 9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122
+  url: https://pypi.org/packages/source/t/typing-inspection/typing_inspection-0.4.0.tar.gz
+build:
+  number: '0'
+  script: /croot/typing-inspection_1746023470701/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold/bin/python
+    -m pip install . -vv --no-deps --no-build-isolation
+  string: py313h06a4308_0
+requirements:
+  host:
+    - _libgcc_mutex 0.1 main
+    - _openmp_mutex 5.1 1_gnu
+    - bzip2 1.0.8 h5eee18b_6
+    - ca-certificates 2025.2.25 h06a4308_0
+    - expat 2.7.1 h6a678d5_0
+    - hatchling 1.27.0 py313h06a4308_0
+    - ld_impl_linux-64 2.40 h12ee557_0
+    - libffi 3.4.4 h6a678d5_1
+    - libgcc-ng 11.2.0 h1234567_1
+    - libgomp 11.2.0 h1234567_1
+    - libmpdec 4.0.0 h5eee18b_0
+    - libstdcxx-ng 11.2.0 h1234567_1
+    - libuuid 1.41.5 h5eee18b_0
+    - ncurses 6.4 h6a678d5_0
+    - openssl 3.0.16 h5eee18b_0
+    - packaging 24.2 py313h06a4308_0
+    - pathspec 0.10.3 py313h06a4308_0
+    - pip 25.0 py313h06a4308_0
+    - pluggy 1.5.0 py313h06a4308_0
+    - python 3.13.2 hf623796_100_cp313
+    - python_abi 3.13 0_cp313
+    - readline 8.2 h5eee18b_0
+    - setuptools 75.8.0 py313h06a4308_0
+    - sqlite 3.45.3 h5eee18b_0
+    - tk 8.6.14 h39e8969_0
+    - trove-classifiers 2024.10.14 py313h06a4308_0
+    - tzdata 2025a h04d1e81_0
+    - wheel 0.45.1 py313h06a4308_0
+    - xz 5.6.4 h5eee18b_1
+    - zlib 1.2.13 h5eee18b_1
+  run:
+    - python >=3.13,<3.14.0a0
+    - python_abi 3.13.* *_cp313
+    - typing_extensions >=4.12.0
+test:
+  commands:
+    - pip check
+    - pytest . -v
+  imports:
+    - typing_inspection
+  requires:
+    - pip
+    - pytest
+  source_files:
+    - tests/*
+about:
+  description: 'A collection of runtime typing introspection tools, including a
+
+    `typing_inspect` module that provides a consistent interface for
+
+    inspecting types across different Python versions.
+
+    '
+  dev_url: https://github.com/pydantic/typing-inspection
+  doc_url: https://typing-inspection.readthedocs.io/
+  home: https://github.com/pydantic/typing-inspection
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: Runtime typing introspection tools
+extra:
+  copy_test_source_files: true
+  final: true
+  flow_run_id: acb3e32c-2f46-406c-9f8c-34d11470c1fb
+  recipe-maintainers:
+    - jan-janssen
+  remote_url: git@github.com:AnacondaRecipes/typing-inspection-feedstock.git
+  sha: 5065df21315b70131755aa55eb0872fa7771b71c

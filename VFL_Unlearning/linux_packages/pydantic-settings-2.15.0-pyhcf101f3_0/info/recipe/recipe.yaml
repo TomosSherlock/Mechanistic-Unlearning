@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: pydantic-settings
+  version: "2.15.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pydantic_settings-${{ version }}.tar.gz
+  sha256: 694b793e84f766ba76a90ebdefc01d0a9a045dab0382bee70393da93712ad117
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - hatchling
+    - pip
+  run:
+    - typing-inspection >=0.4.0
+    - python >=${{ python_min }}
+    - pydantic >=2.7.0
+    - python-dotenv >=0.21.0
+
+tests:
+  - python:
+      imports:
+        - pydantic_settings
+      pip_check: true
+      python_version: ${{ python_min }}
+
+about:
+  summary: Settings management using Pydantic
+  license: MIT
+  license_file: LICENSE
+  homepage: https://github.com/pydantic/pydantic-settings
+  repository: https://github.com/pydantic/pydantic-settings
+  documentation: https://docs.pydantic.dev/latest/usage/pydantic_settings/
+
+extra:
+  recipe-maintainers:
+    - jan-janssen
+    - fhoehle

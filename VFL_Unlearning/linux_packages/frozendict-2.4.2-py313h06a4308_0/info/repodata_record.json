@@ -1,0 +1,21 @@
+{
+  "name": "frozendict",
+  "version": "2.4.2",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "frozendict-2.4.2-py313h06a4308_0.conda",
+  "md5": "31f7036f9bdd3592e660ecfc631f054f",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313"
+  ],
+  "constrains": [],
+  "license": "LGPL-3.0-only",
+  "license_family": "LGPL",
+  "timestamp": 1728497564790,
+  "size": 37317
+}

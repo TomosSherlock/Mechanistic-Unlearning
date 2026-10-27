@@ -1,0 +1,83 @@
+schema_version: 1
+
+context:
+  version: "0.12.0"
+
+package:
+  name: conda-pypi
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/c/conda-pypi/conda_pypi-${{ version }}.tar.gz
+  sha256: 8a07533ac47a15c4f3276da7e7d8cbc53a947aced76e1430964e2ec1b7b941a0
+
+build:
+  # can't be noarch because we can't place EXTERNALLY-MANAGED in stdlib (first level is site-packages)
+  # However, EXTERNALLY-MANAGED is temporarily disabled, so go back to noarch
+  noarch: python
+  number: 0
+  script:
+    - if: unix
+      then: set -x
+    - if: win
+      then: "@ECHO ON"
+    - ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - hatchling >=1.26
+    - hatch-vcs >=0.2.0
+  run:
+    - python >=${{ python_min }}
+    - packaging
+    - unearth
+    - python-build
+    - python-installer >=1.0
+    - platformdirs
+    - conda-index >=0.12.0
+    - conda-package-streaming >=0.11
+  run_constraints:
+    # This is technically a `run` dependency (we do import it), but
+    # conda already depends on conda-pypi, so it creates a
+    # dependency cycle that complicates migrations
+    - conda >=26.1.0
+
+tests:
+  - python:
+      imports:
+        - conda_pypi
+        - conda_pypi.main
+      # pip check runs in the script test below, where ruamel.yaml can be
+      # pinned; python tests do not support extra requirements.
+      pip_check: false
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - pip
+        # conda 26.7.2 pip metadata requires ruamel-yaml <0.19, but the
+        # conda-forge conda package allows <0.20, so the solver can install
+        # ruamel.yaml 0.19.x and break pip check. Remove once conda's pip
+        # metadata allows ruamel.yaml 0.19.
+        - ruamel.yaml >=0.11.14,<0.19
+    script:
+      - pip check
+      - python -m conda pypi --help
+
+about:
+  license: MIT
+  license_file: LICENSE
+  summary: Better PyPI interoperability for the conda ecosystem
+  homepage: https://github.com/conda/conda-pypi
+  repository: https://github.com/conda/conda-pypi
+  documentation: https://conda.github.io/conda-pypi
+
+extra:
+  recipe-maintainers:
+    - danyeaw
+    - ryanskeith
+    - jaimergp
+    - jezdez

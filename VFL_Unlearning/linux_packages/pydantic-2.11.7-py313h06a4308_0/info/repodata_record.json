@@ -1,0 +1,27 @@
+{
+  "name": "pydantic",
+  "version": "2.11.7",
+  "build": "py313h06a4308_0",
+  "build_number": 0,
+  "channel": "<unknown>",
+  "subdir": "linux-64",
+  "fn": "pydantic-2.11.7-py313h06a4308_0.conda",
+  "md5": "7c8e28d9eb0dbf8b3bea0aa9f28f8c17",
+  "arch": "x86_64",
+  "platform": "linux",
+  "depends": [
+    "annotated-types >=0.6.0",
+    "pydantic-core 2.33.2",
+    "python >=3.13,<3.14.0a0",
+    "python_abi 3.13.* *_cp313",
+    "typing-extensions >=4.12.2",
+    "typing-inspection >=0.4.0"
+  ],
+  "constrains": [
+    "email-validator >=2.0.0"
+  ],
+  "license": "MIT",
+  "license_family": "MIT",
+  "timestamp": 1750768395489,
+  "size": 870373
+}

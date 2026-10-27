@@ -1,0 +1,19 @@
+{
+  "arch": null,
+  "build": "pyha770c72_0",
+  "build_number": 0,
+  "constrains": [
+    "prompt_toolkit 3.0.53"
+  ],
+  "depends": [
+    "python >=3.10",
+    "wcwidth"
+  ],
+  "license": "BSD-3-Clause",
+  "name": "prompt-toolkit",
+  "noarch": "python",
+  "platform": null,
+  "subdir": "noarch",
+  "timestamp": 1785160613307,
+  "version": "3.0.53"
+}

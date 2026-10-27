@@ -1,0 +1,79 @@
+# This file created by conda-build 26.7.1
+# meta.yaml template originally from:
+# /home/conda/recipe_root, last modified Tue Sep  8 11:09:25 2026
+# ------------------------------------------------
+
+package:
+  name: boltons
+  version: 26.2.0
+source:
+  fn: boltons-26.2.0.tar.gz
+  url: https://github.com/mahmoud/boltons/archive/26.2.0.tar.gz
+  sha256: 28cebe26b7fc4f76221bf03b4001036843e0d538ec33f082652b084ba57b90d4
+build:
+  noarch: python
+  number: '0'
+  script: /home/conda/feedstock_root/build_artifacts/boltons_1788865829832/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pla/bin/python
+    -m pip install . --no-deps -vv
+  string: pyhd8ed1ab_0
+requirements:
+  host:
+    - _openmp_mutex 4.5 20_gnu
+    - bzip2 1.0.8 hda65f42_10
+    - ca-certificates 2026.7.22 hbd8a1cb_0
+    - flit-core 3.12.0 pyhcf101f3_2
+    - icu 78.3 py310h44b86e0_2
+    - ld_impl_linux-64 2.46.1 default_hbd61a6d_102
+    - libexpat 2.8.1 hecca717_1
+    - libffi 3.7.0 h81df57d_1
+    - libgcc 16.2.0 ha9f2e26_4
+    - libgomp 16.2.0 he0feb66_4
+    - liblzma 5.8.3 hb03c661_1
+    - libnsl 2.0.1 hb9d3cd8_1
+    - libpython 3.11.16 h0c77377_2_cpython
+    - libsqlite 3.53.4 h13e7031_1
+    - libstdcxx 16.2.0 h934c35e_4
+    - libuuid 2.42.3 hcfc3c73_0
+    - libxcrypt 4.4.38 h280c20c_0
+    - libzlib 1.3.2 h25fd6f3_3
+    - ncurses 6.6 hdb14827_1
+    - openssl 3.6.4 h781a0a9_0
+    - packaging 26.3 pyhc364b38_0
+    - pip 26.2.1 pyh8b19718_0
+    - python 3.11.16 h5f976f7_2_cpython
+    - readline 8.3 hd6e31c0_1
+    - setuptools 84.0.0 pyh332efcf_0
+    - tk 8.6.13 noxft_h1df4ec4_4
+    - tzdata 2026c h151e31d_0
+    - wheel 0.48.0 pyhd8ed1ab_0
+    - zstd 1.5.7 hb78ec9c_7
+  run:
+    - python >=3.11
+test:
+  source_files:
+    - boltons
+    - pyproject.toml
+    - tests
+  requires:
+    - pytest
+    - python 3.11.*
+  commands:
+    - pytest --doctest-modules boltons tests
+about:
+  home: https://github.com/mahmoud/boltons
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: 'boltons should be builtins. Boltons is a set of over 160 BSD-licensed,
+    pure-Python utilities in the same spirit as--and yet conspicuously missing from--the
+    standard library.
+
+    '
+extra:
+  recipe-maintainers:
+    - kalefranz
+    - nicoddemus
+  final: true
+  copy_test_source_files: true
+  flow_run_id: github_34219190108
+  remote_url: https://github.com/conda-forge/boltons-feedstock
+  sha: f19ceead4fe3e7b6ee55dd2be69e678694ebcdbf

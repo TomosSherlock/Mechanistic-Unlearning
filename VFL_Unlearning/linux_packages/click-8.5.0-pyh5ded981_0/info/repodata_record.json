@@ -1,0 +1,22 @@
+{
+  "name": "click",
+  "version": "8.5.0",
+  "build": "pyh5ded981_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "click-8.5.0-pyh5ded981_0.conda",
+  "md5": "dea5b13a211bbf99876deb980b408a66",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/click-8.5.0-pyh5ded981_0.conda",
+  "sha256": "9afb0c2c089330321a219c7ee5a25313bd574d4024be606cbb33e7a5735df662",
+  "depends": [
+    "python >=3.11",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "BSD-3-Clause",
+  "package_type": "noarch_python",
+  "timestamp": 1788802215348,
+  "size": 112341
+}

@@ -1,0 +1,22 @@
+{
+  "name": "annotated-doc",
+  "version": "0.0.5",
+  "build": "pyhcf101f3_0",
+  "build_number": 0,
+  "channel": "https://conda.anaconda.org/conda-forge/noarch",
+  "subdir": "noarch",
+  "fn": "annotated-doc-0.0.5-pyhcf101f3_0.conda",
+  "md5": "d68ec17cb915cab4642357417ec0a104",
+  "url": "https://conda.anaconda.org/conda-forge/noarch/annotated-doc-0.0.5-pyhcf101f3_0.conda",
+  "sha256": "a0a320c709fded9b5178108dedebf81a1f5a5d9c7720e3af50c1ab058dadd296",
+  "depends": [
+    "python >=3.10",
+    "python"
+  ],
+  "constrains": [],
+  "noarch": "python",
+  "license": "MIT",
+  "package_type": "noarch_python",
+  "timestamp": 1785335690199,
+  "size": 16785
+}

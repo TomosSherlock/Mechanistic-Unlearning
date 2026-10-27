@@ -1,0 +1,20 @@
+{
+  "channels": [
+    "https://conda.anaconda.org/conda-forge/"
+  ],
+  "dev_url": "https://github.com/conda/conda-libmamba-solver",
+  "doc_url": "https://conda.github.io/conda-libmamba-solver/",
+  "extra": {
+    "flow_run_id": "github_29493756272",
+    "recipe-maintainers": [
+      "jaimergp",
+      "jezdez",
+      "wolfv"
+    ],
+    "remote_url": "https://github.com/conda-forge/conda-libmamba-solver-feedstock",
+    "sha": "83cf8a07a4957c5c40aa68b19f380f068dcc063f"
+  },
+  "home": "https://github.com/conda/conda-libmamba-solver",
+  "license": "BSD-3-Clause",
+  "summary": "The fast mamba solver, now in conda!"
+}
