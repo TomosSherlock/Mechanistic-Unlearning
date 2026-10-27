@@ -1,9 +1,0 @@
-{
-  "noarch": {
-    "type": "python",
-    "entry_points": [
-      "menuinst = menuinst.cli:main"
-    ]
-  },
-  "package_metadata_version": 1
-}

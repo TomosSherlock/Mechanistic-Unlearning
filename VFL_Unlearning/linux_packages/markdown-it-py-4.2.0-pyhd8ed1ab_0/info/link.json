@@ -1,9 +1,0 @@
-{
-  "noarch": {
-    "entry_points": [
-      "markdown-it = markdown_it.cli.parse:main"
-    ],
-    "type": "python"
-  },
-  "package_metadata_version": 1
-}

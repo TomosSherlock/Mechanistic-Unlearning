@@ -1,6 +1,0 @@
-- python:
-    imports:
-    - click
-    python_version:
-    - 3.11.*
-    - 3.14.*

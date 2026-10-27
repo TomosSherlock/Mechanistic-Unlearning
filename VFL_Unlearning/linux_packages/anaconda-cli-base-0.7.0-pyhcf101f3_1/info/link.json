@@ -1,9 +1,0 @@
-{
-  "noarch": {
-    "type": "python",
-    "entry_points": [
-      "anaconda = anaconda_cli_base.cli:app"
-    ]
-  },
-  "package_metadata_version": 1
-}

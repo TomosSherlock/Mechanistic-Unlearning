@@ -235,12 +235,14 @@ def evaluate(bottom_model_A, bottom_model_B, top_model, data_loader, args):
     if top_model == None:
         return evaluate_non_federated(bottom_model_A, data_loader, args)
 
-    bottom_model_A.eval()
-    bottom_model_B.eval()
-    top_model.eval()
-    test_acc = AvgMeter()
-    test_acc.reset()
     with torch.no_grad():
+
+        bottom_model_A.eval()
+        bottom_model_B.eval()
+        top_model.eval()
+        test_acc = AvgMeter()
+        test_acc.reset()
+
         for step, (batch_x, batch_y) in tqdm(enumerate(data_loader)):
             if args.data != 'yahoo':
                 batch_x, batch_y = batch_x.to(args.device), batch_y.to(args.device)

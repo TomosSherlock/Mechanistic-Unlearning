@@ -352,48 +352,49 @@ def main():
     fewshot_train = Subset(forget_train_set, idx_few)
     fewshot_descent_loader = DataLoader(fewshot_train_descent, batch_size = args.batch_size, shuffle=True, num_workers=args.num_workers) #batch size=129 for cifar100
     LUV_trainloader = DataLoader(fewshot_train, batch_size = args.batch_size, shuffle=True, num_workers=args.num_workers)
-
     
     print("Finish Data Preprocessing")
 
-    acc_full = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, full_test_loader, args)
-    acc_remain = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_retain_loader, args)
-    acc_forget = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_forget_loader, args)
+    if (args.quick == False):
 
-    acc_remain_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_retain_loader, args)
-    acc_forget_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_forget_loader, args)
+        acc_full = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, full_test_loader, args)
+        acc_remain = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_retain_loader, args)
+        acc_forget = evaluate(full_bottom_model_A, full_bottom_model_B, full_top_model, test_forget_loader, args)
 
-    print(f'Base Unbiased accuracy: {acc_remain}')
-    run.log({'Base Unbiased acc' : acc_remain})
-    print(f'Base Biased accuracy: {acc_forget}')
-    run.log({'Base Biased acc' : acc_forget})
+        acc_remain_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_retain_loader, args)
+        acc_forget_retrain = evaluate(retrain_bottom_model_A, retrain_bottom_model_B, retrain_top_model, test_forget_loader, args)
 
-    print(f'Retrain Unbiased accuracy: {acc_remain_retrain}')
-    run.log({'Retrain Unbiased acc' : acc_remain_retrain})
-    print(f'Retrain Biased accuracy: {acc_forget_retrain}')
-    run.log({'Retrain Biased acc' : acc_forget_retrain})
+        print(f'Base Unbiased accuracy: {acc_remain}')
+        run.log({'Base Unbiased acc' : acc_remain})
+        print(f'Base Biased accuracy: {acc_forget}')
+        run.log({'Base Biased acc' : acc_forget})
 
-    metric = MIA(
-        retain_loader=train_retain_loader,
-        forget_loader=train_forget_loader,
-        test_loader=full_test_loader,
-        bottom_model_A=full_bottom_model_A,
-        bottom_model_B = full_bottom_model_B,
-        top_model=full_top_model,
-        args=args
-    )
-    run.log({'Base MIA': metric * 100})
+        print(f'Retrain Unbiased accuracy: {acc_remain_retrain}')
+        run.log({'Retrain Unbiased acc' : acc_remain_retrain})
+        print(f'Retrain Biased accuracy: {acc_forget_retrain}')
+        run.log({'Retrain Biased acc' : acc_forget_retrain})
 
-    metric = MIA(
-        retain_loader=train_retain_loader,
-        forget_loader=train_forget_loader,
-        test_loader=full_test_loader,
-        bottom_model_A=retrain_bottom_model_A,
-        bottom_model_B = retrain_bottom_model_B,
-        top_model=retrain_top_model,
-        args=args
-    )
-    run.log({'Retrain MIA': metric * 100})
+        metric = MIA(
+            retain_loader=train_retain_loader,
+            forget_loader=train_forget_loader,
+            test_loader=full_test_loader,
+            bottom_model_A=full_bottom_model_A,
+            bottom_model_B = full_bottom_model_B,
+            top_model=full_top_model,
+            args=args
+        )
+        run.log({'Base MIA': metric * 100})
+
+        metric = MIA(
+            retain_loader=train_retain_loader,
+            forget_loader=train_forget_loader,
+            test_loader=full_test_loader,
+            bottom_model_A=retrain_bottom_model_A,
+            bottom_model_B = retrain_bottom_model_B,
+            top_model=retrain_top_model,
+            args=args
+        )
+        run.log({'Retrain MIA': metric * 100})
 
     if (args.unlearn_method == 'fisher'):
         unlearn_method = 'fisher'

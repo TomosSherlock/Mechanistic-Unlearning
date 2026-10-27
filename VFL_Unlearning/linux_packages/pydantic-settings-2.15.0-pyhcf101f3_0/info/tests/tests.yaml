@@ -1,4 +1,0 @@
-- python:
-    imports:
-    - pydantic_settings
-    python_version: '3.10'

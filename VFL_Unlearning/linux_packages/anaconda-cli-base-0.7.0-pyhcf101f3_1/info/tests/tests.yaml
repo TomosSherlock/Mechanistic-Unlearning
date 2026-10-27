@@ -1,9 +1,0 @@
-- python:
-    imports:
-    - anaconda_cli_base
-    python_version: 3.10.*
-- script:
-    content: python -c "from anaconda_cli_base import __version__; assert __version__ == \"0.7.0\""
-  requirements:
-    run:
-    - python 3.10.*

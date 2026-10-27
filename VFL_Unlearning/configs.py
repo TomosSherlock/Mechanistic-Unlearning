@@ -76,11 +76,12 @@ def config():
                         help='Method for more complex unlearning methods')
     parser.add_argument('--alpha', default=1, type=float,
                         help='Alpha value for manifold mixup')
-    parser.add_argument('--target_unlearned_performance', default=999, type=int,
+    parser.add_argument('--target_unlearned_performance', default=999, type=float,
                         help='Percent unlearned sample performance to stop unlearning at. ' \
                         'If unspecified, unlearning will occur for the specified number of epochs instead.')
-    parser.add_argument('--alpha-momentum', default=1.5, type=float,
+    parser.add_argument('--alpha_momentum', default=1.5, type=float,
                         help='Factor to multiply manifold mixup alpha by after each unlearning epoch')
+    parser.add_argument('--quick', type=bool, default=False)
 
     ###################################### Model ##################################################
     parser.add_argument('--model_type', default='resnet18', type=str,

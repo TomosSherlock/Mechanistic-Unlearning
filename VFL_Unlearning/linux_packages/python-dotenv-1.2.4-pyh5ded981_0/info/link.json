@@ -1,9 +1,0 @@
-{
-  "noarch": {
-    "type": "python",
-    "entry_points": [
-      "dotenv = dotenv.__main__:cli"
-    ]
-  },
-  "package_metadata_version": 1
-}
