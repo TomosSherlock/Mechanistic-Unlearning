@@ -209,6 +209,37 @@ def display_progress(text, current_step, last_step, enabled=True,
 
     sys.stdout.flush()
 
+def report(active_models, top_model, retain_loader, forget_loader, epoch, run, args, alpha=0, forgotten_accuracy=0.0):
+    '''
+    Report the accuracy of the model on the retained class test data and forgotten class test data, as well as some other provided metrics. 
+
+    Args:
+        active_models: list of the active models (bottom models) to evaluate (for unfederated learning, this will be a list containing [model, None])
+        top_model: the top model to evaluate (for unfederated learning, this will be None)
+        retain_loader: the dataloader for the retained class test data
+        forget_loader: the dataloader for the forgotten class test data
+        epoch: the current epoch number
+        run: the wandb run object to log the metrics to
+        args: the arguments object containing the device to use for evaluation
+        alpha: the current alpha value if used
+        forgotten_accuracy: the accuracy of the model on the forgotten class test data if provided
+    '''
+    acc_remain = evaluate(active_models[0], active_models[1], top_model, retain_loader, args)
+    acc_forget = evaluate(active_models[0], active_models[1], top_model, forget_loader, args)
+
+    print(f'epoch : {epoch}')
+    print(f'remain acc : {acc_remain}')
+    print(f'bias acc: {acc_forget}')
+    print(f'alpha: {alpha}')
+
+    run.log({
+        "Epoch" : epoch,
+        "Unbiased Class Accuracy" : acc_remain,
+        "Biased Class Accuracy" : acc_forget,
+        "Forgotten Sample Accuracy" : forgotten_accuracy,
+        "Alpha" : alpha,
+        })
+
 def evaluate_non_federated(model, data_loader, args):
     model.eval()
     test_acc = AvgMeter()
@@ -230,7 +261,11 @@ def evaluate_non_federated(model, data_loader, args):
     
         return test_acc.get()
 
-def evaluate(bottom_model_A, bottom_model_B, top_model, data_loader, args):
+def evaluate(bottom_model_a, bottom_model_b, top_model_o, data_loader, args):
+    bottom_model_A = copy.deepcopy(bottom_model_a)
+    bottom_model_B = copy.deepcopy(bottom_model_b)
+    top_model = copy.deepcopy(top_model_o)
+
     # if the top model is None, we are not using federated learning
     if top_model == None:
         return evaluate_non_federated(bottom_model_A, data_loader, args)

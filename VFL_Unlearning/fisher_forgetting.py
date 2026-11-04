@@ -5,7 +5,7 @@ import psutil
 import numpy as np
 import torch.nn.functional as F
 from collections import OrderedDict
-from utils import evaluate, display_progress
+from utils import evaluate, display_progress, report
 from torch import nn
 
 # adapted from https://github.com/Happy2Git/Unlearning_Inference_IAM/blob/13f385b62e7cbc85c8c59d0912839e756db51cde/unlearning_lib/methods/fisher_forgetting.py
@@ -36,12 +36,36 @@ class FusedVFLModel(nn.Module):
     out = self.top_model(combined)
     return out
 
-def fisher_forgetting(active_net_A, active_net_B, passive_net, retain_loader, forget_loader, test_retain_loader, test_forget_loader, args, run, batch_size=32, REPEAT=1, alpha: float = 1e-9, Method: str = 'EWC', DEVICE: str = 'cpu', evals = 20):
+def fisher_forgetting(active_net_A, active_net_B, passive_net, retain_loader, forget_loader, test_retain_loader, test_forget_loader,
+                       args, run, batch_size=32, REPEAT=1, alpha: float = 1e-9, Method: str = 'EWC', DEVICE: str = 'cpu', evals = 20):
     """
     Here, we implement the diagnoal fisher estimate by a more efficient way.
     Reference:  Aditya Golatkar, Alessandro Achille, Stefano Soatto:
     Eternal Sunshine of the Spotless Net: Selective Forgetting in Deep Networks. CVPR 2020: 9301-9309
+
+    Only currently effective for class unlearning.
+
+    Args:
+        active_net_A: The first active model (for unfederated, this should be the whole model)
+        active_net_B: The second active model (for unfederated, this should be None)
+        passive_net: The passive model (for unfederated, this should be None)
+        retain_loader: DataLoader for the retained samples
+        forget_loader: DataLoader for the samples to be forgotten
+        test_retain_loader: DataLoader for testing on retained samples
+        test_forget_loader: DataLoader for testing on samples within the forgotten class
+        args: Arguments containing hyperparameters and settings
+        run: The current run or experiment context
+        batch_size: Batch size for fisher estimation
+        REPEAT: Number of times to repeat the Fisher estimation
+        alpha: Regularization parameter for Fisher information
+        Method: Method to use for Fisher estimation ('EWC' or 'reference', only 'EWC' is currently supported)
+        DEVICE: Device to run the computations on ('cpu' or 'cuda:n')
+        evals: Frequency of evaluations to perform during unlearning
+    Returns:
+        best_modelf: The model after unlearning with the lowest performance on forgotten samples
     """
+    print(f'Retained Samples: {len(retain_loader.dataset)}')
+    print(f'Forgotten Samples: {len(forget_loader.dataset)}')
 
     if (passive_net == None):
         fused_model = active_net_A
@@ -66,7 +90,7 @@ def fisher_forgetting(active_net_A, active_net_B, passive_net, retain_loader, fo
                 existing_class.append(i)
 
     class_to_forget = None
-    if len(existing_class) < num_classes:
+    if len(existing_class) < num_classes and args.unlearn_bias == 0:
         class_to_forget = [i for i in range(
             num_classes) if i not in existing_class]
 
@@ -98,23 +122,15 @@ def fisher_forgetting(active_net_A, active_net_B, passive_net, retain_loader, fo
             else :
                 fused_bottom_model_a = fused_modelf.bottom_model_A
                 fused_bottom_model_b = fused_modelf.bottom_model_B
-            
-            retain_acc = evaluate(fused_bottom_model_a, fused_bottom_model_b, passive_net, test_retain_loader, args)
-            biased_acc = evaluate(fused_bottom_model_a, fused_bottom_model_b, passive_net, test_forget_loader, args)
+
             acc_forget = evaluate(fused_bottom_model_a, fused_bottom_model_b, passive_net, forget_loader, args)
+
+            report([fused_bottom_model_a, fused_bottom_model_b], passive_net, test_retain_loader, test_forget_loader, i, run, args, forgotten_accuracy=acc_forget)
 
             if (acc_forget < best_forgotten_samples_acc) :
                 best_modelf = fused_modelf
                 best_forgotten_samples_acc = acc_forget
-
-            print(f"Unbiased Class acc : {retain_acc}")
-            print(f"Biased Class acc : {biased_acc}")
-            print(f"Forgotten Samples acc : {acc_forget}")
-
-            run.log({"Unbiased Class acc" : retain_acc})
-            run.log({"Biased Class acc" : biased_acc})
-            run.log({"Forgotten Samples Accuracy" : acc_forget})
-
+                
     if (passive_net == None):
         return best_modelf, None
     return best_modelf.bottom_model_A, best_modelf.bottom_model_B
