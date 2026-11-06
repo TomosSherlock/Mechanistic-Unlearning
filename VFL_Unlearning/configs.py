@@ -93,5 +93,7 @@ def config():
     parser.add_argument('--gamma', default=0.99, type=float)
     parser.add_argument('--model_path', default='exp/', type=str,
                             help='Path of trained model to unlearn')
+    parser.add_argument('--lr', default=0.01, type=float,
+                        help='Learning rate for unlearning or training')
 
     return parser.parse_args()

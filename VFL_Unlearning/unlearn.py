@@ -28,6 +28,7 @@ import numpy as np
 import random
 from model import read_data_text
 from fisher_forgetting import fisher_forgetting
+from finetuning import finetune
 logger = logging.getLogger(f"VFU.{__name__}")
 import wandb
 from datetime import datetime
@@ -55,11 +56,11 @@ def init_run(args):
     date = datetime.today().strftime('%Y-%m-%d_%H:%M:%S')
 
     if args.expname == '---':
-        args.expname = f'Unlearn-{unlearn_goal}-{args.unlearn_method}-{model_n}-{dataset}-{n_biased_classes}-{rho}@{date}'
+        args.expname = f'Unlearn-{unlearn_goal}-{args.unlearn_method}-{model_n}-{dataset}-{n_biased_classes}-{rho}'
 
     # Start a new wandb run to track this.
     run = wandb.init(
-        name=args.expname,
+        name=f'{args.expname}@{date}',
         entity="tomos-sherlock-mechanistic-unlearning",
         mode="offline",
         project="vfl-unlearning",
@@ -398,8 +399,10 @@ def main():
 
     if (args.unlearn_method == 'fisher'):
         unlearn_method = 'fisher'
-    else:
+    elif (args.unlearn_method == 'LUV'):
         unlearn_method = unlearn.get_unlearn_method(args.unlearn_method)
+    else:
+        unlearn_method = args.unlearn_method
 
     criterion = nn.CrossEntropyLoss()
 
@@ -408,6 +411,8 @@ def main():
     if unlearn_method == 'fisher' :
         full_bottom_model_A, full_bottom_model_B = fisher_forgetting(full_bottom_model_A, full_bottom_model_B, full_top_model, train_retain_loader, train_forget_loader, test_retain_loader, 
                                                                      test_forget_loader, args, run, args.u_batch_size, DEVICE=args.device, evals=args.evals, Method=args.f_method)
+    elif unlearn_method == 'finetune':
+        full_bottom_model_A = finetune(full_bottom_model_A, train_retain_loader, train_forget_loader, test_retain_loader, test_forget_loader, run, args, DEVICE=args.device, epochs=args.unlearn_epochs, lr=args.unlearn_lr, target_unlearned_performance=args.target_unlearned_performance)
     else :
         unlearn_method(LUV_trainloader, fewshot_descent_loader, full_bottom_model_A, full_bottom_model_B, full_top_model, criterion, class_to_forget, args, run, test_retain_loader, test_forget_loader, args.alpha)
     end_time = time.time()
